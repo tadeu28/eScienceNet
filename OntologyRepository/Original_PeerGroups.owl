@@ -1,0 +1,245 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY PeerGroups "http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#"
+     xml:base="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl"
+     xmlns:PeerGroups="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#">
+    <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl">
+        <owl:versionInfo rdf:datatype="&xsd;int">1</owl:versionInfo>
+        <rdfs:comment rdf:datatype="&xsd;string">Ontologia para pesquisa de informacoes em grupos da e-ScienceNet</rdfs:comment>
+        <owl:versionIRI rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#createGroup -->
+
+    <owl:ObjectProperty rdf:about="&PeerGroups;createGroup">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="&PeerGroups;Grupo"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Peer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupWasCreatedBy -->
+
+    <owl:ObjectProperty rdf:about="&PeerGroups;groupWasCreatedBy">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Grupo"/>
+        <rdfs:range rdf:resource="&PeerGroups;Peer"/>
+        <owl:inverseOf rdf:resource="&PeerGroups;createGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupArea -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;groupArea">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Grupo"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;groupCreationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Grupo"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupDescription -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;groupDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupName -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;groupName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Grupo"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#idGroup -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;idGroup">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Grupo"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#idPeer -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;idPeer">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerGroups;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#peerIP -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;peerIP">
+        <rdfs:domain rdf:resource="&PeerGroups;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#peerName -->
+
+    <owl:DatatypeProperty rdf:about="&PeerGroups;peerName">
+        <rdfs:domain rdf:resource="&PeerGroups;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo -->
+
+    <owl:Class rdf:about="&PeerGroups;Grupo">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerGroups;groupWasCreatedBy"/>
+                <owl:onClass rdf:resource="&PeerGroups;Peer"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="&PeerGroups;Peer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer -->
+
+    <owl:Class rdf:about="&PeerGroups;Peer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerGroups;createGroup"/>
+                <owl:someValuesFrom rdf:resource="&PeerGroups;Grupo"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Mathematics -->
+
+    <owl:NamedIndividual rdf:about="&PeerGroups;Mathematics">
+        <rdf:type rdf:resource="&PeerGroups;Grupo"/>
+        <idGroup rdf:datatype="&xsd;string">2831092379127392189</idGroup>
+        <groupArea rdf:datatype="&xsd;string">Matematica</groupArea>
+        <groupDescription rdf:datatype="&xsd;string">Matematica grupo</groupDescription>
+        <groupName rdf:datatype="&xsd;string">Mathematics</groupName>
+        <groupWasCreatedBy rdf:resource="&PeerGroups;VIRTUALW8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#VIRTUALW8 -->
+
+    <owl:NamedIndividual rdf:about="&PeerGroups;VIRTUALW8">
+        <rdf:type rdf:resource="&PeerGroups;Peer"/>
+        <peerIP rdf:datatype="&xsd;string">199.999.999.999</peerIP>
+        <idPeer rdf:datatype="&xsd;string">8327498234879</idPeer>
+        <peerName rdf:datatype="&xsd;string">VirtualW8</peerName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

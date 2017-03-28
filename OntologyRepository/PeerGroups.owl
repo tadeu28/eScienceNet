@@ -1,0 +1,119 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:PeerGroups="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl">
+    <owl:versionIRI rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontologia para pesquisa de informacoes em grupos da e-ScienceNet</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo">
+    <owl:disjointWith>
+      <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+    </owl:disjointWith>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+        </owl:onClass>
+        <owl:onProperty>
+          <owl:InverseFunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupWasCreatedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#createGroup"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#peerIP">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#peerName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupArea">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupDescription">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupCreationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#idGroup">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#createGroup">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#idPeer">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#groupWasCreatedBy">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#createGroup"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Peer"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Grupo"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:InverseFunctionalProperty>
+  <PeerGroups:Peer rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#VIRTUALW8">
+    <PeerGroups:idPeer rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >jxta:92139812398n219837293</PeerGroups:idPeer>
+    <PeerGroups:peerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >VirtualW8</PeerGroups:peerName>
+    <PeerGroups:peerIP rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >192.168.0.1</PeerGroups:peerIP>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerGroups:Peer>
+  <PeerGroups:Grupo rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#ES">
+    <PeerGroups:groupWasCreatedBy>
+      <PeerGroups:Peer rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl#Tadeu_PEER">
+        <PeerGroups:idPeer rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >urn:jxta:uuid-59616261646162614A7874615032503399FA8BD9CD434A84A1358340EA5D7F8003</PeerGroups:idPeer>
+        <PeerGroups:peerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Tadeu_PEER</PeerGroups:peerName>
+        <PeerGroups:peerIP rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >192.168.206.1</PeerGroups:peerIP>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </PeerGroups:Peer>
+    </PeerGroups:groupWasCreatedBy>
+    <PeerGroups:groupDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Grupo criado para realizar a troca de informações, trabalhos e resultados nas áreas de Sistemas de Informação, Engenharia de Software e Tecnologia da Informação.</PeerGroups:groupDescription>
+    <PeerGroups:groupArea rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Engenharia de Software e Tecnologia da Informação</PeerGroups:groupArea>
+    <PeerGroups:groupName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >ES</PeerGroups:groupName>
+    <PeerGroups:idGroup rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >8723912738219382189372936126hvd872gg</PeerGroups:idGroup>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerGroups:Grupo>
+</rdf:RDF>

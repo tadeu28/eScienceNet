@@ -1,2 +1,4 @@
 # eScienceNet
 Rede Ponto a Ponto Semântica para e-Science
+
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />O trabalho <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">e-ScienceNet</span> de <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Tadeu Classe</span> está licenciado com uma Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons - Atribuição-CompartilhaIgual 4.0 Internacional</a>.<br />Baseado no trabalho disponível em <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/tadeu28/eScienceNet" rel="dct:source">https://github.com/tadeu28/eScienceNet</a>.

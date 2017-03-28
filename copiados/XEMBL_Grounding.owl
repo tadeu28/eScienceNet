@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+  xml:base="http://www.ebi.ac.uk/xembl/XEMBL.wsdl/XEMBL_Grounding.owl#"
+  xmlns:grounding="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Grounding.owl#"
+  xmlns:owl="http://jamsci.servehttp.com/owlsedit/owl.rdf#"
+  xmlns:process="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Process.owl#"
+  xmlns:profile="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Profile.owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://jamsci.servehttp.com/owlsedit/rdf-schema.rdf#"
+  xmlns:service="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Service.owl#" xmlns:xsd="http://jamsci.servehttp.com/owlsedit/XMLSchema.xsd#">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo>Version 1.0</owl:versionInfo>
+    <rdfs:comment>Add Ontology Comment</rdfs:comment>
+    <owl:imports rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns"/>
+    <owl:imports rdf:resource="http://jamsci.servehttp.com/owlsedit/owl.rdf"/>
+    <owl:imports rdf:resource="http://jamsci.servehttp.com/owlsedit/rdf-schema.rdf"/>
+    <owl:imports rdf:resource="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Service.owl"/>
+    <owl:imports rdf:resource="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Profile.owl"/>
+    <owl:imports rdf:resource="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Process.owl"/>
+    <owl:imports rdf:resource="http://staff.um.edu.mt/cabe2/supervising/undergraduate/owlseditFYP/owls11/Grounding.owl"/>
+  </owl:Ontology>
+  <grounding:WsdlGrounding rdf:ID="XEMBL_Grounding">
+    <service:supportedBy rdf:resource="http://www.ebi.ac.uk/xembl/XEMBL.wsdl/XEMBL_Service#XEMBL_Service"/>
+    <grounding:hasAtomicProcessGrounding rdf:resource="#WSDLGrounding_XEMBL_getNucSeq"/>
+  </grounding:WsdlGrounding>
+  <grounding:WsdlAtomicProcessGrounding rdf:ID="WSDLGrounding_XEMBL_getNucSeq">
+    <grounding:owlsProcess rdf:resource="http://www.ebi.ac.uk/xembl/XEMBL.wsdl/XEMBL_ProcessModel#XEMBLPortType_getNucSeq"/>
+    <grounding:wsdlOperation>
+      <xsd:uriReference rdf:value="http://www.ebi.ac.uk/XEMBL#getNucSeq"/>
+    </grounding:wsdlOperation>
+    <grounding:wsdlInputMessage>
+      <xsd:uriReference rdf:value="http://www.ebi.ac.uk/XEMBL#getNucSeqRequest"/>
+    </grounding:wsdlInputMessage>
+    <grounding:wsdlInputMessageParts rdf:parseType="Collection">
+      <grounding:WsdlMessageMap>
+        <grounding:owlsParameter rdf:resource="http://www.ebi.ac.uk/xembl/XEMBL.wsdl/XEMBL_ProcessModel#XEMBLPortType_getNucSeq_format_IN"/>
+        <grounding:wsdlMessagePart>
+          <xsd:uriReference rdf:value="http://www.ebi.ac.uk/XEMBL#format"/>
+        </grounding:wsdlMessagePart>
+      </grounding:WsdlMessageMap>
+      <grounding:WsdlMessageMap>
+        <grounding:owlsParameter rdf:resource="http://www.ebi.ac.uk/xembl/XEMBL.wsdl/XEMBL_ProcessModel#XEMBLPortType_getNucSeq_ids_IN"/>
+        <grounding:wsdlMessagePart>
+          <xsd:uriReference rdf:value="http://www.ebi.ac.uk/XEMBL#ids"/>
+        </grounding:wsdlMessagePart>
+      </grounding:WsdlMessageMap>
+    </grounding:wsdlInputMessageParts>
+    <grounding:wsdlOutputMessage>
+      <xsd:uriReference rdf:value="http://www.ebi.ac.uk/XEMBL#getNucSeqResponse"/>
+    </grounding:wsdlOutputMessage>
+    <grounding:wsdlOutputMessageParts rdf:parseType="Collection">
+      <grounding:WsdlMessageMap>
+        <grounding:owlsParameter rdf:resource="http://www.ebi.ac.uk/xembl/XEMBL.wsdl/XEMBL_ProcessModel#XEMBLPortType_getNucSeq_result_OUT"/>
+        <grounding:wsdlMessagePart>
+          <xsd:uriReference rdf:value="http://www.ebi.ac.uk/XEMBL#result"/>
+        </grounding:wsdlMessagePart>
+      </grounding:WsdlMessageMap>
+    </grounding:wsdlOutputMessageParts>
+    <grounding:wsdlReference>
+      <xsd:uriReference rdf:value="http://www.w3.org/TR/2001/NOTE-wsdl-20010315"/>
+    </grounding:wsdlReference>
+  </grounding:WsdlAtomicProcessGrounding>
+</rdf:RDF>
