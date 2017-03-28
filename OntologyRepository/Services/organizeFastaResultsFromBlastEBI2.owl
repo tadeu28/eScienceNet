@@ -1,0 +1,120 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:j.0="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl">
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Grounding.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code"/>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#SubParameter">
+    <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#isSubParameterOf">
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#hasSubParameter"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#SubParameter"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#parameterTypeXSD">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#serviceRealName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#hasSubParameter">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#isSubParameterOf"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#SubParameter"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <process:AtomicProcess rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Process">
+    <process:hasOutput>
+      <process:Output rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#return">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code</process:parameterType>
+        <rdfs:label>return</rdfs:label>
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasInput>
+      <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#parameterIn">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code</process:parameterType>
+        <rdfs:label>parameterIn</rdfs:label>
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+      </process:Input>
+    </process:hasInput>
+    <service:describes>
+      <service:Service rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Service">
+        <service:supports>
+          <grounding:WsdlGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Grounding">
+            <grounding:hasAtomicProcessGrounding>
+              <grounding:WsdlAtomicProcessGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2AtomicProcessGrounding">
+                <grounding:wsdlOutput>
+                  <grounding:WsdlOutputMessageMap>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL#return</grounding:wsdlMessagePart>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#return"/>
+                  </grounding:WsdlOutputMessageMap>
+                </grounding:wsdlOutput>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL#parameterIn</grounding:wsdlMessagePart>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#parameterIn"/>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://ws/#organizeFastaResultsFromBlastEBIResponse</grounding:wsdlOutputMessage>
+                <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://ws/#organizeFastaResultsFromBlastEBI</grounding:wsdlInputMessage>
+                <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL</grounding:wsdlDocument>
+                <grounding:wsdlOperation>
+                  <grounding:WsdlOperationRef>
+                    <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL#BioWebServicePort</grounding:portType>
+                    <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL#organizeFastaResultsFromBlastEBI</grounding:operation>
+                  </grounding:WsdlOperationRef>
+                </grounding:wsdlOperation>
+                <grounding:owlsProcess rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Process"/>
+              </grounding:WsdlAtomicProcessGrounding>
+            </grounding:hasAtomicProcessGrounding>
+            <service:supportedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Service"/>
+          </grounding:WsdlGrounding>
+        </service:supports>
+        <service:describedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Process"/>
+        <service:presents>
+          <profile:Profile rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Profile">
+            <j.0:serviceRealName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >organizeFastaResultsFromBlastEBI</j.0:serviceRealName>
+            <profile:hasOutput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#return"/>
+            <profile:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#parameterIn"/>
+            <profile:textDescription>Auto generated from http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL</profile:textDescription>
+            <profile:serviceName>organizeFastaResultsFromBlastEBI2</profile:serviceName>
+            <service:presentedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/organizeFastaResultsFromBlastEBI2.owl#organizeFastaResultsFromBlastEBI2Service"/>
+          </profile:Profile>
+        </service:presents>
+      </service:Service>
+    </service:describes>
+    <rdfs:label>organizeFastaResultsFromBlastEBI2Process</rdfs:label>
+  </process:AtomicProcess>
+</rdf:RDF>

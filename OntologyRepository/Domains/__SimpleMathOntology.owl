@@ -1,0 +1,1161 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#"
+     xml:base="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#next_task -->
+
+    <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#next_task">
+        <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task -->
+
+    <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task">
+        <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by -->
+
+    <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task -->
+
+    <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task">
+        <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules"/>
+        <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Bhaskara -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Bhaskara">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#CircleArea -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#CircleArea">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Complex -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Complex">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#CubeVolum -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#CubeVolum">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#SquareArea"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Irrational -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Irrational">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathConcepts -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathConcepts"/>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathConcepts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathConcepts"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathConcepts"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#next_task"/>
+                <owl:allValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#next_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Natural -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Natural">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pythagoras -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pythagoras">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Rational -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Rational">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathNumerics"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#SquareArea -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#SquareArea">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathFormules"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#workflows_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum -->
+
+    <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum">
+        <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#MathOperation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Negative"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Pot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Module"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Different"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Equals"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Multiplication"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Read"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sqrt"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Subtraction"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Sum"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Complex"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Irrational"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Natural"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Rational"/>
+            <rdf:Description rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.3) http://owlapi.sourceforge.net -->
+

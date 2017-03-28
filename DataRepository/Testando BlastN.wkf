@@ -1,0 +1,291 @@
+<com.esciencenet.compositionmanager.CompositionModel>
+  <nameComposition></nameComposition>
+  <data>2013-12-26 20:39:51.549 UTC</data>
+  <lstServices>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>runBlast</operationName>
+        <operationRealName>run</operationRealName>
+        <operationDomainTerm>BLAST_Basic_Local_Alignment_Search_Tool</operationDomainTerm>
+        <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/ncbiblast?wsdl</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>email</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>tadeu.classe@gmail.com</manualContent>
+            <parentName>runBlast - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>title</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>testando blastn</manualContent>
+            <parentName>runBlast - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>stype</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>dna</manualContent>
+            <parentName>runBlast - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>sequence</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>&gt;gi|186704|gb|J00124.1|HUMKEREP Homo sapiens 50 kDa type I epidermal keratin gene, complete cds
+CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCCTGGCGGGACA
+AGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGACATGATGAGGCGGATGAGAG
+GAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGATGAAAGCCAAGGGGAATGGAAAGTGCCAGAC
+CCGCCCCCTACCCATGAGTATAAAGCACTCGCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTC
+AGCCTTCTGCTCGCTCGCTCACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTC
+CAGCTCCATGAAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCCTCCCGCTTCT
+CCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGCAGCAGCAGCAGCAGCTTTGG
+TAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCTGGCTTGGGTGGTGGCTTTGGTGGTGGCTTT
+GCTGGTGGTGATGGGCTTCTGGTGGGCAGTGAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCT
+CCTACCTGGACAAGGTGCGTGCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTA
+CCAGAGGCAGCGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTCATGCCCCAGG
+CCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCCTTCTTTCGAGGTCTTGGATG
+CCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCAGGCCTCCTCATCCCCTTCTGATCTCAAATC
+CTCAGACCATGTGAGATCAGTGATTCCTATCCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGG
+TGCTGTGACCAGCTGCAGGTCACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTT
+CCAGCACAGGAGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTTGGTACAGGCT
+GGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAGTGTGGTCCCTTGATGTGCCC
+TGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAGCCCCCTCCTCCCTGCTCCCACATTACTTGG
+GAGCCCTCCCTGCTGGAGTCTGTTGGGCTCTAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGT
+GGGGAAATCCAACCAGACTCAGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCC
+CCTGTGTTAGTTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCAGCTCAGGAAG
+GAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTTGAAGCCCCAAGACCCATTAG
+GTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAACTCCTGGGCTTTCGATTCTAAGCCCGGGGCT
+GCCATCTACCCCCTCTGTTGACCATGAGTTAGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTT
+TGGGCTGCTATGGTCAAGTTTTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAAT
+GTAGGCTACAGTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGGCCGCGGATGA
+CTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCCCAGAGTAGGGCATTTTTGGA
+GCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGGTGCATGAAAACTCCCTGGGGTGCTTATAAA
+AGAATAAGACTCTTGGGCCCCACCCTTGGAGTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATT
+CTGGTCCACAGCCAGGTTTCAGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTG
+AAGTATAGGAAGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATCTGAGCAATCA
+ATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACCACCCACAAGGCACCAGCTCT
+GGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGTGATCAGGATGGGTGTCTCATACCTTTTCTC
+TGGGGTCATTCCAGGTATGAGACAGAGTTGAACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGC
+GCAGGGTGCTGGACGAACTGACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGA
+GCTGGCCTACCTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGGAGGATCACTT
+GAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCAAAAAAAAAAAAAAAAAAAAA
+AAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGAGAGAAGGGAGAGTCGAGATAGAATTGTGAT
+GGTGGGAGGGCAGTATTCAGGCCTAAGGAACACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACT
+GTCCCTGGCTTGCAGGAGATGAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACG
+CTGCACCTGGCGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAGGAACCCAGAC
+CACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAGACAGAGGAGCTGAACCGCGA
+GGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGCGAGATCTCGGAGCTCCGGCGCACCATGCAG
+AACCTGGAGATTGAGCTGCAGTCCCAGCTCAGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAG
+GACTGGCAGGGAGAGAACGGCCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCC
+TGGAGAACAGCCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTACAAGATCCTG
+CTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCTGCTGGAGGGCGAGGACGCCC
+AGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGGCACTCTCACGGCCCCACCATGTATCTAATG
+ATCCTGTCCTTTTCTATTTTCACAGCCTCTCCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGA
+TGGTAAGACCCTCCTCCTCTGCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCAT
+TGGCTAGGGGCTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCCTTCTACGTGG
+TGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGGCCCTACAGCGGTCTTCCCAC
+TGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCAGGTGTGAGCTCTTAGGAAGCTCTAATCTGA
+GGGCAAAGACTCTGTCTCTGACCTTTGGGAGCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTT
+GGGCAACAGCAGGGAGTGAAGCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACC
+TTCTTGGCCTCCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCAAGGTGGTGTC
+CACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGCTCAGGCCTAGGAGGCCCCCC
+GTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCCCAAGCACTTCACAGCTGGACCCTGCTTCAC
+CCTCACCCCCTCCTGGCAATCAATACAGCTTCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCA
+TTGTTAGGAGTGGGGGTGGGGAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGG
+CCCCTGGGACTGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGATATTCATTCA
+TTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTGCCTCTATGTCAGGCACTATG
+TTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATTCCTTGGAGAATATTGAAAGCTATAGATCTT
+TCCTTCTGCCCCCTACCTTCAAATAAGCATACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCC
+TAGAGCTCCTTACCGGAGT</manualContent>
+            <parentName>runBlast - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>string</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>em_rel</manualContent>
+            <parentName>runBlast - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>program</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>blastn</manualContent>
+            <parentName>runBlast - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>jobId</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>getStatus</operationName>
+                <operationRealName>getStatus</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/ncbiblast?wsdl</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>jobId</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>status</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[jobId == jobId]</compatibility>
+                <restriction>
+                  <time>10</time>
+                  <restrictionType>LOOP</restrictionType>
+                  <owlsParam reference="../../outputs/com.esciencenet.servicemanager.OWLSParam"/>
+                  <operator>!=</operator>
+                  <restrictionTerm>FINISHED</restrictionTerm>
+                </restriction>
+              </com.esciencenet.servicemanager.OWLSOperation>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>getResultBlastP_1</operationName>
+                <operationRealName>getResult</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/ncbiblast?wsdl</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>jobId</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>type</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent>ids</manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>name</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>string</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>output</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#base64Binary</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[jobId == jobId]</compatibility>
+              </com.esciencenet.servicemanager.OWLSOperation>
+            </connectorAssociated>
+            <paramConnectorAssociated>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation/inputs/com.esciencenet.servicemanager.OWLSParam"/>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[2]/inputs/com.esciencenet.servicemanager.OWLSParam"/>
+            </paramConnectorAssociated>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName></parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+      </operation>
+      <task>blast</task>
+      <petriOperation>SEQUENCE</petriOperation>
+      <nextTasks></nextTasks>
+      <taskCode></taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+  </lstServices>
+  <validated>false</validated>
+</com.esciencenet.compositionmanager.CompositionModel>

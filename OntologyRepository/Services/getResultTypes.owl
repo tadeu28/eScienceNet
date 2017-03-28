@@ -1,0 +1,168 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:j.0="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl">
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Grounding.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#SubParameter">
+    <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#hasSubParameter">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#SubParameter"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#isSubParameterOf"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#isSubParameterOf">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#SubParameter"/>
+    <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#hasSubParameter"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#parameterTypeXSD">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#domainTerm">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl#Service"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#serviceRealName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/>
+  </owl:DatatypeProperty>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#identifier">
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+    <j.0:isSubParameterOf>
+      <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#type">
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://soap.jdispatcher.ebi.ac.uk#wsResultType</j.0:parameterTypeXSD>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2002/07/owl#Thing</process:parameterType>
+        <j.0:isSubParameterOf>
+          <process:Output rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#resultTypes">
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://soap.jdispatcher.ebi.ac.uk#wsResultTypes</j.0:parameterTypeXSD>
+            <rdfs:label>resultTypes</rdfs:label>
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2002/07/owl#Thing</process:parameterType>
+          </process:Output>
+        </j.0:isSubParameterOf>
+      </owl:NamedIndividual>
+    </j.0:isSubParameterOf>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#label">
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+    <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#type"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#fileSuffix">
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+    <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#type"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#mediaType">
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+    <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#type"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#description">
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+    <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#type"/>
+  </owl:NamedIndividual>
+  <service:Service rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesService">
+    <service:presents>
+      <profile:Profile rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesProfile">
+        <j.0:serviceRealName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >getResultTypes</j.0:serviceRealName>
+        <service:presentedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesService"/>
+        <profile:serviceName>getResultTypes</profile:serviceName>
+        <profile:textDescription>Get the list of renderers available to output a job result (i.e. the list of available output types)</profile:textDescription>
+        <profile:hasInput>
+          <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#jobId">
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+            <rdfs:label>jobId</rdfs:label>
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+          </process:Input>
+        </profile:hasInput>
+        <profile:hasOutput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#resultTypes"/>
+      </profile:Profile>
+    </service:presents>
+    <service:describedBy>
+      <process:AtomicProcess rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesProcess">
+        <rdfs:label>getResultTypesProcess</rdfs:label>
+        <service:describes rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesService"/>
+        <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#jobId"/>
+        <process:hasOutput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#resultTypes"/>
+      </process:AtomicProcess>
+    </service:describedBy>
+    <service:supports>
+      <grounding:WsdlGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesGrounding">
+        <service:supportedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesService"/>
+        <grounding:hasAtomicProcessGrounding>
+          <grounding:WsdlAtomicProcessGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesAtomicProcessGrounding">
+            <grounding:owlsProcess rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#getResultTypesProcess"/>
+            <grounding:wsdlOperation>
+              <grounding:WsdlOperationRef>
+                <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#getResultTypes</grounding:operation>
+                <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#JDispatcherServiceHttpPort</grounding:portType>
+              </grounding:WsdlOperationRef>
+            </grounding:wsdlOperation>
+            <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl</grounding:wsdlDocument>
+            <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://soap.jdispatcher.ebi.ac.uk#getResultTypesRequest</grounding:wsdlInputMessage>
+            <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://soap.jdispatcher.ebi.ac.uk#getResultTypesResponse</grounding:wsdlOutputMessage>
+            <grounding:wsdlInput>
+              <grounding:WsdlInputMessageMap>
+                <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#jobId"/>
+                <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#jobId</grounding:wsdlMessagePart>
+              </grounding:WsdlInputMessageMap>
+            </grounding:wsdlInput>
+            <grounding:wsdlOutput>
+              <grounding:WsdlOutputMessageMap>
+                <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultTypes.owl#resultTypes"/>
+                <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#resultTypes</grounding:wsdlMessagePart>
+              </grounding:WsdlOutputMessageMap>
+            </grounding:wsdlOutput>
+          </grounding:WsdlAtomicProcessGrounding>
+        </grounding:hasAtomicProcessGrounding>
+      </grounding:WsdlGrounding>
+    </service:supports>
+    <j.0:domainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:domainTerm>
+  </service:Service>
+</rdf:RDF>

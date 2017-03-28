@@ -1,0 +1,265 @@
+<com.esciencenet.models.WorkflowABSModel>
+  <taskName>base_calling</taskName>
+  <taskCode>T1</taskCode>
+  <taskPetriOp>SEQUENCE</taskPetriOp>
+  <taskChild>
+    <com.esciencenet.models.WorkflowABSModel>
+      <taskName>sequence_grouping</taskName>
+      <taskCode>T2</taskCode>
+      <taskPetriOp></taskPetriOp>
+      <taskChild/>
+      <cell class="com.mxgraph.model.mxCell">
+        <id>9</id>
+        <value class="string">T2</value>
+        <geometry>
+          <x>215.0</x>
+          <y>163.0</y>
+          <width>25.0</width>
+          <height>60.0</height>
+          <relative>false</relative>
+        </geometry>
+        <style>Trans</style>
+        <vertex>true</vertex>
+        <edge>false</edge>
+        <connectable>true</connectable>
+        <visible>true</visible>
+        <collapsed>false</collapsed>
+        <parent class="com.mxgraph.model.mxCell">
+          <id>1</id>
+          <vertex>false</vertex>
+          <edge>false</edge>
+          <connectable>true</connectable>
+          <visible>true</visible>
+          <collapsed>false</collapsed>
+          <parent class="com.mxgraph.model.mxCell">
+            <id>0</id>
+            <vertex>false</vertex>
+            <edge>false</edge>
+            <connectable>true</connectable>
+            <visible>true</visible>
+            <collapsed>false</collapsed>
+            <children>
+              <com.mxgraph.model.mxCell reference="../../.."/>
+            </children>
+          </parent>
+          <children>
+            <com.mxgraph.model.mxCell>
+              <id>2</id>
+              <geometry>
+                <x>10.0</x>
+                <y>163.0</y>
+                <width>60.0</width>
+                <height>60.0</height>
+                <relative>false</relative>
+              </geometry>
+              <style>Start</style>
+              <vertex>true</vertex>
+              <edge>false</edge>
+              <connectable>true</connectable>
+              <visible>true</visible>
+              <collapsed>false</collapsed>
+              <parent class="com.mxgraph.model.mxCell" reference="../../.."/>
+              <children>
+                <com.mxgraph.model.mxCell>
+                  <id>3</id>
+                  <value class="string">Start</value>
+                  <geometry>
+                    <x>10.0</x>
+                    <y>10.0</y>
+                    <width>40.0</width>
+                    <height>40.0</height>
+                    <relative>false</relative>
+                  </geometry>
+                  <style>Start;fillColor=#000000;fontColor=ffffffff</style>
+                  <vertex>true</vertex>
+                  <edge>false</edge>
+                  <connectable>true</connectable>
+                  <visible>true</visible>
+                  <collapsed>false</collapsed>
+                  <parent class="com.mxgraph.model.mxCell" reference="../../.."/>
+                </com.mxgraph.model.mxCell>
+              </children>
+              <edges>
+                <com.mxgraph.model.mxCell>
+                  <id>5</id>
+                  <geometry>
+                    <x>0.0</x>
+                    <y>0.0</y>
+                    <width>0.0</width>
+                    <height>0.0</height>
+                    <relative>true</relative>
+                  </geometry>
+                  <style>Arrow</style>
+                  <vertex>false</vertex>
+                  <edge>true</edge>
+                  <connectable>true</connectable>
+                  <visible>true</visible>
+                  <collapsed>false</collapsed>
+                  <parent class="com.mxgraph.model.mxCell" reference="../../../../.."/>
+                  <source class="com.mxgraph.model.mxCell" reference="../../.."/>
+                  <target class="com.mxgraph.model.mxCell">
+                    <id>4</id>
+                    <value class="string">T1</value>
+                    <geometry>
+                      <x>100.0</x>
+                      <y>163.0</y>
+                      <width>25.0</width>
+                      <height>60.0</height>
+                      <relative>false</relative>
+                    </geometry>
+                    <style>Trans</style>
+                    <vertex>true</vertex>
+                    <edge>false</edge>
+                    <connectable>true</connectable>
+                    <visible>true</visible>
+                    <collapsed>false</collapsed>
+                    <parent class="com.mxgraph.model.mxCell" reference="../../../../../.."/>
+                    <edges>
+                      <com.mxgraph.model.mxCell reference="../../.."/>
+                      <com.mxgraph.model.mxCell>
+                        <id>6</id>
+                        <geometry>
+                          <x>0.0</x>
+                          <y>0.0</y>
+                          <width>0.0</width>
+                          <height>0.0</height>
+                          <relative>true</relative>
+                        </geometry>
+                        <style>Arrow</style>
+                        <vertex>false</vertex>
+                        <edge>true</edge>
+                        <connectable>true</connectable>
+                        <visible>true</visible>
+                        <collapsed>false</collapsed>
+                        <parent class="com.mxgraph.model.mxCell" reference="../../../../../../../.."/>
+                        <source class="com.mxgraph.model.mxCell" reference="../../../../../.."/>
+                        <target class="com.mxgraph.model.mxCell" reference="../../.."/>
+                      </com.mxgraph.model.mxCell>
+                      <com.mxgraph.model.mxCell>
+                        <id>8</id>
+                        <geometry>
+                          <x>0.0</x>
+                          <y>0.0</y>
+                          <width>0.0</width>
+                          <height>0.0</height>
+                          <relative>true</relative>
+                        </geometry>
+                        <style>Arrow</style>
+                        <vertex>false</vertex>
+                        <edge>true</edge>
+                        <connectable>true</connectable>
+                        <visible>true</visible>
+                        <collapsed>false</collapsed>
+                        <parent class="com.mxgraph.model.mxCell" reference="../../../../../../../.."/>
+                        <source class="com.mxgraph.model.mxCell" reference="../../.."/>
+                        <target class="com.mxgraph.model.mxCell">
+                          <id>7</id>
+                          <geometry>
+                            <x>155.0</x>
+                            <y>178.0</y>
+                            <width>30.0</width>
+                            <height>30.0</height>
+                            <relative>false</relative>
+                          </geometry>
+                          <style>Start</style>
+                          <vertex>true</vertex>
+                          <edge>false</edge>
+                          <connectable>true</connectable>
+                          <visible>true</visible>
+                          <collapsed>false</collapsed>
+                          <parent class="com.mxgraph.model.mxCell" reference="../../../../../../../../.."/>
+                          <edges>
+                            <com.mxgraph.model.mxCell reference="../../.."/>
+                            <com.mxgraph.model.mxCell>
+                              <id>10</id>
+                              <geometry>
+                                <x>0.0</x>
+                                <y>0.0</y>
+                                <width>0.0</width>
+                                <height>0.0</height>
+                                <relative>true</relative>
+                              </geometry>
+                              <style>Arrow</style>
+                              <vertex>false</vertex>
+                              <edge>true</edge>
+                              <connectable>true</connectable>
+                              <visible>true</visible>
+                              <collapsed>false</collapsed>
+                              <parent class="com.mxgraph.model.mxCell" reference="../../../../../../../../../../.."/>
+                              <source class="com.mxgraph.model.mxCell" reference="../../.."/>
+                              <target class="com.mxgraph.model.mxCell" reference="../../../../../../../../../../../.."/>
+                            </com.mxgraph.model.mxCell>
+                          </edges>
+                        </target>
+                      </com.mxgraph.model.mxCell>
+                    </edges>
+                  </target>
+                </com.mxgraph.model.mxCell>
+                <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[2]"/>
+              </edges>
+            </com.mxgraph.model.mxCell>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target"/>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell"/>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[2]"/>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[3]/target"/>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[3]"/>
+            <com.mxgraph.model.mxCell reference="../../.."/>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[3]/target/edges/com.mxgraph.model.mxCell[2]"/>
+            <com.mxgraph.model.mxCell>
+              <id>11</id>
+              <value class="string">Finish</value>
+              <geometry>
+                <x>270.0</x>
+                <y>163.0</y>
+                <width>60.0</width>
+                <height>60.0</height>
+                <relative>false</relative>
+              </geometry>
+              <style>Start;fillColor=#E0E0E0</style>
+              <vertex>true</vertex>
+              <edge>false</edge>
+              <connectable>true</connectable>
+              <visible>true</visible>
+              <collapsed>false</collapsed>
+              <parent class="com.mxgraph.model.mxCell" reference="../../.."/>
+              <edges>
+                <com.mxgraph.model.mxCell>
+                  <id>12</id>
+                  <geometry>
+                    <x>0.0</x>
+                    <y>0.0</y>
+                    <width>0.0</width>
+                    <height>0.0</height>
+                    <relative>true</relative>
+                  </geometry>
+                  <style>Arrow</style>
+                  <vertex>false</vertex>
+                  <edge>true</edge>
+                  <connectable>true</connectable>
+                  <visible>true</visible>
+                  <collapsed>false</collapsed>
+                  <parent class="com.mxgraph.model.mxCell" reference="../../../../.."/>
+                  <source class="com.mxgraph.model.mxCell" reference="../../../../../.."/>
+                  <target class="com.mxgraph.model.mxCell" reference="../../.."/>
+                </com.mxgraph.model.mxCell>
+              </edges>
+            </com.mxgraph.model.mxCell>
+            <com.mxgraph.model.mxCell reference="../com.mxgraph.model.mxCell[9]/edges/com.mxgraph.model.mxCell"/>
+          </children>
+        </parent>
+        <edges>
+          <com.mxgraph.model.mxCell reference="../../parent/children/com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[3]/target/edges/com.mxgraph.model.mxCell[2]"/>
+          <com.mxgraph.model.mxCell reference="../../parent/children/com.mxgraph.model.mxCell[9]/edges/com.mxgraph.model.mxCell"/>
+        </edges>
+      </cell>
+      <petriCells/>
+      <selected>true</selected>
+    </com.esciencenet.models.WorkflowABSModel>
+  </taskChild>
+  <cell class="com.mxgraph.model.mxCell" reference="../taskChild/com.esciencenet.models.WorkflowABSModel/cell/parent/children/com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target"/>
+  <petriCells>
+    <com.mxgraph.model.mxCell reference="../../taskChild/com.esciencenet.models.WorkflowABSModel/cell/parent/children/com.mxgraph.model.mxCell/edges/com.mxgraph.model.mxCell/target/edges/com.mxgraph.model.mxCell[3]/target"/>
+  </petriCells>
+  <selected>false</selected>
+  <graph class="com.mxgraph.model.mxCell" reference="../taskChild/com.esciencenet.models.WorkflowABSModel/cell/parent"/>
+</com.esciencenet.models.WorkflowABSModel>

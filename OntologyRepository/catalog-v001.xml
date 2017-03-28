@@ -1,6 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1351951779066" name="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerGroups.owl" uri="Original_PeerGroups.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="http://gabriellacastro.com.br/SequenceAligningOntology" uri="SequenceAligningOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl" uri="PeerOntology%20-%20Vazia.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl" uri="SimpleMathOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatch.owl" uri="Services/fetchBatch.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="http://www.esciencenet.com.br/tadeuclasse/esciencenet/runBlastP.owl" uri="Services/runBlastP.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="shadowed:http://gabriellacastro.com.br/SequenceAligningOntology" uri="Domains/SequenceAligningOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="shadowed:http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl" uri="Domains/SimpleMathOntology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1389123734563" name="shadowed:http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl" uri="Domains/__SimpleMathOntology.owl"/>
     </group>
 </catalog>

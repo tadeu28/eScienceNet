@@ -1,0 +1,22 @@
+<list>
+  <com.esciencenet.datamanager.DownloadedFilesModel>
+    <peerName>VirtualXP</peerName>
+    <fileName>SolexaVirtualXp.awf</fileName>
+  </com.esciencenet.datamanager.DownloadedFilesModel>
+  <com.esciencenet.datamanager.DownloadedFilesModel>
+    <peerName>VirtualXP2</peerName>
+    <fileName>Sanger_VIRTUALXP2.awf</fileName>
+  </com.esciencenet.datamanager.DownloadedFilesModel>
+  <com.esciencenet.datamanager.DownloadedFilesModel>
+    <peerName>VirtualXP</peerName>
+    <fileName>Sanger.awf</fileName>
+  </com.esciencenet.datamanager.DownloadedFilesModel>
+  <com.esciencenet.datamanager.DownloadedFilesModel>
+    <peerName>VirtualW7</peerName>
+    <fileName>Fasta Execution by Code.wkf</fileName>
+  </com.esciencenet.datamanager.DownloadedFilesModel>
+  <com.esciencenet.datamanager.DownloadedFilesModel>
+    <peerName>VirtualW7</peerName>
+    <fileName>Pythagoras.awf</fileName>
+  </com.esciencenet.datamanager.DownloadedFilesModel>
+</list>

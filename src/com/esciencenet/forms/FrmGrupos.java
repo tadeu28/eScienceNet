@@ -4,37 +4,69 @@
  */
 package com.esciencenet.forms;
 
-import java.util.ArrayList;
 import com.esciencenet.models.*;
-import java.awt.Font;
-import java.awt.Frame;
-import java.util.concurrent.Semaphore;
-import javax.swing.DefaultComboBoxModel;
 import com.esciencenet.semanticmanager.*;
+import java.awt.Frame;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 /**
- *
+ * Formulário de visualização dos grupos disponiveis na e-ScienceNet
  * @author Tadeu Classe
  */
 public class FrmGrupos extends javax.swing.JDialog {
-
+    
+    
+    //atributos da classe
     private ArrayList<PeerGroupModel> peerGroupLst;
+    private PeerGroupModel grupoSelecionado;
+    private boolean cancelado = false;
     
     /**
-     * Creates new form FrmGrupos
+     * Mètodo construtor da classe
+     * @param parent formulário pai responsavel
+     * @param modal verifica se é para exibir em modal
      */
     public FrmGrupos(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);       
+        //seto os parametros para a classe pai
+        super(parent, modal);  
+        
         initComponents();
+        
+        if (System.getProperty("os.name").toLowerCase().equals("linux")){
+            this.setType(Type.UTILITY);
+        }else{
+            this.setType(Type.POPUP);
+        }
+        
+        lblAtualizacao.setText("");
         
         //coloco a posição do formulário para o centro da tela
         setLocationRelativeTo(null);  
     }
     
+    /**
+     * Método construtor da classe
+     * @param parent formulário pai responsavel
+     * @param modal verifica se é para exibir em modal
+     * @param peerGroupLst lista de grupos disponíveis
+     */
     public FrmGrupos(Frame parent, boolean modal, ArrayList<PeerGroupModel> peerGroupLst){
-        super(parent, modal);       
+        //seto os parametros para a classe pai
+        super(parent, modal);
+        
         initComponents();
+        
+        if (System.getProperty("os.name").toLowerCase().equals("linux")){
+            this.setType(Type.UTILITY);
+        }else{
+            this.setType(Type.POPUP);
+        }
+        
+        //seto a lista de grupos disponíveis
         this.peerGroupLst = peerGroupLst;
+        lblAtualizacao.setText("");
         
         //crio os grupos na combobox
         criarModeloComboGrupos();
@@ -43,23 +75,37 @@ public class FrmGrupos extends javax.swing.JDialog {
         setLocationRelativeTo(null);   
     }
 
+    /**
+     * Seto os valores da comboBox de grupos criando um modelo
+     */
     private void criarModeloComboGrupos(){
         
+        //crio o modelo de items da combobox
         DefaultComboBoxModel cmdModel = new DefaultComboBoxModel();        
+        //crio um item vazio
+        cmdModel.addElement("");
         
+        //percorro a lista de grupos encontrados
         for (PeerGroupModel peerGroup : peerGroupLst){
+            //seto o elemento no modelo
             cmdModel.addElement(peerGroup.getGroupName());
-        }
+        }       
         
-        cmdModel.insertElementAt("Nenhum Grupo", 0);        
+        //seto o modelo e o indice do item na combobox
         cmbGrupos.setModel(cmdModel);        
         cmbGrupos.setSelectedIndex(0);
     }
     
+    /**
+     * Obtenho o modelo de grupo selecionado
+     * @param nomeGrupo nome do grupo
+     * @return PeerGroupModel
+     */
     private PeerGroupModel obterPeerGrupo(String nomeGrupo){
         
+        //percorro a lista de modelos
         for (PeerGroupModel peerGroup : peerGroupLst){
-            
+            //verifico se o modelo selecionado e o mesmo do grupo que foi passdo por parametro
             if(peerGroup.getGroupName().equals(nomeGrupo)){
                 return peerGroup;
             }            
@@ -79,19 +125,25 @@ public class FrmGrupos extends javax.swing.JDialog {
         pnlFooter = new javax.swing.JPanel();
         btnOK = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        lblAtualizacao = new javax.swing.JLabel();
         pnlMain = new javax.swing.JPanel();
         gpbGrupos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         cmbGrupos = new javax.swing.JComboBox();
         jScrollPane3 = new javax.swing.JScrollPane();
         mmoInfo = new javax.swing.JTextPane();
+        btnAtualizarGrupos = new javax.swing.JButton();
         btnDeleteGrupo = new javax.swing.JButton();
         btnNovoGrupo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Grupos e-ScienceNet");
+        setTitle("e-ScienceNet Groups");
         setResizable(false);
-        setType(java.awt.Window.Type.POPUP);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         pnlFooter.setBackground(new java.awt.Color(192, 192, 192));
 
@@ -104,19 +156,24 @@ public class FrmGrupos extends javax.swing.JDialog {
         });
 
         btnCancelar.setBackground(new java.awt.Color(192, 192, 192));
-        btnCancelar.setText("Cancelar");
+        btnCancelar.setText("Cancel");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
 
+        lblAtualizacao.setForeground(new java.awt.Color(255, 255, 255));
+        lblAtualizacao.setText("Atualizando...");
+
         javax.swing.GroupLayout pnlFooterLayout = new javax.swing.GroupLayout(pnlFooter);
         pnlFooter.setLayout(pnlFooterLayout);
         pnlFooterLayout.setHorizontalGroup(
             pnlFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlFooterLayout.createSequentialGroup()
-                .addContainerGap(236, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(lblAtualizacao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
                 .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,50 +185,71 @@ public class FrmGrupos extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlFooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnOK)
-                    .addComponent(btnCancelar))
+                    .addComponent(btnCancelar)
+                    .addComponent(lblAtualizacao))
                 .addContainerGap())
         );
 
         pnlMain.setLayout(null);
 
-        gpbGrupos.setBorder(javax.swing.BorderFactory.createTitledBorder(" Grupos Disponíveis "));
+        gpbGrupos.setBorder(javax.swing.BorderFactory.createTitledBorder(" Available Groups"));
         gpbGrupos.setLayout(null);
 
-        jLabel1.setText("Informações");
+        jLabel1.setText("Informations");
         gpbGrupos.add(jLabel1);
         jLabel1.setBounds(10, 50, 418, 16);
 
+        cmbGrupos.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbGruposItemStateChanged(evt);
+            }
+        });
         cmbGrupos.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 cmbGruposPropertyChange(evt);
             }
         });
         gpbGrupos.add(cmbGrupos);
-        cmbGrupos.setBounds(10, 20, 410, 22);
+        cmbGrupos.setBounds(10, 20, 290, 22);
 
         mmoInfo.setEditable(false);
         jScrollPane3.setViewportView(mmoInfo);
 
         gpbGrupos.add(jScrollPane3);
-        jScrollPane3.setBounds(10, 70, 410, 130);
+        jScrollPane3.setBounds(10, 70, 410, 180);
+
+        btnAtualizarGrupos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/network-ring-icon.png"))); // NOI18N
+        btnAtualizarGrupos.setText("Update");
+        btnAtualizarGrupos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarGruposActionPerformed(evt);
+            }
+        });
+        gpbGrupos.add(btnAtualizarGrupos);
+        btnAtualizarGrupos.setBounds(310, 20, 110, 33);
 
         pnlMain.add(gpbGrupos);
-        gpbGrupos.setBounds(10, 10, 430, 210);
+        gpbGrupos.setBounds(10, 10, 430, 260);
 
         btnDeleteGrupo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deleteGroup.png"))); // NOI18N
-        btnDeleteGrupo.setText("Excluir Grupo");
+        btnDeleteGrupo.setText("Delete Group");
         btnDeleteGrupo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteGrupoActionPerformed(evt);
             }
         });
         pnlMain.add(btnDeleteGrupo);
-        btnDeleteGrupo.setBounds(170, 225, 150, 30);
+        btnDeleteGrupo.setBounds(170, 270, 150, 30);
 
         btnNovoGrupo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/addGroup.png"))); // NOI18N
-        btnNovoGrupo.setText("Novo Grupo");
+        btnNovoGrupo.setText("New Group");
+        btnNovoGrupo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoGrupoActionPerformed(evt);
+            }
+        });
         pnlMain.add(btnNovoGrupo);
-        btnNovoGrupo.setBounds(10, 225, 150, 30);
+        btnNovoGrupo.setBounds(10, 270, 150, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,56 +261,124 @@ public class FrmGrupos extends javax.swing.JDialog {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                .addComponent(pnlMain, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlFooter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-458)/2, (screenSize.height-361)/2, 458, 361);
+        getAccessibleContext().setAccessibleName("frmGrupos");
+
+        setSize(new java.awt.Dimension(458, 410));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKActionPerformed
+        
+        //retorno o grupo selecionado
+        if (cmbGrupos.getSelectedIndex() != 0){
+            this.grupoSelecionado = obterPeerGrupo(cmbGrupos.getSelectedItem().toString());
+            SemanticManager.getInstance().gravarGrupoSelecionadoOWL(grupoSelecionado.getGroupName());
+        }
         
         //fecho a tela de grupos
         this.fechar();
     }//GEN-LAST:event_btnOKActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.cancelado = true;
         //fecho a tela de grupos
         this.fechar();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void cmbGruposPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cmbGruposPropertyChange
-        
-        PeerGroupModel peerGroup = obterPeerGrupo(cmbGrupos.getSelectedItem().toString());
-        
-        if (peerGroup != null){
-            
-            String html = "<b>Nome do Grupo:</b> " + peerGroup.getGroupName() + "<br>" +
-                          "<b>Área:</b> " + peerGroup.getGroupArea() + "<br>" + 
-                          "<b>Autor:</b> " + peerGroup.getGroupCreator() + "<br>" +
-                          "<b>Identificador:</b> " + peerGroup.getGroupID() + "<br><hr>"+
-                          "<b>Descrição:</b><br> " + peerGroup.getGroupDescription();
-            
-            mmoInfo.setContentType("text/html");
-            mmoInfo.setText(html);
-        }else{
-            mmoInfo.setText("");
-        }
+                
     }//GEN-LAST:event_cmbGruposPropertyChange
 
     private void btnDeleteGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteGrupoActionPerformed
         
+        //verifico se foi selecionado algum grupo
         if (cmbGrupos.getSelectedIndex() != 0){
-            String nomeGrupo = cmbGrupos.getSelectedItem().toString();
-            SemanticManager.getInstance().removerGrupoOWL(nomeGrupo);            
-            peerGroupLst.remove(obterPeerGrupo(nomeGrupo));
-            criarModeloComboGrupos();
+            
+            //seleciono os dados do grupo na lista
+            PeerGroupModel peerGroup = obterPeerGrupo(cmbGrupos.getSelectedItem().toString());
+            
+            //verifico se a exclusão esta sendo feita pelo criador do grupo
+            if (! SemanticManager.getInstance().getNomePeer().equals(peerGroup.getGroupCreator())){
+                JOptionPane.showMessageDialog(this, "Não foi possível remover este grupo pois o peer [" + SemanticManager.getInstance().getNomePeer() +
+                                                     "] não é seu criador.", ".: e-ScienceNet :.", JOptionPane.WARNING_MESSAGE,
+                                                    (new javax.swing.ImageIcon(getClass().getResource("/images/warning.png"))));
+                return;
+            }
+            
+            //verifico se realmente é para excluir o grupo
+            if (JOptionPane.showConfirmDialog(this, "Deseja realmente remover o grupo ["+ cmbGrupos.getSelectedItem().toString() +"]?", 
+                                                    ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, 
+                                                    (new javax.swing.ImageIcon(getClass().getResource("/images/question.png")))) == 0){
+                //pego o nome do grupo
+               String nomeGrupo = cmbGrupos.getSelectedItem().toString();
+               
+               SemanticManager.getInstance().getSemanticChat().enviarExclusaoGrupo(nomeGrupo);
+               
+               //removo o grupo da ontologia
+               SemanticManager.getInstance().removerGrupoOWL(nomeGrupo);            
+               //removo o grupo da lista de grupos
+               peerGroupLst.remove(obterPeerGrupo(nomeGrupo));
+               
+               //recrio o modelo da combobox
+               criarModeloComboGrupos();
+            }
         }        
     }//GEN-LAST:event_btnDeleteGrupoActionPerformed
 
+    private void btnNovoGrupoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoGrupoActionPerformed
+        //chamo o método de criação de um novo grupo
+        SemanticManager.getInstance().getInterestManager().criarGrupo();
+        peerGroupLst.clear();
+        peerGroupLst = SemanticManager.getInstance().obterGrupos();
+        //atualizo o grupo
+        criarModeloComboGrupos();
+    }//GEN-LAST:event_btnNovoGrupoActionPerformed
+
+    private void cmbGruposItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbGruposItemStateChanged
+        //pego o modelo de grupos selecionado
+        PeerGroupModel peerGroup = obterPeerGrupo(cmbGrupos.getSelectedItem().toString());
+        
+        //verifico se o grupo não é nulo
+        if (peerGroup != null){
+            //monto o html de exibição do grupo
+            String html = "<b>Group Name:</b> " + peerGroup.getGroupName() + "<br>" +
+                          "<b>Area:</b> " + peerGroup.getGroupArea() + "<br>" + 
+                          "<b>Autor:</b> " + peerGroup.getGroupCreator() + "<br>" +
+                          "<b>Creation Date:</b> " + peerGroup.getDataCriacao() + "<br>" +
+                          "<b>Identifier:</b> " + peerGroup.getGroupID() + "<br><hr>"+
+                          "<b>Description:</b><br> " + peerGroup.getGroupDescription();
+            //seto o tipo de exibião
+            mmoInfo.setContentType("text/html");
+            //seto o texto no componente de informaçao
+            mmoInfo.setText(html);
+        }else{
+            //seto vazio na informação
+            mmoInfo.setText("");
+        }
+    }//GEN-LAST:event_cmbGruposItemStateChanged
+
+    private void btnAtualizarGruposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarGruposActionPerformed
+        lblAtualizacao.setText("Atualizando Grupos...");
+        SemanticManager.getInstance().getSemanticChat().requisitarGrupos();
+        peerGroupLst.clear();
+        peerGroupLst = SemanticManager.getInstance().obterGrupos();
+        this.criarModeloComboGrupos();
+        lblAtualizacao.setText("");
+    }//GEN-LAST:event_btnAtualizarGruposActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        this.cancelado = true;
+        //fecho a tela de grupos
+        this.fechar();
+    }//GEN-LAST:event_formWindowClosing
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtualizarGrupos;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnDeleteGrupo;
     private javax.swing.JButton btnNovoGrupo;
@@ -241,13 +387,24 @@ public class FrmGrupos extends javax.swing.JDialog {
     private javax.swing.JPanel gpbGrupos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JLabel lblAtualizacao;
     private javax.swing.JTextPane mmoInfo;
     private javax.swing.JPanel pnlFooter;
     private javax.swing.JPanel pnlMain;
     // End of variables declaration//GEN-END:variables
 
     private void fechar(){
-        setVisible(false);
+        //fecho o formulário
+        this.setVisible(false);
     }
+
+    public PeerGroupModel getGrupoSelecionado() {
+        return grupoSelecionado;
+    }
+
+    public boolean isCancelado() {
+        return cancelado;
+    }
+    
     
 }

@@ -1,0 +1,492 @@
+<com.esciencenet.compositionmanager.CompositionModel>
+  <nameComposition>Pythagoras.awf</nameComposition>
+  <data>2013-12-30 19:33:09.508 UTC</data>
+  <lstServices>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>readThreeNumbersSimpleMath</operationName>
+        <operationRealName>readThreeNumbersSimpleMath</operationRealName>
+        <operationDomainTerm>Read</operationDomainTerm>
+        <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>numberOne</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>5</manualContent>
+            <parentName>readThreeNumbersSimpleMath - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>numberThree</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>4</manualContent>
+            <parentName>readThreeNumbersSimpleMath - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>numberTwo</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>3</manualContent>
+            <parentName>readThreeNumbersSimpleMath - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>numeros</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>splitNumbersMath</operationName>
+                <operationRealName>splitNumbersMath</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>index</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#int</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>numeros</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>index</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#int</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>return</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam>
+                        <paramName>number</paramName>
+                        <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                        <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                        <connectorAssociated/>
+                        <paramConnectorAssociated/>
+                        <paramConnected>
+                          <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                        </paramConnected>
+                        <manualContent></manualContent>
+                        <parentName>potSquareSimpleMath - T2</parentName>
+                        <valueReturned></valueReturned>
+                      </com.esciencenet.servicemanager.OWLSParam>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName>readThreeNumbersSimpleMath - T1</parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[numeros == numeros]</compatibility>
+                <serviceDescription>Auto generated from http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>splitNumbersMath_1</operationName>
+                <operationRealName>splitNumbersMath</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>index</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#int</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>numeros</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>index</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#int</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>return</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam>
+                        <paramName>number</paramName>
+                        <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                        <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                        <connectorAssociated/>
+                        <paramConnectorAssociated/>
+                        <paramConnected>
+                          <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                        </paramConnected>
+                        <manualContent></manualContent>
+                        <parentName>potSquareSimpleMath_1 - T3</parentName>
+                        <valueReturned></valueReturned>
+                      </com.esciencenet.servicemanager.OWLSParam>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName>readThreeNumbersSimpleMath - T1</parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[numeros == numeros]</compatibility>
+                <serviceDescription>Auto generated from http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>splitNumbersMath_2</operationName>
+                <operationRealName>splitNumbersMath</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>index</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#int</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>numeros</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>index</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Integer</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#int</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>return</paramName>
+                    <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam>
+                        <paramName>number</paramName>
+                        <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                        <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                        <connectorAssociated/>
+                        <paramConnectorAssociated/>
+                        <paramConnected>
+                          <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                        </paramConnected>
+                        <manualContent></manualContent>
+                        <parentName>potSquareSimpleMath_2 - T4</parentName>
+                        <valueReturned></valueReturned>
+                      </com.esciencenet.servicemanager.OWLSParam>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName>readThreeNumbersSimpleMath - T1</parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[numeros == numeros]</compatibility>
+                <serviceDescription>Auto generated from http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+            </connectorAssociated>
+            <paramConnectorAssociated>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation/inputs/com.esciencenet.servicemanager.OWLSParam[2]"/>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[2]/inputs/com.esciencenet.servicemanager.OWLSParam[2]"/>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[3]/inputs/com.esciencenet.servicemanager.OWLSParam[2]"/>
+            </paramConnectorAssociated>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName>readThreeNumbersSimpleMath - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>This service read three numbers and return its in a List.</serviceDescription>
+      </operation>
+      <task>Read</task>
+      <petriOperation>AND-SPLIT</petriOperation>
+      <nextTasks>potSquareSimpleMath|potSquareSimpleMath_1|potSquareSimpleMath_2</nextTasks>
+      <taskCode>T1</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>potSquareSimpleMath</operationName>
+        <operationRealName>potSquareSimpleMath</operationRealName>
+        <operationDomainTerm>Pot</operationDomainTerm>
+        <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel/operation/outputs/com.esciencenet.servicemanager.OWLSParam/connectorAssociated/com.esciencenet.servicemanager.OWLSOperation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>return</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected>
+              <com.esciencenet.servicemanager.OWLSParam>
+                <paramName>number</paramName>
+                <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                <connectorAssociated/>
+                <paramConnectorAssociated/>
+                <paramConnected>
+                  <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                </paramConnected>
+                <manualContent></manualContent>
+                <parentName>equalsSimpleMath - T6</parentName>
+                <valueReturned></valueReturned>
+              </com.esciencenet.servicemanager.OWLSParam>
+            </paramConnected>
+            <manualContent></manualContent>
+            <parentName>potSquareSimpleMath - T2</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>This service returns the potential square of a number.</serviceDescription>
+      </operation>
+      <task>Pot</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>equalsSimpleMath</nextTasks>
+      <taskCode>T2</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>potSquareSimpleMath_1</operationName>
+        <operationRealName>potSquareSimpleMath</operationRealName>
+        <operationDomainTerm>Pot</operationDomainTerm>
+        <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel/operation/outputs/com.esciencenet.servicemanager.OWLSParam/connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[2]/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>return</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected>
+              <com.esciencenet.servicemanager.OWLSParam>
+                <paramName>numberOne</paramName>
+                <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                <connectorAssociated/>
+                <paramConnectorAssociated/>
+                <paramConnected>
+                  <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                </paramConnected>
+                <manualContent></manualContent>
+                <parentName>sumSimpleMath - T5</parentName>
+                <valueReturned></valueReturned>
+              </com.esciencenet.servicemanager.OWLSParam>
+            </paramConnected>
+            <manualContent></manualContent>
+            <parentName>potSquareSimpleMath_1 - T3</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>This service returns the potential square of a number.</serviceDescription>
+      </operation>
+      <task>Pot</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>sumSimpleMath</nextTasks>
+      <taskCode>T3</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>potSquareSimpleMath_2</operationName>
+        <operationRealName>potSquareSimpleMath</operationRealName>
+        <operationDomainTerm>Pot</operationDomainTerm>
+        <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel/operation/outputs/com.esciencenet.servicemanager.OWLSParam/connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[3]/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>return</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected>
+              <com.esciencenet.servicemanager.OWLSParam>
+                <paramName>numberTwo</paramName>
+                <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                <connectorAssociated/>
+                <paramConnectorAssociated/>
+                <paramConnected>
+                  <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                </paramConnected>
+                <manualContent></manualContent>
+                <parentName>sumSimpleMath - T5</parentName>
+                <valueReturned></valueReturned>
+              </com.esciencenet.servicemanager.OWLSParam>
+            </paramConnected>
+            <manualContent></manualContent>
+            <parentName>potSquareSimpleMath_2 - T4</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>This service returns the potential square of a number.</serviceDescription>
+      </operation>
+      <task>Pot</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>sumSimpleMath</nextTasks>
+      <taskCode>T4</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>sumSimpleMath</operationName>
+        <operationRealName>sumSimpleMath</operationRealName>
+        <operationDomainTerm>Sum</operationDomainTerm>
+        <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel[3]/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel[4]/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>return</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected>
+              <com.esciencenet.servicemanager.OWLSParam>
+                <paramName>number2</paramName>
+                <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+                <paramType>http://www.w3.org/2001/XMLSchema#double</paramType>
+                <connectorAssociated/>
+                <paramConnectorAssociated/>
+                <paramConnected>
+                  <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                </paramConnected>
+                <manualContent></manualContent>
+                <parentName>equalsSimpleMath - T6</parentName>
+                <valueReturned></valueReturned>
+              </com.esciencenet.servicemanager.OWLSParam>
+            </paramConnected>
+            <manualContent></manualContent>
+            <parentName>sumSimpleMath - T5</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>This services sum two numbers.</serviceDescription>
+      </operation>
+      <task>Sum</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>equalsSimpleMath</nextTasks>
+      <taskCode>T5</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>equalsSimpleMath</operationName>
+        <operationRealName>equalsSimpleMath</operationRealName>
+        <operationDomainTerm>Equals</operationDomainTerm>
+        <serviceURL>http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel[2]/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel[5]/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>return</paramName>
+            <paramDomainTerm>http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#Real</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#boolean</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName></parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>Compare two numbers to discover if both are equals.</serviceDescription>
+      </operation>
+      <task>Equals</task>
+      <petriOperation></petriOperation>
+      <nextTasks></nextTasks>
+      <taskCode>T6</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+  </lstServices>
+  <validated>false</validated>
+</com.esciencenet.compositionmanager.CompositionModel>

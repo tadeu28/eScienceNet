@@ -1,0 +1,1277 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:PeerOntology="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl">
+    <owl:versionIRI rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Ontologia responsavel por informacoes sobre o peer local e seus recursos, incluindo os grupos de que cada recurso corresponde</rdfs:comment>
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >1.1</owl:versionInfo>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+        </owl:onClass>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#pertenceOneGroup"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+        </owl:onClass>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isResourceOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasWS"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#SOAP">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasWS"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+    </rdfs:subClassOf>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasWS"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isConnectorOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Technology"/>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasDomain"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isGroupOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+        </owl:onClass>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupWasCreated"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onProperty>
+          <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerName"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:qualifiedCardinality>
+        <owl:onClass rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasGroup"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerCreate"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isDomainOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#SOAP"/>
+              <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isWsOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#SOAP"/>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isWsOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+        <owl:onProperty>
+          <owl:SymmetricProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isWsOf"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Technology"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#REST">
+    <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files">
+    <owl:disjointWith rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdfs:subClassOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupWasCreated">
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerCreate">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupWasCreated"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isConnectorOf">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasConnector"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isGroupOf">
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasGroup">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isGroupOf"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasResource">
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isFileOf">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isResourceOf"/>
+    </rdfs:subPropertyOf>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasFile"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasConnector">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasFile">
+    <rdfs:subPropertyOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasResource"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupHasResources">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#pertenceOneGroup"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isServiceOf">
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isResourceOf"/>
+    </rdfs:subPropertyOf>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#pertenceOneGroup">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasService">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isServiceOf"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasResource"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isDomainOf">
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isResourceOf">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasResource"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasDomain">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isDomainOf"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#domainURI">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#domainName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileOWLDomain">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceWSDLURL">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceWSDLPath">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#domainDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceDomainMainTerm">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceOWLSPath">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasWS">
+    <owl:inverseOf>
+      <owl:SymmetricProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isWsOf"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:SymmetricProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isWsOf">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:SymmetricProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#makeUse">
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupDescription">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileCreationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#filePath">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerIdJXTA">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerIP">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerCreationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileExtension">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerInformation">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupCreationDate">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupArea">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupIdJXTA">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileType">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerEmail">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileSize">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </owl:FunctionalProperty>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#PythagorasNew">
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow to Pythagoras New</PeerOntology:fileDescription>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow File</PeerOntology:fileType>
+    <PeerOntology:pertenceOneGroup>
+      <PeerOntology:Group rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics">
+        <PeerOntology:groupWasCreated>
+          <PeerOntology:Peer rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER">
+            <PeerOntology:hasGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+            <PeerOntology:peerIdJXTA rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >urn:jxta:uuid-59616261646162614A78746150325033943E152216574DEB91458999915C0C4603</PeerOntology:peerIdJXTA>
+            <PeerOntology:peerName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Tadeu_PEER</PeerOntology:peerName>
+            <PeerOntology:peerIP rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >192.168.13.1</PeerOntology:peerIP>
+            <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+          </PeerOntology:Peer>
+        </PeerOntology:groupWasCreated>
+        <PeerOntology:groupIdJXTA rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >urn:jxta:uuid-17DA279E047547A1BDAD8EC10EBE08C402</PeerOntology:groupIdJXTA>
+        <PeerOntology:groupDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >The semantic group base on bioinformatics concepts.</PeerOntology:groupDescription>
+        <PeerOntology:groupName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bioinformatics</PeerOntology:groupName>
+        <PeerOntology:groupArea rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Bioinformatics</PeerOntology:groupArea>
+        <PeerOntology:groupCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >29/11/2013</PeerOntology:groupCreationDate>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </PeerOntology:Group>
+    </PeerOntology:pertenceOneGroup>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >58.0</PeerOntology:fileSize>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.awf</PeerOntology:fileExtension>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pythagoras New</PeerOntology:fileName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Pythagoras">
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.awf</PeerOntology:fileExtension>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >58.0</PeerOntology:fileSize>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pythagoras</PeerOntology:fileName>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow to validate a triangle by the Pythagorean Theroem.</PeerOntology:fileDescription>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow</PeerOntology:fileType>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >02/12/2013</PeerOntology:fileCreationDate>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#PythagorasResult">
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wfr</PeerOntology:fileExtension>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileDescription>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileType>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pythagoras Result</PeerOntology:fileName>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >6.0</PeerOntology:fileSize>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#LaryssaExampleWKF">
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LaryssaExampleWKF</PeerOntology:fileName>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to LaryssaExampleWKF</PeerOntology:fileDescription>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >27/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >25.0</PeerOntology:fileSize>
+  </owl:NamedIndividual>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Complex">
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Complex</PeerOntology:fileName>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >41.0</PeerOntology:fileSize>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Complex</PeerOntology:fileDescription>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+  </PeerOntology:Files>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#PythagorasFunctional">
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Pythagoras Functional</PeerOntology:fileDescription>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Pythagoras Functional</PeerOntology:fileName>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >29.0</PeerOntology:fileSize>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Solexa">
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow to Solexa</PeerOntology:fileDescription>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.awf</PeerOntology:fileExtension>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow File</PeerOntology:fileType>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >49.0</PeerOntology:fileSize>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Solexa</PeerOntology:fileName>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getStatusClustalOmega">
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getStatusClustalOmega.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getStatusClustalOmega.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/clustalo</PeerOntology:serviceWSDLURL>
+    <PeerOntology:isConnectorOf>
+      <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runClustalOmega">
+        <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+        <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+        <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runClustalOmega.owl</PeerOntology:serviceOWLSPath>
+        <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runClustalOmega.wsdl</PeerOntology:serviceWSDLPath>
+        <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.ebi.ac.uk/Tools/services/soap/clustalo</PeerOntology:serviceWSDLURL>
+        <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >Clustal_Omega</PeerOntology:serviceDomainMainTerm>
+        <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+      </owl:NamedIndividual>
+    </PeerOntology:isConnectorOf>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#RecoverFasta">
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\RecoverFasta.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\RecoverFasta.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FASTA</PeerOntology:serviceDomainMainTerm>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getResultClustalOmega">
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getResultClustalOmega.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getResultClustalOmega.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/clustalo</PeerOntology:serviceWSDLURL>
+    <PeerOntology:isConnectorOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runClustalOmega"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hello">
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\hello.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\hello.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.128/WSHello/HelloWorld.php</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >biological_sequence</PeerOntology:serviceDomainMainTerm>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+  </owl:NamedIndividual>
+  <PeerOntology:Domain rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#SimpleMathOntology">
+    <PeerOntology:isDomainOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:domainURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.esciencenet.com.br/tadeuclasse/esciencenet/SimpleMathOntology.owl#</PeerOntology:domainURI>
+    <PeerOntology:domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SimpleMathOntology</PeerOntology:domainName>
+    <PeerOntology:domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >No Description, becaus this ontology was generated of automatic form.</PeerOntology:domainDescription>
+    <PeerOntology:fileOWLDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Domains\SimpleMathOntology.owl</PeerOntology:fileOWLDomain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:Domain>
+  <PeerOntology:Connectors rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getResultBlastP">
+    <PeerOntology:isConnectorOf>
+      <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runBlast">
+        <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+        <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+        <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.ebi.ac.uk/Tools/services/soap/ncbiblast</PeerOntology:serviceWSDLURL>
+        <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runBlast.wsdl</PeerOntology:serviceWSDLPath>
+        <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runBlast.owl</PeerOntology:serviceOWLSPath>
+        <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >BLAST_Basic_Local_Alignment_Search_Tool</PeerOntology:serviceDomainMainTerm>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </PeerOntology:WSDL>
+    </PeerOntology:isConnectorOf>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/ncbiblast</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getResultBlastP.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getResultBlastP.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:Connectors>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#joinSequences">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >GroupSequences</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.129:8080/BioinformaticsWS/BioWebService</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\joinSequences.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\joinSequences.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getStatus">
+    <PeerOntology:isConnectorOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runBlast"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/ncbiblast</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getStatus.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getStatus.owl</PeerOntology:serviceOWLSPath>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runBlastTeste">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Smith_Waterman</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/ncbiblast</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runBlastTeste.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runBlastTeste.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runBlastP">
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/psiblast</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runBlastP.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runBlastP.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BLASTP</PeerOntology:serviceDomainMainTerm>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#ReadANDFormat_Sequences">
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\ReadANDFormat_Sequences.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\ReadANDFormat_Sequences.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.129:8080/BioinformaticsWS/BioWebService</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >read_and_format_sequence</PeerOntology:serviceDomainMainTerm>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#TestandoBlastN">
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Testando BlastN</PeerOntology:fileDescription>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Testando BlastN</PeerOntology:fileName>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >16.0</PeerOntology:fileSize>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >26/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+  </owl:NamedIndividual>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fetchBatchConnetor">
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\fetchBatchConnetor.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\fetchBatchConnetor.owl</PeerOntology:serviceOWLSPath>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#LaryssaFucntionalWorkflow">
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Laryssa Fucntional Workflow</PeerOntology:fileDescription>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >26.0</PeerOntology:fileSize>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Laryssa Fucntional Workflow</PeerOntology:fileName>
+  </owl:NamedIndividual>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runPhrap">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >CAP3</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://genome.imim.es/cgi-bin/moby/devel/MobyServices.cgi</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runPhrap.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runPhrap.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#organizeFastaResultsFromBlastEBI2">
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\organizeFastaResultsFromBlastEBI2.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\organizeFastaResultsFromBlastEBI2.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.129:8080/BioinformaticsWS/BioWebService</PeerOntology:serviceWSDLURL>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#MUltipleAlignResult">
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileDescription>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >12/08/2014</PeerOntology:fileCreationDate>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileType>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >MUltiple Align Result</PeerOntology:fileName>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >123.0</PeerOntology:fileSize>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wfr</PeerOntology:fileExtension>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+  </owl:NamedIndividual>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#LaryssaFinalResult2">
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wfr</PeerOntology:fileExtension>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileType>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileDescription>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Laryssa Final Result 2</PeerOntology:fileName>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >62.0</PeerOntology:fileSize>
+  </PeerOntology:Files>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#LaryssaAWF">
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow to LaryssaAWF</PeerOntology:fileDescription>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >64.0</PeerOntology:fileSize>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LaryssaAWF</PeerOntology:fileName>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.awf</PeerOntology:fileExtension>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >27/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Abstract Workflow File</PeerOntology:fileType>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+  </owl:NamedIndividual>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#EMBOSS">
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >EMBOSS</PeerOntology:fileName>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >11.0</PeerOntology:fileSize>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to EMBOSS</PeerOntology:fileDescription>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+  </PeerOntology:Files>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#ResultadodoComplex">
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileType>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileDescription>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Resultado do Complex</PeerOntology:fileName>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wfr</PeerOntology:fileExtension>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >40.0</PeerOntology:fileSize>
+  </PeerOntology:Files>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runPhred">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PHRED</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://genome.imim.es/cgi-bin/moby/devel/MobyServices.cgi</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runPhred.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runPhred.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#FastaeBlastN">
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fasta e BlastN</PeerOntology:fileName>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >15.0</PeerOntology:fileSize>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >26/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Fasta e BlastN</PeerOntology:fileDescription>
+  </PeerOntology:Files>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#ComplexComplete">
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Complex Complete</PeerOntology:fileName>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Complex Complete</PeerOntology:fileDescription>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >31/12/2013</PeerOntology:fileCreationDate>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >45.0</PeerOntology:fileSize>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+  </PeerOntology:Files>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#BlastPConnectores">
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >16.0</PeerOntology:fileSize>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to BlastPConnectores</PeerOntology:fileDescription>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >BlastPConnectores</PeerOntology:fileName>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+  </owl:NamedIndividual>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#FastaResultsFromBlastEBI">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >PHRAP_View</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.129:8080/BioinformaticsWS/BioWebService</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\FastaResultsFromBlastEBI.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\FastaResultsFromBlastEBI.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#organizeFastaResultsFromBlastEBI">
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\organizeFastaResultsFromBlastEBI.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\organizeFastaResultsFromBlastEBI.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.129:8080/BioinformaticsWS/BioWebService</PeerOntology:serviceWSDLURL>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:NamedIndividual>
+  <PeerOntology:Connectors rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getResultBlastAligning">
+    <PeerOntology:isConnectorOf>
+      <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#BlastExecution">
+        <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >BLAST_Basic_Local_Alignment_Search_Tool</PeerOntology:serviceDomainMainTerm>
+        <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.ebi.ac.uk/Tools/services/soap/ncbiblast</PeerOntology:serviceWSDLURL>
+        <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\BlastExecution.wsdl</PeerOntology:serviceWSDLPath>
+        <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\BlastExecution.owl</PeerOntology:serviceOWLSPath>
+        <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+        <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+      </PeerOntology:WSDL>
+    </PeerOntology:isConnectorOf>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/ncbiblast</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getResultBlastAligning.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getResultBlastAligning.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:Connectors>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getResultEmbossPepstat">
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getResultEmbossPepstat.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getResultEmbossPepstat.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/emboss_pepstats</PeerOntology:serviceWSDLURL>
+    <PeerOntology:isConnectorOf>
+      <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runEmbossPepstar">
+        <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+        <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+        <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\runEmbossPepstar.owl</PeerOntology:serviceOWLSPath>
+        <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\runEmbossPepstar.wsdl</PeerOntology:serviceWSDLPath>
+        <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >http://www.ebi.ac.uk/Tools/services/soap/emboss_pepstats</PeerOntology:serviceWSDLURL>
+        <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >EMBOSS</PeerOntology:serviceDomainMainTerm>
+        <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+      </owl:NamedIndividual>
+    </PeerOntology:isConnectorOf>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:NamedIndividual>
+  <PeerOntology:Connectors rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#splitNumbersMath">
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\splitNumbersMath.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\splitNumbersMath.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:Connectors>
+  <owl:AllDisjointClasses>
+    <owl:members rdf:parseType="Collection">
+      <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group"/>
+      <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer"/>
+      <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource"/>
+    </owl:members>
+  </owl:AllDisjointClasses>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Teste">
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >30/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Teste</PeerOntology:fileDescription>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >9.0</PeerOntology:fileSize>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Teste</PeerOntology:fileName>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+  </owl:NamedIndividual>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fetchBatch">
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >fasta_format</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\fetchBatch.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\fetchBatch.owl</PeerOntology:serviceOWLSPath>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#MultipleAlignWorkflow">
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >26.0</PeerOntology:fileSize>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Multiple Align Workflow</PeerOntology:fileDescription>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >12/08/2014</PeerOntology:fileCreationDate>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Multiple Align Workflow</PeerOntology:fileName>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+  </owl:NamedIndividual>
+  <PeerOntology:Files rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#FastaeBlastP">
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Fasta e BlastP</PeerOntology:fileName>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow to Fasta e BlastP</PeerOntology:fileDescription>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >15.0</PeerOntology:fileSize>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wkf</PeerOntology:fileExtension>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >26/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Functional Workflow File</PeerOntology:fileType>
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+  </PeerOntology:Files>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#ChangeResultFormatBlast">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >viewing_and_editing</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://192.168.79.129:8080/BioinformaticsWS/BioWebService</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\ChangeResultFormatBlast.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\ChangeResultFormatBlast.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#FastaSingle">
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >02/01/2014</PeerOntology:fileCreationDate>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileDescription>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >2.0</PeerOntology:fileSize>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >FastaSingle</PeerOntology:fileName>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileType>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wfr</PeerOntology:fileExtension>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getStatusEmbossPepstat">
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getStatusEmbossPepstat.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getStatusEmbossPepstat.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/emboss_pepstats</PeerOntology:serviceWSDLURL>
+    <PeerOntology:isConnectorOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#runEmbossPepstar"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors"/>
+  </owl:NamedIndividual>
+  <PeerOntology:WSDL rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#getResultTypes">
+    <PeerOntology:serviceDomainMainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >string</PeerOntology:serviceDomainMainTerm>
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/Tools/services/soap/clustalo</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\getResultTypes.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\getResultTypes.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:WSDL>
+  <PeerOntology:Domain rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#SequenceAligningOntology">
+    <PeerOntology:isDomainOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <PeerOntology:domainURI rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://gabriellacastro.com.br/SequenceAligningOntology#</PeerOntology:domainURI>
+    <PeerOntology:domainName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >SequenceAligningOntology</PeerOntology:domainName>
+    <PeerOntology:domainDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >No Description, becaus this ontology was generated of automatic form.</PeerOntology:domainDescription>
+    <PeerOntology:fileOWLDomain rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Domains\SequenceAligningOntology.owl</PeerOntology:fileOWLDomain>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:Domain>
+  <PeerOntology:Connectors rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fetchBatchRecoverFasta">
+    <PeerOntology:serviceWSDLURL rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit</PeerOntology:serviceWSDLURL>
+    <PeerOntology:serviceWSDLPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\ServiceRepository\fetchBatchRecoverFasta.wsdl</PeerOntology:serviceWSDLPath>
+    <PeerOntology:serviceOWLSPath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\\OntologyRepository\Services\fetchBatchRecoverFasta.owl</PeerOntology:serviceOWLSPath>
+    <PeerOntology:isServiceOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </PeerOntology:Connectors>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#LaryssaFinalResult">
+    <PeerOntology:filePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >C:\Users\Tadeu Classe\Documents\NetBeansProjects\eScienceNet\DataRepository\</PeerOntology:filePath>
+    <PeerOntology:fileType rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileType>
+    <PeerOntology:fileSize rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal"
+    >90.0</PeerOntology:fileSize>
+    <PeerOntology:fileName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >LaryssaFinalResult</PeerOntology:fileName>
+    <PeerOntology:fileExtension rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >.wfr</PeerOntology:fileExtension>
+    <PeerOntology:fileDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >Workflow Result</PeerOntology:fileDescription>
+    <rdf:type rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files"/>
+    <PeerOntology:isFileOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Tadeu_PEER"/>
+    <PeerOntology:fileCreationDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >27/12/2013</PeerOntology:fileCreationDate>
+    <PeerOntology:pertenceOneGroup rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Bioinformatics"/>
+  </owl:NamedIndividual>
+</rdf:RDF>

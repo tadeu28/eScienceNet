@@ -4,17 +4,21 @@
  */
 package com.esciencenet.models;
 
+import java.util.Date;
+
 /**
  * Classe modelo para a os grupos de peers a serem salvos ou obtidos na ontologia
  * @author Tadeu Classe
  */
 public class PeerGroupModel {
     
+    //atributos da bean
     private String groupName;
     private String groupID;
     private String groupArea;
     private String groupDescription;
     private String groupCreator;
+    private String dataCriacao;
 
     public String getGroupName() {
         return groupName;
@@ -54,5 +58,13 @@ public class PeerGroupModel {
 
     public void setGroupCreator(String groupCreator) {
         this.groupCreator = groupCreator;
+    }
+
+    public String getDataCriacao() {
+        return dataCriacao;
+    }
+
+    public void setDataCriacao(String dataCriacao) {
+        this.dataCriacao = dataCriacao;
     }
 }

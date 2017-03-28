@@ -31,6 +31,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
     private Transport transportHTTP;
     private List listPeerEncontro;
     private List listPeerRelay;
+    private boolean reconf;
     
     /**
      * Método construtor da formulário de configuração
@@ -41,6 +42,8 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         //chamo o pai do formulário e inicializo os componentes do formulário
         super();
         initComponents();        
+        
+        this.reconf = false;
         
         //coloco a posição do formulário para o centro da tela
         setLocationRelativeTo(null);  
@@ -223,6 +226,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
             configurator.save(new File(Config.JXTA_HOME));
 
             //fecho a tela de configuração
+            this.reconf = true;
             setVisible(false);
         } catch (URISyntaxException | IllegalArgumentException | ConfiguratorException e) {
             //exibo a mensagem de erro
@@ -299,18 +303,18 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
 
         jPanel2.setLayout(null);
 
-        gpbSeguraca.setBorder(javax.swing.BorderFactory.createTitledBorder(" Seguranca "));
+        gpbSeguraca.setBorder(javax.swing.BorderFactory.createTitledBorder(" Security "));
         gpbSeguraca.setLayout(null);
 
-        jLabel1.setText("Usuário");
+        jLabel1.setText("User");
         gpbSeguraca.add(jLabel1);
         jLabel1.setBounds(10, 20, 50, 16);
         gpbSeguraca.add(edtUsuario);
         edtUsuario.setBounds(10, 40, 330, 20);
 
-        jLabel2.setText("Senha");
+        jLabel2.setText("Pass.");
         gpbSeguraca.add(jLabel2);
-        jLabel2.setBounds(10, 70, 36, 16);
+        jLabel2.setBounds(10, 70, 30, 16);
         gpbSeguraca.add(edtSenha);
         edtSenha.setBounds(10, 90, 330, 22);
 
@@ -320,7 +324,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(" TCP "));
         jPanel1.setLayout(null);
 
-        cbkRedeLocal.setText("Ativar Rede Local");
+        cbkRedeLocal.setText("Active Local Network");
         jPanel1.add(cbkRedeLocal);
         cbkRedeLocal.setBounds(10, 20, 310, 25);
 
@@ -337,7 +341,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(" HTTP "));
         jPanel6.setLayout(null);
 
-        cbkInternet.setText("Ativar Internet");
+        cbkInternet.setText("Active Internet");
         cbkInternet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbkInternetActionPerformed(evt);
@@ -355,22 +359,28 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jPanel2.add(jPanel6);
         jPanel6.setBounds(10, 100, 350, 100);
 
-        jTabbedPane1.addTab("Config. Geral", jPanel2);
+        jTabbedPane1.addTab("General Config.", jPanel2);
 
         jPanel3.setLayout(null);
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder(" Relay "));
         jPanel8.setLayout(null);
 
-        cbkRelay.setText("Atuar como peer Relay");
+        cbkRelay.setText("Act as Relay peer");
         jPanel8.add(cbkRelay);
         cbkRelay.setBounds(10, 20, 190, 25);
 
-        jLabel3.setText("Lista");
+        jLabel3.setText("List");
+        jLabel3.setToolTipText("");
         jPanel8.add(jLabel3);
-        jLabel3.setBounds(10, 50, 26, 16);
+        jLabel3.setBounds(10, 50, 19, 16);
 
         cmbRelay.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TCP", "HTTP" }));
+        cmbRelay.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbRelayItemStateChanged(evt);
+            }
+        });
         cmbRelay.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 cmbRelayPropertyChange(evt);
@@ -386,6 +396,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jLabel7.setBounds(270, 70, 10, 16);
 
         edtPortaRelay.setEditable(false);
+        edtPortaRelay.setText("9701");
         jPanel8.add(edtPortaRelay);
         edtPortaRelay.setBounds(280, 70, 60, 22);
 
@@ -419,15 +430,20 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(" Rendezvous "));
         jPanel9.setLayout(null);
 
-        cbkRendezvous.setText("Atuar como peer Rendezvous");
+        cbkRendezvous.setText("Act as RedezVous peer");
         jPanel9.add(cbkRendezvous);
-        cbkRendezvous.setBounds(10, 20, 190, 25);
+        cbkRendezvous.setBounds(10, 20, 220, 25);
 
-        jLabel8.setText("Lista");
+        jLabel8.setText("List");
         jPanel9.add(jLabel8);
-        jLabel8.setBounds(10, 50, 26, 16);
+        jLabel8.setBounds(10, 50, 19, 16);
 
         cmbRendezvous.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "TCP", "HTTP" }));
+        cmbRendezvous.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cmbRendezvousItemStateChanged(evt);
+            }
+        });
         cmbRendezvous.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 cmbRendezvousPropertyChange(evt);
@@ -443,6 +459,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jLabel9.setBounds(270, 70, 10, 16);
 
         edtPortaRendezvous.setEditable(false);
+        edtPortaRendezvous.setText("9701");
         jPanel9.add(edtPortaRendezvous);
         edtPortaRendezvous.setBounds(280, 70, 60, 22);
 
@@ -473,7 +490,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         jPanel3.add(jPanel9);
         jPanel9.setBounds(10, 0, 350, 160);
 
-        jTabbedPane1.addTab("Config. Peer", jPanel3);
+        jTabbedPane1.addTab("Peer Config.", jPanel3);
 
         jPanel5.setBackground(new java.awt.Color(178, 168, 168));
 
@@ -486,7 +503,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         });
 
         btnCancela.setBackground(new java.awt.Color(178, 168, 168));
-        btnCancela.setText("Cancela");
+        btnCancela.setText("Cancel");
         btnCancela.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelaActionPerformed(evt);
@@ -516,7 +533,7 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
 
         jPanel7.setLayout(null);
 
-        jLabel6.setText("Nome do peer");
+        jLabel6.setText("Peer name");
         jPanel7.add(jLabel6);
         jLabel6.setBounds(10, 10, 90, 16);
         jPanel7.add(edtNome);
@@ -541,6 +558,8 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        getAccessibleContext().setAccessibleName("e-ScienceNet Configuration");
+
         setBounds(0, 0, 379, 504);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -554,8 +573,13 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
     }//GEN-LAST:event_btnOKActionPerformed
 
     private void btnCancelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelaActionPerformed
-        //saio do sistema quanto o botão cancelar for acionado
-        System.exit(0);
+        if(!isReconf()){
+            //saio do sistema quanto o botão cancelar for acionado
+            System.exit(0);
+        }else{
+            this.reconf = false;
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_btnCancelaActionPerformed
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -578,13 +602,11 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
     }//GEN-LAST:event_btnDelRedezvousActionPerformed
 
     private void cmbRendezvousPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cmbRendezvousPropertyChange
-        //seto a porta no campo de porta dependendo do que for selecionado na combobox
-        edtPortaRendezvous.setText(cmbRendezvous.getSelectedIndex() == 0 ? "9701" : "9700");        
+
     }//GEN-LAST:event_cmbRendezvousPropertyChange
 
     private void cmbRelayPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_cmbRelayPropertyChange
-        //seto a porta no campo de porta dependendo do que for selecionado na combobox
-        edtPortaRelay.setText(cmbRelay.getSelectedIndex() == 0 ? "9701" : "9700");
+
     }//GEN-LAST:event_cmbRelayPropertyChange
 
     private void btnAddRedezvousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRedezvousActionPerformed
@@ -598,6 +620,16 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
         listaRelay.addElement(cmbRelay.getSelectedItem().toString().toLowerCase() + "://" + edtIPRelay.getText() + ":" + edtPortaRelay.getText());
         lstIPRelay.setModel(listaRelay);  
     }//GEN-LAST:event_btnAddRelayActionPerformed
+
+    private void cmbRendezvousItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbRendezvousItemStateChanged
+        //seto a porta no campo de porta dependendo do que for selecionado na combobox
+        edtPortaRendezvous.setText(cmbRendezvous.getSelectedIndex() == 0 ? "9701" : "9700");        
+    }//GEN-LAST:event_cmbRendezvousItemStateChanged
+
+    private void cmbRelayItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cmbRelayItemStateChanged
+        //seto a porta no campo de porta dependendo do que for selecionado na combobox
+        edtPortaRelay.setText(cmbRelay.getSelectedIndex() == 0 ? "9701" : "9700");
+    }//GEN-LAST:event_cmbRelayItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddRedezvous;
@@ -645,5 +677,19 @@ public final class FrmConfigPeer extends javax.swing.JDialog {
     private javax.swing.JList lstIPRelay;
     private javax.swing.JList lstIPRendezvous;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * @param reconf the reconf to set
+     */
+    public void setReconf(boolean reconf) {
+        this.reconf = reconf;
+    }
+
+    /**
+     * @return the reconf
+     */
+    public boolean isReconf() {
+        return reconf;
+    }
 
 }

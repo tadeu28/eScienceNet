@@ -4,17 +4,18 @@
  */
 package juniorvs.virtualdir.desktop;
 
+import com.esciencenet.utils.EScienceNetUtils;
+import com.esciencenet.datamanager.DataManager;
+import com.esciencenet.datamanager.DownloadedFilesModel;
 import com.esciencenet.forms.*;
 import com.esciencenet.semanticmanager.*;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.io.File;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +23,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.table.AbstractTableModel;
 import juniorvs.virtualdir.ConteudoDownload;
 import juniorvs.virtualdir.ConteudoRemoto;
 import juniorvs.virtualdir.ControlaMensagens;
@@ -31,7 +31,6 @@ import juniorvs.virtualdir.GerenciaProcura;
 import juniorvs.virtualdir.Mensagem;
 import juniorvs.virtualdir.OuvinteDescoberta;
 import juniorvs.virtualdir.OuvinteMensagem;
-import juniorvs.virtualdir.Peer;
 import juniorvs.virtualdir.Peers;
 import juniorvs.virtualdir.ext.*;
 import net.jxta.ext.config.Configurator;
@@ -43,9 +42,17 @@ import net.jxta.protocol.PeerGroupAdvertisement;
 import net.jxta.rendezvous.RendezVousService;
 import net.jxta.rendezvous.RendezvousEvent;
 import net.jxta.rendezvous.RendezvousListener;
-import net.jxta.share.CMS;
 import net.jxta.share.ContentAdvertisement;
-import net.jxta.share.FileContent;
+import com.esciencenet.models.*;
+import com.esciencenet.searchmanager.*;
+import com.esciencenet.servicemanager.ServiceManager;
+import com.esciencenet.utils.JTreeResearch;
+import java.awt.event.MouseEvent;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import net.jxta.discovery.DiscoveryService;
+import net.jxta.document.Advertisement;
 
 /**
  * Classe fundamental para a execução da e-ScienceNet
@@ -70,16 +77,6 @@ public class VirtualDir extends JFrame implements Runnable,
         
         Image icon = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/esciencenet2.png"));
         setIconImage(icon);
-        initialize();
-    }
-    
-    private void initialize() {  
-        //Inicialização dos modelos das tabelas
-        tableArquivos.setModel(modelArquivos);
-        tablePeers.setModel(modelPeers);
-
-        //seto o ouvinte da tabela de nós
-        tablePeers.getSelectionModel().addListSelectionListener(this);
     }
 
     /**
@@ -95,10 +92,11 @@ public class VirtualDir extends JFrame implements Runnable,
         menuItemCopiar = new javax.swing.JMenuItem();
         gpbEscopo = new javax.swing.ButtonGroup();
         gpbBusca = new javax.swing.ButtonGroup();
+        ppmDownloads = new javax.swing.JPopupMenu();
+        menuDownload = new javax.swing.JMenuItem();
         statusBar = new javax.swing.JPanel();
         lbleScienceNet = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
-        jLabelFileShared = new javax.swing.JLabel();
         pnlAllComponent = new javax.swing.JPanel();
         pnlMain = new javax.swing.JPanel();
         sptPanelMain = new javax.swing.JSplitPane();
@@ -113,17 +111,15 @@ public class VirtualDir extends JFrame implements Runnable,
         btnPesquisa = new javax.swing.JButton();
         rdbServicos = new javax.swing.JRadioButton();
         rdbRecursos = new javax.swing.JRadioButton();
-        rdbTodos = new javax.swing.JRadioButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        treeFileOptions = new javax.swing.JTree();
         pnlP2P = new javax.swing.JPanel();
-        pnlPonto = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tablePeers = new javax.swing.JTable();
-        pnlArquivos = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        treeFiles = new javax.swing.JTree();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        edtInfoFiles = new javax.swing.JTextPane();
         jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tableArquivos = new javax.swing.JTable();
         pnlMainInfo = new javax.swing.JPanel();
         pnlSplit = new javax.swing.JPanel();
         lblSplit = new javax.swing.JLabel();
@@ -136,15 +132,38 @@ public class VirtualDir extends JFrame implements Runnable,
         jScrollPaneInfo = new javax.swing.JScrollPane();
         jTextAreaInfo = new javax.swing.JTextArea();
         mnuEScienceNet = new javax.swing.JMenuBar();
-        actArquivo = new javax.swing.JMenu();
+        actSistema = new javax.swing.JMenu();
+        actMostrarPeers = new javax.swing.JMenuItem();
         actConfig = new javax.swing.JMenuItem();
-        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         actSair = new javax.swing.JMenuItem();
+        actRecursos = new javax.swing.JMenu();
+        mnuArquivo = new javax.swing.JMenu();
+        actInserirArquivos = new javax.swing.JMenuItem();
+        actVerArquivos = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
+        actViewResults = new javax.swing.JMenuItem();
+        mnuServicos = new javax.swing.JMenu();
+        actInserirServico = new javax.swing.JMenuItem();
+        actVerServicos = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        actInserirConectores = new javax.swing.JMenuItem();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
+        actExecuteSingle = new javax.swing.JMenuItem();
+        actComposition = new javax.swing.JMenu();
+        actAbstractWorkFlow = new javax.swing.JMenuItem();
+        actServiceResearch = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
+        actOpenWorkflow = new javax.swing.JMenuItem();
+        actInterest = new javax.swing.JMenu();
+        actDomains = new javax.swing.JMenu();
+        actSupeNodeDomains = new javax.swing.JMenuItem();
+        actIncludeDomains = new javax.swing.JMenuItem();
+        actMyDomains = new javax.swing.JMenuItem();
         actGrupos = new javax.swing.JMenu();
         actSelectGroup = new javax.swing.JMenuItem();
         actSobre = new javax.swing.JMenu();
 
-        menuItemCopiar.setText("Copiar Conteúdo...");
+        menuItemCopiar.setText("Copy Content...");
         menuItemCopiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuItemCopiarActionPerformed(evt);
@@ -152,7 +171,16 @@ public class VirtualDir extends JFrame implements Runnable,
         });
         popMenuArquivos.add(menuItemCopiar);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        menuDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png"))); // NOI18N
+        menuDownload.setText("Requisitar");
+        menuDownload.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuDownloadActionPerformed(evt);
+            }
+        });
+        ppmDownloads.add(menuDownload);
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle(".: e-ScienceNet :.");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -166,11 +194,8 @@ public class VirtualDir extends JFrame implements Runnable,
         lbleScienceNet.setText("e-ScienceNet | ");
         statusBar.add(lbleScienceNet);
 
-        lblUsuario.setText("Usuário |");
+        lblUsuario.setText("User |");
         statusBar.add(lblUsuario);
-
-        jLabelFileShared.setText(" Diretório de Compartilhamento");
-        statusBar.add(jLabelFileShared);
 
         getContentPane().add(statusBar, java.awt.BorderLayout.SOUTH);
 
@@ -186,17 +211,17 @@ public class VirtualDir extends JFrame implements Runnable,
 
         pnlPesquisa.setMinimumSize(new java.awt.Dimension(250, 100));
 
-        pnlEscopo.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Escopo ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+        pnlEscopo.setBorder(javax.swing.BorderFactory.createTitledBorder(" Scope "));
 
         gpbEscopo.add(rdbPeerLocal);
-        rdbPeerLocal.setText("Peer Local");
+        rdbPeerLocal.setText("Local Peer");
 
         gpbEscopo.add(rdbNosRede);
-        rdbNosRede.setText("Peer de Rede");
+        rdbNosRede.setText("Network Peer");
 
         gpbEscopo.add(rdbTodosPeers);
         rdbTodosPeers.setSelected(true);
-        rdbTodosPeers.setText("Todos os Peers");
+        rdbTodosPeers.setText("All Peers");
 
         javax.swing.GroupLayout pnlEscopoLayout = new javax.swing.GroupLayout(pnlEscopo);
         pnlEscopo.setLayout(pnlEscopoLayout);
@@ -221,20 +246,39 @@ public class VirtualDir extends JFrame implements Runnable,
                 .addComponent(rdbTodosPeers))
         );
 
-        pnlBusca.setBorder(javax.swing.BorderFactory.createTitledBorder(null, " Busca ", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, null, java.awt.Color.black));
+        pnlBusca.setBorder(javax.swing.BorderFactory.createTitledBorder(" Search  "));
 
-        jLabel1.setText("Conteúdo de Pesquisa");
+        jLabel1.setText("Search Content");
+        jLabel1.setToolTipText("");
 
-        btnPesquisa.setText("Pesquisar");
+        btnPesquisa.setText("Search");
+        btnPesquisa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPesquisaActionPerformed(evt);
+            }
+        });
 
         gpbBusca.add(rdbServicos);
-        rdbServicos.setText("Serviços");
+        rdbServicos.setText("Services");
+        rdbServicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbServicosActionPerformed(evt);
+            }
+        });
 
         gpbBusca.add(rdbRecursos);
-        rdbRecursos.setText("Recursos e Arquivos");
-
-        gpbBusca.add(rdbTodos);
-        rdbTodos.setText("Todos");
+        rdbRecursos.setSelected(true);
+        rdbRecursos.setText("Files");
+        rdbRecursos.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                rdbRecursosStateChanged(evt);
+            }
+        });
+        rdbRecursos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rdbRecursosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlBuscaLayout = new javax.swing.GroupLayout(pnlBusca);
         pnlBusca.setLayout(pnlBuscaLayout);
@@ -249,11 +293,10 @@ public class VirtualDir extends JFrame implements Runnable,
                         .addComponent(btnPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlBuscaLayout.createSequentialGroup()
                         .addGroup(pnlBuscaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(rdbTodos)
                             .addComponent(rdbRecursos)
                             .addComponent(jLabel1)
                             .addComponent(rdbServicos))
-                        .addGap(0, 44, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlBuscaLayout.setVerticalGroup(
@@ -267,24 +310,28 @@ public class VirtualDir extends JFrame implements Runnable,
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rdbServicos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rdbRecursos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(rdbTodos))
+                .addComponent(rdbRecursos))
         );
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        jScrollPane4.setBorder(null);
 
-        jButton2.setText("jButton2");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
+        treeFileOptions.setBackground(new java.awt.Color(240, 240, 240));
+        treeFileOptions.setBorder(javax.swing.BorderFactory.createTitledBorder("File Options"));
+        treeFileOptions.setForeground(new java.awt.Color(240, 240, 240));
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("File options");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Name");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Extension");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Description");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Date");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Size");
+        treeNode1.add(treeNode2);
+        treeFileOptions.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        treeFileOptions.setAutoscrolls(true);
+        jScrollPane4.setViewportView(treeFileOptions);
 
         javax.swing.GroupLayout pnlPesquisaLayout = new javax.swing.GroupLayout(pnlPesquisa);
         pnlPesquisa.setLayout(pnlPesquisaLayout);
@@ -294,14 +341,11 @@ public class VirtualDir extends JFrame implements Runnable,
                 .addContainerGap()
                 .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlEscopo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pnlBusca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlBusca, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlPesquisaLayout.createSequentialGroup()
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(pnlPesquisaLayout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addGroup(pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPesquisaLayout.setVerticalGroup(
             pnlPesquisaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,57 +354,47 @@ public class VirtualDir extends JFrame implements Runnable,
                 .addComponent(pnlEscopo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlBusca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(4, 4, 4)
-                .addComponent(jButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         sptPanelMain.setLeftComponent(pnlPesquisa);
 
         pnlP2P.setLayout(new java.awt.BorderLayout());
 
-        pnlPonto.setPreferredSize(new java.awt.Dimension(160, 419));
-        pnlPonto.setLayout(new java.awt.BorderLayout());
-
-        tablePeers.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(tablePeers);
-
-        pnlPonto.add(jScrollPane1, java.awt.BorderLayout.CENTER);
-
-        pnlP2P.add(pnlPonto, java.awt.BorderLayout.WEST);
-
-        pnlArquivos.setLayout(new java.awt.BorderLayout());
-
-        jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
-        jSeparator2.setPreferredSize(new java.awt.Dimension(7, 2));
-        pnlArquivos.add(jSeparator2, java.awt.BorderLayout.WEST);
-
-        tableArquivos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        tableArquivos.addMouseListener(new java.awt.event.MouseAdapter() {
+        treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Nenhum");
+        treeFiles.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        treeFiles.setRootVisible(false);
+        treeFiles.setShowsRootHandles(true);
+        treeFiles.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                tableArquivosMouseReleased(evt);
+                treeFilesMouseReleased(evt);
             }
         });
-        jScrollPane2.setViewportView(tableArquivos);
+        treeFiles.addTreeSelectionListener(new javax.swing.event.TreeSelectionListener() {
+            public void valueChanged(javax.swing.event.TreeSelectionEvent evt) {
+                treeFilesValueChanged(evt);
+            }
+        });
+        treeFiles.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                treeFilesPropertyChange(evt);
+            }
+        });
+        jScrollPane3.setViewportView(treeFiles);
+        treeFiles.getAccessibleContext().setAccessibleName("treeFiles");
 
-        pnlArquivos.add(jScrollPane2, java.awt.BorderLayout.CENTER);
+        pnlP2P.add(jScrollPane3, java.awt.BorderLayout.NORTH);
 
-        pnlP2P.add(pnlArquivos, java.awt.BorderLayout.CENTER);
+        jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane6.setViewportView(edtInfoFiles);
+
+        jPanel1.add(jScrollPane6, java.awt.BorderLayout.CENTER);
+        jPanel1.add(jSeparator2, java.awt.BorderLayout.PAGE_START);
+
+        pnlP2P.add(jPanel1, java.awt.BorderLayout.CENTER);
 
         sptPanelMain.setRightComponent(pnlP2P);
 
@@ -384,7 +418,7 @@ public class VirtualDir extends JFrame implements Runnable,
         pnlSplit.add(lblSplit);
 
         btnLimparInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/limpar.png"))); // NOI18N
-        btnLimparInfo.setText("Limpar Informações");
+        btnLimparInfo.setText("Clear Informations");
         btnLimparInfo.setPreferredSize(new java.awt.Dimension(167, 20));
         btnLimparInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -401,7 +435,7 @@ public class VirtualDir extends JFrame implements Runnable,
 
         pnlEnviaMsg.setLayout(new javax.swing.BoxLayout(pnlEnviaMsg, javax.swing.BoxLayout.LINE_AXIS));
 
-        jLabelEnviaMensagem.setText("Mensagem: ");
+        jLabelEnviaMensagem.setText("Message: ");
         pnlEnviaMsg.add(jLabelEnviaMensagem);
 
         jTextFieldEnviaMensagem.addActionListener(new java.awt.event.ActionListener() {
@@ -413,7 +447,7 @@ public class VirtualDir extends JFrame implements Runnable,
 
         pnlSul.add(pnlEnviaMsg, java.awt.BorderLayout.SOUTH);
 
-        pnlInformacao.setBorder(javax.swing.BorderFactory.createTitledBorder(" Informação "));
+        pnlInformacao.setBorder(javax.swing.BorderFactory.createTitledBorder(" Informations "));
         pnlInformacao.setLayout(new java.awt.BorderLayout());
 
         jTextAreaInfo.setEditable(false);
@@ -433,30 +467,195 @@ public class VirtualDir extends JFrame implements Runnable,
 
         getContentPane().add(pnlAllComponent, java.awt.BorderLayout.CENTER);
 
-        actArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arquivo.png"))); // NOI18N
-        actArquivo.setText("Arquivo");
+        actSistema.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/systems.png"))); // NOI18N
+        actSistema.setText("System");
+
+        actMostrarPeers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/peer.png"))); // NOI18N
+        actMostrarPeers.setText("Peers Connected");
+        actMostrarPeers.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actMostrarPeersActionPerformed(evt);
+            }
+        });
+        actSistema.add(actMostrarPeers);
+        actMostrarPeers.getAccessibleContext().setAccessibleName("actMostrarPeers");
 
         actConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Config.png"))); // NOI18N
-        actConfig.setText("Configurações");
-        actArquivo.add(actConfig);
-        actArquivo.add(jSeparator1);
+        actConfig.setText("JXTA Configuration");
+        actConfig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actConfigActionPerformed(evt);
+            }
+        });
+        actSistema.add(actConfig);
 
         actSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sair.png"))); // NOI18N
-        actSair.setText("Sair");
+        actSair.setText("Exit");
         actSair.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actSairActionPerformed(evt);
             }
         });
-        actArquivo.add(actSair);
+        actSistema.add(actSair);
 
-        mnuEScienceNet.add(actArquivo);
+        mnuEScienceNet.add(actSistema);
+
+        actRecursos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/resource.png"))); // NOI18N
+        actRecursos.setText("Resource Managers");
+
+        mnuArquivo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arquivo.png"))); // NOI18N
+        mnuArquivo.setText("Data Manager");
+
+        actInserirArquivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/addArquivo.png"))); // NOI18N
+        actInserirArquivos.setText("Insert Files");
+        actInserirArquivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actInserirArquivosActionPerformed(evt);
+            }
+        });
+        mnuArquivo.add(actInserirArquivos);
+
+        actVerArquivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verArquivo.png"))); // NOI18N
+        actVerArquivos.setText("Show Files");
+        actVerArquivos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actVerArquivosActionPerformed(evt);
+            }
+        });
+        mnuArquivo.add(actVerArquivos);
+        mnuArquivo.add(jSeparator4);
+
+        actViewResults.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/document-index-icon.png"))); // NOI18N
+        actViewResults.setText("View Workflow Results");
+        actViewResults.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actViewResultsActionPerformed(evt);
+            }
+        });
+        mnuArquivo.add(actViewResults);
+
+        actRecursos.add(mnuArquivo);
+
+        mnuServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Services.png"))); // NOI18N
+        mnuServicos.setText("Services Manager");
+
+        actInserirServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/addService.png"))); // NOI18N
+        actInserirServico.setText("Insert Services");
+        actInserirServico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actInserirServicoActionPerformed(evt);
+            }
+        });
+        mnuServicos.add(actInserirServico);
+
+        actVerServicos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/showServices.png"))); // NOI18N
+        actVerServicos.setText("Show Services");
+        actVerServicos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actVerServicosActionPerformed(evt);
+            }
+        });
+        mnuServicos.add(actVerServicos);
+        mnuServicos.add(jSeparator1);
+
+        actInserirConectores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/port-icon.png"))); // NOI18N
+        actInserirConectores.setText("Insert Connectors");
+        actInserirConectores.setToolTipText("");
+        actInserirConectores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actInserirConectoresActionPerformed(evt);
+            }
+        });
+        mnuServicos.add(actInserirConectores);
+        mnuServicos.add(jSeparator5);
+
+        actExecuteSingle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/world-go-icon.png"))); // NOI18N
+        actExecuteSingle.setText("Execute Single Service");
+        actExecuteSingle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actExecuteSingleActionPerformed(evt);
+            }
+        });
+        mnuServicos.add(actExecuteSingle);
+
+        actRecursos.add(mnuServicos);
+
+        mnuEScienceNet.add(actRecursos);
+
+        actComposition.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/plugin-icon.png"))); // NOI18N
+        actComposition.setText("Composition Manager");
+
+        actAbstractWorkFlow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bubblechart-icon.png"))); // NOI18N
+        actAbstractWorkFlow.setText("Abstract Workflow");
+        actAbstractWorkFlow.setToolTipText("");
+        actAbstractWorkFlow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actAbstractWorkFlowActionPerformed(evt);
+            }
+        });
+        actComposition.add(actAbstractWorkFlow);
+
+        actServiceResearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Search-Globe-icon.png"))); // NOI18N
+        actServiceResearch.setText("Service Search");
+        actServiceResearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actServiceResearchActionPerformed(evt);
+            }
+        });
+        actComposition.add(actServiceResearch);
+        actComposition.add(jSeparator3);
+
+        actOpenWorkflow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/chart-line-icon 32.png"))); // NOI18N
+        actOpenWorkflow.setText("Open Workflow");
+        actOpenWorkflow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actOpenWorkflowActionPerformed(evt);
+            }
+        });
+        actComposition.add(actOpenWorkflow);
+
+        mnuEScienceNet.add(actComposition);
+
+        actInterest.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Charts-Genealogy-icon.png"))); // NOI18N
+        actInterest.setText("Interest Manager");
+
+        actDomains.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Sciences-Classes-Literature-icon.png"))); // NOI18N
+        actDomains.setText("Domains");
+
+        actSupeNodeDomains.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/domain super node.png"))); // NOI18N
+        actSupeNodeDomains.setText("Domains Available at Super Node");
+        actSupeNodeDomains.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actSupeNodeDomainsActionPerformed(evt);
+            }
+        });
+        actDomains.add(actSupeNodeDomains);
+
+        actIncludeDomains.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/book-add-icon.png"))); // NOI18N
+        actIncludeDomains.setText("Include New Domains");
+        actIncludeDomains.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actIncludeDomainsActionPerformed(evt);
+            }
+        });
+        actDomains.add(actIncludeDomains);
+
+        actMyDomains.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/book-open-icon.png"))); // NOI18N
+        actMyDomains.setText("My Domains");
+        actMyDomains.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                actMyDomainsActionPerformed(evt);
+            }
+        });
+        actDomains.add(actMyDomains);
+
+        actInterest.add(actDomains);
 
         actGrupos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/groups.png"))); // NOI18N
-        actGrupos.setText("Grupos");
+        actGrupos.setText("Groups");
 
         actSelectGroup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/groupSelected.png"))); // NOI18N
-        actSelectGroup.setText("Selecionar Grupo");
+        actSelectGroup.setText("Select Groups");
         actSelectGroup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actSelectGroupActionPerformed(evt);
@@ -464,10 +663,12 @@ public class VirtualDir extends JFrame implements Runnable,
         });
         actGrupos.add(actSelectGroup);
 
-        mnuEScienceNet.add(actGrupos);
+        actInterest.add(actGrupos);
+
+        mnuEScienceNet.add(actInterest);
 
         actSobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sobre.png"))); // NOI18N
-        actSobre.setText("Sobre...");
+        actSobre.setText("About...");
         actSobre.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 actSobreMouseClicked(evt);
@@ -482,15 +683,18 @@ public class VirtualDir extends JFrame implements Runnable,
 
         setJMenuBar(mnuEScienceNet);
 
-        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        setBounds((screenSize.width-940)/2, (screenSize.height-686)/2, 940, 686);
+        setSize(new java.awt.Dimension(1097, 782));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void actSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actSairActionPerformed
-        if (JOptionPane.showConfirmDialog(this, "Deseja realmente se desconectar da e-ScienceNet?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
+        if (JOptionPane.showConfirmDialog(this, "Do you really want disconnect from the e-ScienceNet?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
                                       JOptionPane.QUESTION_MESSAGE, (new javax.swing.ImageIcon(getClass().getResource("/images/question.png")))) == 0){
+            //gravo os arquivos no XML para futuros downloads
+            SemanticManager.getInstance().getDataManager().gravarArquivos();
             //informo aos demais nos que este aqui abandonou a rede
             controlaMensagens.saidaPeer();
+            SemanticManager.getInstance().getSemanticChat().exitOnSemanticChat();
             //finalizo o sistema
             System.exit(0);
         };
@@ -504,33 +708,22 @@ public class VirtualDir extends JFrame implements Runnable,
                                                   (new javax.swing.ImageIcon(getClass().getResource("/images/up.png"))));
         }
     }//GEN-LAST:event_pnlSplitMouseClicked
-
+    
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
-        if (JOptionPane.showConfirmDialog(this, "Deseja realmente se desconectar da e-ScienceNet?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
+        if (JOptionPane.showConfirmDialog(this, "Do you really want disconnect from the e-ScienceNet?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
                                       JOptionPane.QUESTION_MESSAGE, (new javax.swing.ImageIcon(getClass().getResource("/images/question.png")))) == 0){
+            //gravo os arquivos no XML para futuros downloads
+            SemanticManager.getInstance().getDataManager().gravarArquivos();
             //informo aos demais nos que este aqui abandonou a rede
             controlaMensagens.saidaPeer();
+            SemanticManager.getInstance().getSemanticChat().exitOnSemanticChat();
             //finalizo o sistema
             System.exit(0);
-        };
+        }
     }//GEN-LAST:event_formWindowClosing
 
-    private void tableArquivosMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableArquivosMouseReleased
-        //verifico se é o nó local
-        boolean local = tablePeers.getSelectedRow() == 0 ? true : false;
-               
-        //verifico se é um requisição de botão direito e se não é o nó local
-        if (evt.isPopupTrigger() && !local) {
-                //exibo o popupMenu para iniciar a cópia dos arquivos
-                popMenuArquivos.show(tableArquivos, evt.getX(), evt.getY());
-        }
-    }//GEN-LAST:event_tableArquivosMouseReleased
-
     private void menuItemCopiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemCopiarActionPerformed
-        //seto o conteúdo para o no selecionado
-        ContentAdvertisement adv = peerSelecionado.getAnuncioConteudo(tableArquivos.getSelectedRow());
-        //mando aviso ao conteúdo remoto
-        conteudoRemoto.mostrarConteudo(adv);
+
     }//GEN-LAST:event_menuItemCopiarActionPerformed
 
     private void jTextFieldEnviaMensagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEnviaMensagemActionPerformed
@@ -541,8 +734,8 @@ public class VirtualDir extends JFrame implements Runnable,
     }//GEN-LAST:event_jTextFieldEnviaMensagemActionPerformed
 
     private void btnLimparInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparInfoActionPerformed
-          
-        if (JOptionPane.showConfirmDialog(this, "Deseja realmente limpar as informações?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
+      
+        if (JOptionPane.showConfirmDialog(this, "Do you really clean the informations?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
                                       JOptionPane.QUESTION_MESSAGE, (new javax.swing.ImageIcon(getClass().getResource("/images/question.png")))) == 0){
             jTextAreaInfo.setText("");
         };
@@ -558,75 +751,272 @@ public class VirtualDir extends JFrame implements Runnable,
         frmSobre.setVisible(true);
     }//GEN-LAST:event_actSobreMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        CMS cms = gerenciaProcura.getCMS(netPeerGroup);
-        try {
-            gerenciaProcura.addFile(new File(edtPesquisa.getText()));
-
-            //gerenciaProcura.addContent(files);
-        } catch (Exception ex) {
-            Logger.getLogger(VirtualDir.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
-        //peerGroupManager.createPeerGroup("eScienceNet", true, "280988");
-        groupsInLocalCache();
-        try {
-            //peerGroupManager.joinGroup(netPeerGroup, adv, true);
-            //peerGroupManager.leaveGroup(netPeerGroup.getPeerGroupAdvertisement());
-        } catch (Exception ex) {
-            Logger.getLogger(VirtualDir.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void actSelectGroupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actSelectGroupActionPerformed
         //verifico os grupos
         SemanticManager.getInstance().getInterestManager().exibirGrupos();
         
-        if (JOptionPane.showConfirmDialog(this, "Para que seja realizada a troca do grupo a e-ScienceNet precisará ser fechada.\n\n"
-                                              + "Deseja sair da e-ScienceNet agora?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
+        if (SemanticManager.getInstance().getInterestManager().isCancelado()){
+            return;
+        }
+        
+        if (JOptionPane.showConfirmDialog(this, "For the exchange of a group of the e-ScienceNet, you need to exit of the system.\n\n"
+                                              + "Do you want to exit of e-ScienceNet now?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
                                       JOptionPane.QUESTION_MESSAGE, (new javax.swing.ImageIcon(getClass().getResource("/images/question.png")))) == 0){
             //informo aos demais nos que este aqui abandonou a rede
             controlaMensagens.saidaPeer();
+            SemanticManager.getInstance().getSemanticChat().exitOnSemanticChat();
             //finalizo o sistema
             System.exit(0);
         };
     }//GEN-LAST:event_actSelectGroupActionPerformed
 
+    private void actInserirArquivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actInserirArquivosActionPerformed
+        
+        //chamo o objeto do gerente de dados para inserir o arquivo no sistema
+        SemanticManager.getInstance().getDataManager().inserirArquivo();
+        
+    }//GEN-LAST:event_actInserirArquivosActionPerformed
+
+    private void actVerArquivosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actVerArquivosActionPerformed
+        //chamo a tela de exibição de todos os arquivos do peer.
+        SemanticManager.getInstance().getDataManager().visualizarArquivosLocais(netPeerGroup.getPeerName());
+    }//GEN-LAST:event_actVerArquivosActionPerformed
+
+    private void btnPesquisaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisaActionPerformed
+
+        //limpo a tree de busca
+        treeFiles.setModel(null);
+        treeFiles.setCellRenderer(new JTreeResearch());
+        
+        if (rdbRecursos.isSelected()){
+                       
+            if (edtPesquisa.getText().equals("")){
+                JOptionPane.showMessageDialog(this, "It's necessary to put the Research Content!", ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE, 
+                                      (new javax.swing.ImageIcon(getClass().getResource("/images/error.png"))));
+                return;
+            }
+            
+            if (treeFileOptions.getSelectionCount() == 0){
+                JOptionPane.showMessageDialog(this, "It's necessary to select one or more file options to make a research!", ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE, 
+                                      (new javax.swing.ImageIcon(getClass().getResource("/images/error.png"))));
+                return;
+            }
+            String stringBusca = EScienceNetUtils.retornarStringBuscaFiles(edtPesquisa.getText(), treeFileOptions.getSelectionPaths());
+            
+            this.pesquisar(SearchManagerEnum.FILE_SEARCH.toString() + stringBusca);
+        }
+    }//GEN-LAST:event_btnPesquisaActionPerformed
+
+    private void rdbRecursosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_rdbRecursosStateChanged
+        treeFileOptions.setVisible(rdbRecursos.isSelected());
+    }//GEN-LAST:event_rdbRecursosStateChanged
+
+    private void menuDownloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuDownloadActionPerformed
+        
+        //pego o nome do peer
+        String peerName = treeFiles.getSelectionPath().getParentPath().getLastPathComponent().toString();
+        //pego o nome do arquivo
+        String fileName = treeFiles.getSelectionPath().getLastPathComponent().toString();        
+                   
+        if (menuDownload.getText().contains("Download...")){
+            //seto o conteúdo para o no selecionado            
+            ContentAdvertisement adv = peers.getPeer(peerName).getAnuncioConteudo(fileName);
+            //mando aviso ao conteúdo remoto
+            conteudoRemoto.mostrarConteudo(adv);
+        }else{
+            this.controlaMensagens.enviarMensagem(DataManager.RESQUEST_FILE + "#" + peerName + "#" + fileName);
+        }
+    }//GEN-LAST:event_menuDownloadActionPerformed
+
+    private void treeFilesPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_treeFilesPropertyChange
+        
+    }//GEN-LAST:event_treeFilesPropertyChange
+
+    private void treeFilesValueChanged(javax.swing.event.TreeSelectionEvent evt) {//GEN-FIRST:event_treeFilesValueChanged
+        if(treeFiles.getSelectionPath() != null){
+            edtInfoFiles.setContentType("text/html");
+            boolean hasChildren = (treeFiles.getModel().getChildCount(treeFiles.getSelectionPath().getLastPathComponent()) > 0);
+            edtInfoFiles.setText(SemanticManager.getInstance().getSearchManager().obterInformacoesArquivo(treeFiles.getSelectionPath().getLastPathComponent().toString(),
+                hasChildren));
+            edtInfoFiles.setCaretPosition(0);
+        }
+    }//GEN-LAST:event_treeFilesValueChanged
+
+    private void treeFilesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_treeFilesMouseReleased
+        if (evt.getButton() == MouseEvent.BUTTON3){
+            
+            //verifico se o caminho é diferende de null
+            if(treeFiles.getSelectionPath() != null){
+
+                //verifico se e um arquivo ou um peer
+                boolean hasChildren = (treeFiles.getModel().getChildCount(treeFiles.getSelectionPath().getLastPathComponent()) > 0);
+
+                if (! hasChildren){
+
+                    //pego o nome do arquivo
+                    String fileName = treeFiles.getSelectionPath().getLastPathComponent().toString();
+                    String peerName = treeFiles.getSelectionPath().getParentPath().getLastPathComponent().toString();
+
+                    //verifico se não é o peer local, senão não faz sentido requisitar download.
+                    if (peerName.equals(SemanticManager.getInstance().getNomePeer())){
+                        return;
+                    }
+                    
+                    if (SemanticManager.getInstance().getDataManager().verificarDownaloaded(fileName, peerName)) {
+                        menuDownload.setText("Download...");
+                        menuDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/download.png")));
+                    }else{
+                        menuDownload.setText("Send Download Resquest to Peer...");
+                        menuDownload.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notdownload.png")));
+                    }
+
+                    //exibo o popupMenu para iniciar a cópia dos arquivos
+                    ppmDownloads.show(treeFiles, evt.getX(), evt.getY());
+                }
+            }
+        }
+    }//GEN-LAST:event_treeFilesMouseReleased
+
+    private void actMostrarPeersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actMostrarPeersActionPerformed
+        FPeerConectados frmPeerConnected = new FPeerConectados(this, true, peers);
+        frmPeerConnected.setVisible(true);
+    }//GEN-LAST:event_actMostrarPeersActionPerformed
+
+    private void actInserirServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actInserirServicoActionPerformed
+        //exibo o gerente de arquivos
+        SemanticManager.getInstance().getServiceManager().executeWSDLToOWLs(false);
+    }//GEN-LAST:event_actInserirServicoActionPerformed
+
+    private void actVerServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actVerServicosActionPerformed
+        SemanticManager.getInstance().getServiceManager().showServices();
+    }//GEN-LAST:event_actVerServicosActionPerformed
+
+    private void actSupeNodeDomainsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actSupeNodeDomainsActionPerformed
+        SemanticManager.getInstance().getInterestManager().showDomains();
+    }//GEN-LAST:event_actSupeNodeDomainsActionPerformed
+
+    private void actMyDomainsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actMyDomainsActionPerformed
+        SemanticManager.getInstance().getInterestManager().showMyDomainsOntologies();
+    }//GEN-LAST:event_actMyDomainsActionPerformed
+
+    private void actIncludeDomainsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actIncludeDomainsActionPerformed
+        SemanticManager.getInstance().getInterestManager().includeNewDomains();
+    }//GEN-LAST:event_actIncludeDomainsActionPerformed
+
+    private void rdbServicosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbServicosActionPerformed
+        treeFileOptions.setVisible(false);
+        
+        SemanticManager.getInstance().getCompositionManager().showServicesSerach();
+        
+        rdbRecursos.setSelected(true);
+    }//GEN-LAST:event_rdbServicosActionPerformed
+
+    private void rdbRecursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rdbRecursosActionPerformed
+        treeFileOptions.setVisible(true);
+    }//GEN-LAST:event_rdbRecursosActionPerformed
+
+    private void actAbstractWorkFlowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actAbstractWorkFlowActionPerformed
+        SemanticManager.getInstance().getCompositionManager().composerAbstractWF();
+    }//GEN-LAST:event_actAbstractWorkFlowActionPerformed
+
+    private void actInserirConectoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actInserirConectoresActionPerformed
+        //exibo o gerente de arquivos
+        SemanticManager.getInstance().getServiceManager().executeWSDLToOWLs(true);
+    }//GEN-LAST:event_actInserirConectoresActionPerformed
+
+    private void actOpenWorkflowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actOpenWorkflowActionPerformed
+        SemanticManager.getInstance().getCompositionManager().openFunctionalWorkflows();
+    }//GEN-LAST:event_actOpenWorkflowActionPerformed
+
+    private void actServiceResearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actServiceResearchActionPerformed
+        this.rdbServicosActionPerformed(evt);
+    }//GEN-LAST:event_actServiceResearchActionPerformed
+
+    private void actConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actConfigActionPerformed
+        if (JOptionPane.showConfirmDialog(this, "Do you really want reconfigurate the JXTA?", ".: e-ScienceNet :.", JOptionPane.YES_NO_OPTION, 
+                                      JOptionPane.QUESTION_MESSAGE, (new javax.swing.ImageIcon(getClass().getResource("/images/question.png")))) == 0){
+            
+            File file = new File(Config.JXTA_HOME + "reconf");
+            try{
+                file.createNewFile();
+            }catch(Exception e){}
+            
+            //crio o formulário de configuração de pontos da e-ScienceNet
+            FrmConfigPeer configuracaoDialog = new FrmConfigPeer(configurator);
+            configuracaoDialog.setVisible(true);
+            
+            //gravo os arquivos no XML para futuros downloads
+            SemanticManager.getInstance().getDataManager().gravarArquivos();
+            //informo aos demais nos que este aqui abandonou a rede
+            controlaMensagens.saidaPeer();
+            SemanticManager.getInstance().getSemanticChat().exitOnSemanticChat();
+            //finalizo o sistema
+            System.exit(0);
+        }
+    }//GEN-LAST:event_actConfigActionPerformed
+
+    private void actViewResultsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actViewResultsActionPerformed
+        SemanticManager.getInstance().getCompositionManager().openWorkflowResultFile();
+    }//GEN-LAST:event_actViewResultsActionPerformed
+
+    private void actExecuteSingleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actExecuteSingleActionPerformed
+        SemanticManager.getInstance().getServiceManager().executeSingleService();
+    }//GEN-LAST:event_actExecuteSingleActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu actArquivo;
+    private javax.swing.JMenuItem actAbstractWorkFlow;
+    private javax.swing.JMenu actComposition;
     private javax.swing.JMenuItem actConfig;
+    private javax.swing.JMenu actDomains;
+    private javax.swing.JMenuItem actExecuteSingle;
     private javax.swing.JMenu actGrupos;
+    private javax.swing.JMenuItem actIncludeDomains;
+    private javax.swing.JMenuItem actInserirArquivos;
+    private javax.swing.JMenuItem actInserirConectores;
+    private javax.swing.JMenuItem actInserirServico;
+    private javax.swing.JMenu actInterest;
+    private javax.swing.JMenuItem actMostrarPeers;
+    private javax.swing.JMenuItem actMyDomains;
+    private javax.swing.JMenuItem actOpenWorkflow;
+    private javax.swing.JMenu actRecursos;
     private javax.swing.JMenuItem actSair;
     private javax.swing.JMenuItem actSelectGroup;
+    private javax.swing.JMenuItem actServiceResearch;
+    private javax.swing.JMenu actSistema;
     private javax.swing.JMenu actSobre;
+    private javax.swing.JMenuItem actSupeNodeDomains;
+    private javax.swing.JMenuItem actVerArquivos;
+    private javax.swing.JMenuItem actVerServicos;
+    private javax.swing.JMenuItem actViewResults;
     private javax.swing.JButton btnLimparInfo;
     private javax.swing.JButton btnPesquisa;
+    private javax.swing.JTextPane edtInfoFiles;
     private javax.swing.JTextField edtPesquisa;
     private javax.swing.ButtonGroup gpbBusca;
     private javax.swing.ButtonGroup gpbEscopo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelEnviaMensagem;
-    private javax.swing.JLabel jLabelFileShared;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPaneInfo;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JTextArea jTextAreaInfo;
     private javax.swing.JTextField jTextFieldEnviaMensagem;
     private javax.swing.JLabel lblSplit;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JLabel lbleScienceNet;
+    private javax.swing.JMenuItem menuDownload;
     private javax.swing.JMenuItem menuItemCopiar;
+    private javax.swing.JMenu mnuArquivo;
     private javax.swing.JMenuBar mnuEScienceNet;
+    private javax.swing.JMenu mnuServicos;
     private javax.swing.JPanel pnlAllComponent;
-    private javax.swing.JPanel pnlArquivos;
     private javax.swing.JPanel pnlBusca;
     private javax.swing.JPanel pnlEnviaMsg;
     private javax.swing.JPanel pnlEscopo;
@@ -635,20 +1025,19 @@ public class VirtualDir extends JFrame implements Runnable,
     private javax.swing.JPanel pnlMainInfo;
     private javax.swing.JPanel pnlP2P;
     private javax.swing.JPanel pnlPesquisa;
-    private javax.swing.JPanel pnlPonto;
     private javax.swing.JPanel pnlSplit;
     private javax.swing.JPanel pnlSul;
     private javax.swing.JPopupMenu popMenuArquivos;
+    private javax.swing.JPopupMenu ppmDownloads;
     private javax.swing.JRadioButton rdbNosRede;
     private javax.swing.JRadioButton rdbPeerLocal;
     private javax.swing.JRadioButton rdbRecursos;
     private javax.swing.JRadioButton rdbServicos;
-    private javax.swing.JRadioButton rdbTodos;
     private javax.swing.JRadioButton rdbTodosPeers;
     private javax.swing.JSplitPane sptPanelMain;
     private javax.swing.JPanel statusBar;
-    private javax.swing.JTable tableArquivos;
-    private javax.swing.JTable tablePeers;
+    private javax.swing.JTree treeFileOptions;
+    private javax.swing.JTree treeFiles;
     // End of variables declaration//GEN-END:variables
 
     private GerenciaProcura gerenciaProcura;
@@ -658,108 +1047,21 @@ public class VirtualDir extends JFrame implements Runnable,
     private ControlaMensagens controlaMensagens;
     private NumberFormat FORMATADOR = DecimalFormat.getInstance();
     private File pastaPublicaPeer;
-    private Peer peerSelecionado;
     private Peers peers = new Peers();
-    private ModelPeer modelPeers = new ModelPeer();
-    private ModelArquivos modelArquivos = new ModelArquivos();
     private ConteudoRemoto conteudoRemoto;
     private FrmDownload frmDownload = null;
-     Configurator configurator = null;
+    private Configurator configurator = null;
+    private PeerGroup p = null;
 
     @Override
     public void notificarCancelamento(String msg) {
-        jTextAreaInfo.append("O Download do arquivo " + msg + " foi cancelado." + "\n");
+        jTextAreaInfo.append("The download of file " + msg + " was canceled." + "\n");
         jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
-    }
-    
-    // Tabela de usuarios
-    private class ModelPeer extends AbstractTableModel {
-        @Override
-        public int getColumnCount() {
-            return 1;
-        }
-        @Override
-        public int getRowCount() {
-            return peers.getQtdPeers() + 1;
-        }
-        @Override
-        public Object getValueAt(int rowIndex, int columnIndex) {
-            if (rowIndex == 0) {
-                return peerGroupManager.getMyPeerName() + " (Local)";
-            }
-
-            Peer user = peers.getPeer(rowIndex - 1);
-            return user.getNome();
-        }
-        @Override
-        public String getColumnName(int column) {
-                return "Nome";
-        }
-    }
-    
-    //Tabela de Arquivos
-    private class ModelArquivos extends AbstractTableModel {
-        
-        @Override
-        public int getColumnCount() {
-            return 2;
-        }
-        
-        @Override
-        public int getRowCount() {
-            if (tablePeers.getSelectedRow() == 0) {
-                    return pastaPublicaPeer.list().length;
-            }
-            if (peerSelecionado != null) {
-                    return peerSelecionado.getQtdAnuncioConteudo();
-            }
-         
-            return 0;
-        }
-        
-        @Override
-        public Object getValueAt(int rowIndex, int columnIndex) {
-                        
-            int indexUser = tablePeers.getSelectedRow();
-            //Arquivo Local
-            if (indexUser == 0) {
-                if (columnIndex == 0) {
-                    File s = pastaPublicaPeer.listFiles()[rowIndex];
-            
-                    if (s.isDirectory()) {
-                        return " Pasta não pode ser compartilhada - " + s.getName();
-                    } else {
-                        return s.getName();
-                    }
-                }
-                
-                return FORMATADOR.format(pastaPublicaPeer.listFiles()[rowIndex].length() / 1024.0) + " KB";
-            }
-            
-            //Arquivo Remoto
-            ContentAdvertisement adv = peerSelecionado.getAnuncioConteudo(rowIndex);
-            
-            if (columnIndex == 0) {
-                return adv.getName();
-            }
-            
-            return FORMATADOR.format(adv.getLength() / 1024.0) + " KB";
-        }
-        
-        @Override
-        public String getColumnName(int column) {
-            if (column == 0) {
-                return "Nome do Arquivo";
-            }
-            else {
-                return "Tamanho (KB)";
-            }
-        }
     }
     
     private void inicializacaoAuxiliar() {
         
-        // Ferifica compartilhamento
+        // Verifica compartilhamento
         String root = conteudoRemoto.lerDiretorioPreferencia();
         root += File.separator + "pastaPublica";
         pastaPublicaPeer = new File(root);
@@ -767,12 +1069,12 @@ public class VirtualDir extends JFrame implements Runnable,
         //verifico se a pasta pública para o compartilhamento de arquivos já existe
         if (!pastaPublicaPeer.exists()) {
             //crio a pasta publica para o compartilhamento de arquivos
-            jTextAreaInfo.append("Compartilhamento: " + pastaPublicaPeer.getAbsolutePath() + "\n");
+            jTextAreaInfo.append("Shared: " + pastaPublicaPeer.getAbsolutePath() + "\n");
             pastaPublicaPeer.mkdirs();
         }
         
         //seto o diretório compartilhado
-        jLabelFileShared.setText("Pasta compartilhada: [" + pastaPublicaPeer.getAbsolutePath() + "]");
+//        jLabelFileShared.setText("Shared folder: [" + pastaPublicaPeer.getAbsolutePath() + "]");
         
         //seto o título da aplicação junto com o nome do peer
         setTitle(".: e-ScienceNet - <"+ peerGroupManager.getMyPeerName() +"> :.");
@@ -784,78 +1086,37 @@ public class VirtualDir extends JFrame implements Runnable,
         //verifico se a pasta de arquivos a ser copiados já existe
         if (!f.exists()) {
                 //crio a pasta de arquivos copiados
-                jTextAreaInfo.append("Pasta de arquivos copiados: " + f.getAbsolutePath() + "\n");
+                jTextAreaInfo.append("The files were copied to: " + f.getAbsolutePath() + "\n");
                 f.mkdirs();
         }
         
         //crio a tela de progresso de download        
-        frmDownload = new FrmDownload(this, false, gerenciaProcura);                
+        frmDownload = new FrmDownload(this, false, gerenciaProcura);
         
         //Inicializa Formatadores
         FORMATADOR.setMaximumFractionDigits(2);
         
-        //gravo as infomações de Peers nas ontologias
-        SemanticManager.getInstance().gravarPeerOnOntology(configurator);
-    }
-    
-    private void atualizarPastaPublica() {
+        //crio o gerente de pesquisa
+        SemanticManager.getInstance().criarSearchManager(controlaMensagens, this);
+        //passo o objeto de pesquisa para o dataManager
+        SemanticManager.getInstance().getDataManager().setGerenciaProcura(gerenciaProcura);
         
-        //crio um enumerado a partir do gerente de pesquisa
-        Enumeration en = gerenciaProcura.recuperaConteudoLocal();
-
-        //crio um hash local
-        final HashMap hashLocal = new HashMap();
+        SemanticManager.getInstance().getDataManager().setConteudoRemoto(conteudoRemoto);
         
-        //verifico a existencia dos arquivos na pasta publica
-        while (en.hasMoreElements()) {
-                //abro o arquivo e o coloco na tabela hash
-                FileContent file = (FileContent) en.nextElement();
-                //hashLocal.put(file.getFile().getName(), file);
-        }
-
-        //preencho os arquivos da pastas publicas
-        File[] files = pastaPublicaPeer.listFiles(new FilenameFilter() {
-            //verifica se pode adivionar o arquivo a partir da lista do hash local
-            @Override
-            public boolean accept(File dir, String name) {
-                if (hashLocal.get(name) == null) {
-                    return true;
-                }
-                return false;
-            }
-        });
-
-        //Publica arquivos            
-        if (files.length != 0) {
-            //adiciono os aquivos no gerente de pesquisa
-            //TODO Verificar se é prociso melhorar o anúncio de arquivos para os demais nós da rede
-            //gerenciaProcura.addContent(files);
-/*            
-            for (int i = 0; i < files.length; i++){
-            
-            CMS cms = new CMS();
-            try {
-                cms.init(netPeerGroup, null, null);
-                cms.startApp(new File("AnuncioArquivos\\jxta-NetGroup", CMS.DEFAULT_DIR));
-                try {
-                    cms.getContentManager().share(files[i], peerGroupManager.getMyPeerName());
-                    
-                    //gerenciaProcura.addContent(files);
-                } catch (IOException ex) {
-                    Logger.getLogger(VirtualDir.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            } catch (PeerGroupException ex) {
-                Logger.getLogger(VirtualDir.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            }*/
-        }
-
+        //passo o controlador de mensagens para o gerente de interesse
+        SemanticManager.getInstance().getInterestManager().setControlaMensagens(controlaMensagens);
+        
+        SemanticManager.getInstance().getInterestManager().setPeers(peers);
+                
+        //passo o controlador de mensagens para o gerente de composiçao
+        SemanticManager.getInstance().getCompositionManager().setControlaMensagens(controlaMensagens);
+        
+        treeFileOptions.setVisible(rdbRecursos.isSelected());
     }
     
     public String getApplicationPath() {  
         //crio o objeto de arquivos
-        File dir = new File(".");
-        //TODO tentar trocar a classe PreferenceReader pela a do pacote instantp2p baixado em Downloads
+        File dir = new File(".");        
         //crio a instâncio do objeto de preferência de arquivos
         PreferenceReader prefs = PreferenceReader.getInstance();
         //abro as propriedades do arquivo        
@@ -876,15 +1137,38 @@ public class VirtualDir extends JFrame implements Runnable,
    
     private void iniciarSemantica(){
         try{
+            //seto o netPeerGroup no gerente de semantica
+            SemanticManager.getInstance().setNetPeerGroup(netPeerGroup);
             //crio o gerente de semântica
             SemanticManager.getInstance().criarRepositorio(getApplicationPath());
+            //seto o usuário no gerente de semantica
+            SemanticManager.getInstance().setNomePeer(configurator.getName());         
+            //gravo as infomações de Peers nas ontologias
+            SemanticManager.getInstance().gravarPeerOnOntology(configurator);
+            //crio o chat para a troca semantica de grupos
+            SemanticManager.getInstance().createSemanticChat(netPeerGroup); 
+            SemanticManager.getInstance().getSemanticChat().setjTextAreaInfo(jTextAreaInfo);
+            //seto os peerGroup para o gerente de interesse
+            PeerGroupManager pgm = new PeerGroupManager(netPeerGroup, netPeerGroup);
+            SemanticManager.getInstance().getInterestManager().setPgm(pgm);
             
-            //TODO: Verificar se o peer já está associado a algum grupo
+            //seto os diretorio para o gerente de servico
+            ServiceManager serviceManager = new ServiceManager(getApplicationPath(), 
+                                                               SemanticManager.getInstance().getDirOntology() + File.separator + SemanticManager.SERVICES_OWL_DIR);            
+            SemanticManager.getInstance().setServiceManager(serviceManager);
             
-            //verifico os grupos
-            SemanticManager.getInstance().getInterestManager().exibirGrupos();
+            //verificar se o peer já está associado a algum grupo            
+            PeerGroupModel peerGroupModel = SemanticManager.getInstance().verificarPeerGroup();
+            if (peerGroupModel != null){
+                SemanticManager.getInstance().getInterestManager().setGrupoSelecionado(peerGroupModel);
+            }else{
+                //verifico os grupos                
+                SemanticManager.getInstance().getInterestManager().exibirGrupos();
+            }           
+
         }catch(Exception e){
-            System.out.println(e.getMessage());
+            JOptionPane.showMessageDialog(null, "Don't was possible to begin the Semantic Manager\n\nError: " + e.getMessage());
+            System.exit(0);
         }
     }
     
@@ -902,17 +1186,34 @@ public class VirtualDir extends JFrame implements Runnable,
                 FrmConfigPeer configuracaoDialog = new FrmConfigPeer(configurator);
                 configuracaoDialog.setVisible(true);
             }
+            
+            //crio o grupo para a comunicação do peer no JXTA            
+            netPeerGroup = PeerGroupFactory.newNetPeerGroup();
                         
-            //TODO: Colocar a inicialização de semântica dentro do if de configuração
+            //verifico se o login foi cancelado
+            if(netPeerGroup.getMembershipService().getDefaultCredential() == null){
+                System.exit(0);
+            }
+            
             //inicio a semantica do peer
             iniciarSemantica();
             
-            //crio o grupo para a comunicação do peer no JXTA
-            netPeerGroup = PeerGroupFactory.newNetPeerGroup();
+            //verifico se algum grupo foi selecionado         
+            if (SemanticManager.getInstance().getInterestManager().getGrupoSelecionado() == null){
+                System.out.println("The e-ScienceNet will be closed because don't was made the group selection.");
+                SemanticManager.getInstance().getSemanticChat().exitOnSemanticChat();
+                //finalizo o sistema
+                System.exit(0);
+            }
             
-            //TODO: VERIFICAR GRUPO
-            PeerGroupAdvertisement adv = groupsInLocalCache();            
-            PeerGroup p = netPeerGroup.newGroup(adv);
+            PeerGroupAdvertisement adv = SemanticManager.getInstance().getInterestManager().obterGruposJXTA(netPeerGroup, 
+                                         SemanticManager.getInstance().getInterestManager().getGrupoSelecionado().getGroupName());                          
+            
+            if (adv != null){
+                p = netPeerGroup.newGroup(adv);                
+            }else{
+                p = netPeerGroup;   
+            }
             
             //crio o serviço de rendezVous e passo este formulário para trabalhar como ouvinte da rede
             rendezVousService = p.getRendezVousService();
@@ -920,9 +1221,9 @@ public class VirtualDir extends JFrame implements Runnable,
             
             //crio o gerenciados de grupos passado o grupo deste ponto
             peerGroupManager = new PeerGroupManager(p, netPeerGroup);
-            
+                        
             //Registra ouvinte para descobertas
-            gerenciaProcura = new GerenciaProcura(peerGroupManager, this);
+            gerenciaProcura = new GerenciaProcura(peerGroupManager, this, netPeerGroup.getDiscoveryService());
             
             //Registra conteúdos remotos            
             conteudoRemoto = new ConteudoRemoto(this, gerenciaProcura);
@@ -932,41 +1233,35 @@ public class VirtualDir extends JFrame implements Runnable,
             chat.addListener(this);
 
             controlaMensagens = new ControlaMensagens(p, peerGroupManager.getMyPeerName());
-            controlaMensagens.setListener(this);
-            
-            //TODO: Grupo novo            
-            //rendezVousService = p.getRendezVousService();            
-            //peerGroupManager.joinGroup(p, adv, true);       
-            //controlaMensagens.setGrupo(p);
-            //gerenciaProcura.grupoAlterado(p);
+            controlaMensagens.setListener(this);          
             
             //faço a inicialização dos demais componentes da e-ScienceNet
-            inicializacaoAuxiliar();
+            inicializacaoAuxiliar();                        
             
             //Inicia Thread
             Thread thread = new Thread(this);
             thread.start();
         } catch (Exception e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "It wasn't possible to start e-ScienceNet." + e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
+            System.exit(0);
         }
     }
     
     @Override
     public void rendezvousEvent(RendezvousEvent event) {
-            jTextAreaInfo.append("Nó de encontro (RendezVous): " + event.getPeer() + "\n");
+            jTextAreaInfo.append("RendezVous Node (RendezVous): " + event.getPeer() + "\n");
             jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
     }
     
     @Override
     public void run() {
        while (true) {
-            try {
-                atualizarPastaPublica();
+            try {                
                 gerenciaProcura.iniciaProcura("*");
                 controlaMensagens.procuraPeers();
                 Thread.sleep(10000);
             } catch (Exception iox) {
-                    jTextAreaInfo.append("ERRO de execução: " + iox.getMessage() + " \n ");
+                    jTextAreaInfo.append("Execution fault: " + iox.getMessage() + " \n ");
                     jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
             }
         }
@@ -975,7 +1270,7 @@ public class VirtualDir extends JFrame implements Runnable,
     @Override
     public void eventoMensagem(String user, String msg) {
         //exibo as mensagens que foram trocadas entres os nós        
-        jTextAreaInfo.append(user.toUpperCase() + " (Mensagem): " + msg + "\n");
+        jTextAreaInfo.append(user.toUpperCase() + " (Message): " + msg + "\n");
         jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
     }
 
@@ -990,42 +1285,49 @@ public class VirtualDir extends JFrame implements Runnable,
         //atualizo os nos do sistema
         if (peers.atualizaPeer(name)) {
             //seto a informação na area de informação
-            jTextAreaInfo.append("Novo nó encontrado: [" + name + "]\n");
+            jTextAreaInfo.append("New peer finded: [" + name + "]\n");
             jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
-            //coloco o peer na tabela de peers
-            modelPeers.fireTableDataChanged();
         }
     }
 
     @Override
     public void eventoSaidaPeer(String name) {
         //removo o nó
-        peers.removePeer(name);
-        //altero o conteúdo da lista de nó
-        modelPeers.fireTableDataChanged();
+        peers.removePeer(name);     
         //exibo a mensagem de que o nó está desconectado
-        jTextAreaInfo.append("O nó [" + name + "] foi desconectado da e-ScienceNet\n");
+        jTextAreaInfo.append("The peer [" + name + "] was unpluged of e-ScienceNet\n");
         jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
+        
+        //removo o peer da lista de resultados
+        this.removerPeerOfTree(name);
     }
+    
+    private void removerPeerOfTree(String name){
+        
+        if (! name.equals(SemanticManager.getInstance().getNomePeer())){
+            DefaultMutableTreeNode rootModel = (DefaultMutableTreeNode) treeFiles.getModel().getRoot();
+            DefaultTreeModel modelTree = new DefaultTreeModel(rootModel);  
+            
+            for(int i = 0; i < modelTree.getChildCount(rootModel); i++){
 
-    @Override
-    public void valueChanged(ListSelectionEvent e) {
-        
-        //pego o indice do peer selecionado
-        int indexSelected = tablePeers.getSelectedRow();
-        modelArquivos.fireTableDataChanged();
-        
-        //verifico se e o no local ou se nenhum ponto foi selecionado, retornando que nenhum ponto foi selecionado
-        if (indexSelected == 0 || indexSelected == -1) {
-            peerSelecionado = null;
-            return;
+                if (modelTree.getChild(modelTree.getRoot(), i).toString().equals(name)){                
+                    DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) modelTree.getChild(modelTree.getRoot(), i);                
+                    modelTree.removeNodeFromParent(selectedNode);  
+                    break;
+                }
+            }
+
+            treeFiles.setModel(modelTree);    
+            
+            for (int i = 0; i < treeFiles.getRowCount(); i++) {
+                treeFiles.expandRow(i);
+            }           
+            
+            SemanticManager.getInstance().getSearchManager().removerArquivosListaByPeer(name);
         }
-        
-        //retorno o no selecionado
-        peerSelecionado = peers.getPeer(indexSelected - 1);
     }
 
-    @Override
+   @Override
     public void eventoDescoberta(EventoDescoberta event) {
         //crio a lista de anuncios recuperados no sistema
         List lista = event.recuperaAnuncios();
@@ -1040,15 +1342,25 @@ public class VirtualDir extends JFrame implements Runnable,
             //verifico se é uma instância de anuncio de conteudo
             if (ob instanceof ContentAdvertisement) {
                 //pego o anuncio de conteúdo
-                ContentAdvertisement adv = (ContentAdvertisement) lista.get(i);
-                
+                ContentAdvertisement adv = (ContentAdvertisement) lista.get(i);               
+                                
                 //verifico se é para criar um novo arquivo de anuncio de conteúdo
                 boolean newFile = peers.atualizaAnuncioConteudo(adv.getDescription(), adv);
                 //verifico se é para criar o arquivo
                 if (newFile) {
-                    //exibo a mensagem de que foram encontrados arquivos em um nó
-                    jTextAreaInfo.append("Novo arquivo encontrado no nó [" + adv.getDescription() + "]: " + adv.getName() + "\n");
-                    jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
+                    
+                    //verifico se o arquivo ja existe na lista
+                    if (SemanticManager.getInstance().getDataManager().indexOfFileDownloaded(adv.getName(), adv.getDescription()) == -1){
+                       
+                        DownloadedFilesModel newFileModel = new DownloadedFilesModel();
+                        newFileModel.setFileName(adv.getName());
+                        newFileModel.setPeerName(adv.getDescription());
+                        SemanticManager.getInstance().getDataManager().getLstFilesDownloaded().add(newFileModel);
+                        
+                        //exibo a mensagem de que foram encontrados arquivos em um nó
+                        jTextAreaInfo.append("The file \"" + adv.getName() + "\" on peer [" + adv.getDescription() + "] is ready for download.\n");
+                        jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
+                    }
                 }
             }
         }
@@ -1070,15 +1382,15 @@ public class VirtualDir extends JFrame implements Runnable,
     @Override
     public void notificarDownloadFalha() {
         //exibo a notificação de que ocorreram falhas ao realizar a transferencia de arquivos
-        jTextAreaInfo.append("ERRO em download do arquivo" + "\n");
+        jTextAreaInfo.append("Download file fault" + "\n");
         jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
     }
 
     @Override
     public void notificarDownloadCompleto(String url) {
         //exibo a conclusão do download do arquivo
-        jTextAreaInfo.append("Tranferência de Arquivos Concluída. <" + url + ">\n");
-        jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
+        //jTextAreaInfo.append("File transfer complete. <" + url + ">\n");
+        //jScrollPaneInfo.getVerticalScrollBar().setValue(jScrollPaneInfo.getVerticalScrollBar().getMaximum());
         
         //fecho a janela de download
         frmDownload.setVisible(false);
@@ -1121,5 +1433,34 @@ public class VirtualDir extends JFrame implements Runnable,
         } catch (Exception e) {}
         jTextAreaInfo.append("--- end local cache ---\n");        
         return adv;
+    }
+    
+    public JTree getTreeFile(){
+        return this.treeFiles;
+    }
+    
+    //método responsável por fazer a pesquisa nos peers
+    private void pesquisar(String flag){
+        
+        //faço a limpeza da lista de arquivos
+        SemanticManager.getInstance().getSearchManager().limparListaArquivos();
+        
+        //realizo a verificação de que tipo de pesquisa sera realizada
+        if (rdbTodosPeers.isSelected()){
+            SemanticManager.getInstance().getSearchManager().pesquisaLocal(flag, netPeerGroup.getPeerName());
+            //envio uma mensagen aos demais nós através do controlados de mensagens
+            SemanticManager.getInstance().getSearchManager().enviarRequisicaoRemota(flag);
+        }else if (rdbNosRede.isSelected()){
+            //envio uma mensagen aos demais nós através do controlados de mensagens
+            SemanticManager.getInstance().getSearchManager().enviarRequisicaoRemota(flag);
+        }else{
+            //busca local
+            SemanticManager.getInstance().getSearchManager().pesquisaLocal(flag, netPeerGroup.getPeerName());
+        }
+    }
+
+    @Override
+    public void valueChanged(ListSelectionEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

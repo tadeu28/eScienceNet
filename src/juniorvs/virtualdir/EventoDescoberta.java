@@ -40,7 +40,7 @@ public class EventoDescoberta extends EventObject {
         while (en.hasMoreElements()) {
             //adiciono os elementos encontrados na lista
             listaAnuncios.add(en.nextElement());
-        }
+        }        
     }
     
     /**

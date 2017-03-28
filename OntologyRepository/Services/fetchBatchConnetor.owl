@@ -1,0 +1,167 @@
+<rdf:RDF
+    xmlns:j.0="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl">
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Grounding.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#SubParameter">
+    <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database"/>
+  <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format"/>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#hasSubParameter">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#SubParameter"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#isSubParameterOf"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#isSubParameterOf">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#SubParameter"/>
+    <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#hasSubParameter"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#parameterTypeXSD">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <process:AtomicProcess rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorProcess">
+    <rdfs:label>fetchBatchConnetorProcess</rdfs:label>
+    <service:describes>
+      <service:Service rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorService">
+        <service:presents>
+          <profile:Profile rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorProfile">
+            <service:presentedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorService"/>
+            <profile:serviceName>fetchBatchConnetor</profile:serviceName>
+            <profile:textDescription>
+Get a set of database entries (see http://www.ebi.ac.uk/Tools/webservices/services/dbfetch#fetchbatch_db_ids_format_style).   </profile:textDescription>
+            <profile:hasInput>
+              <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#db">
+                <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+                <rdfs:label>db</rdfs:label>
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database</process:parameterType>
+              </process:Input>
+            </profile:hasInput>
+            <profile:hasInput>
+              <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#ids">
+                <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+                <rdfs:label>ids</rdfs:label>
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</process:parameterType>
+              </process:Input>
+            </profile:hasInput>
+            <profile:hasInput>
+              <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#format">
+                <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+                <rdfs:label>format</rdfs:label>
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</process:parameterType>
+              </process:Input>
+            </profile:hasInput>
+            <profile:hasInput>
+              <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#style">
+                <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+                <rdfs:label>style</rdfs:label>
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+              </process:Input>
+            </profile:hasInput>
+            <profile:hasOutput>
+              <process:Output rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchReturn">
+                <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+                <rdfs:label>fetchBatchReturn</rdfs:label>
+                <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</process:parameterType>
+              </process:Output>
+            </profile:hasOutput>
+          </profile:Profile>
+        </service:presents>
+        <service:describedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorProcess"/>
+        <service:supports>
+          <grounding:WsdlGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorGrounding">
+            <service:supportedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorService"/>
+            <grounding:hasAtomicProcessGrounding>
+              <grounding:WsdlAtomicProcessGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorAtomicProcessGrounding">
+                <grounding:wsdlOperation>
+                  <grounding:WsdlOperationRef>
+                    <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#fetchBatch</grounding:operation>
+                    <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#WSDbfetchDoclit</grounding:portType>
+                  </grounding:WsdlOperationRef>
+                </grounding:wsdlOperation>
+                <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl</grounding:wsdlDocument>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#ids"/>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#ids</grounding:wsdlMessagePart>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#format"/>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#format</grounding:wsdlMessagePart>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#style"/>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#style</grounding:wsdlMessagePart>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#db"/>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#db</grounding:wsdlMessagePart>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlOutput>
+                  <grounding:WsdlOutputMessageMap>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchReturn"/>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl#fetchBatchReturn</grounding:wsdlMessagePart>
+                  </grounding:WsdlOutputMessageMap>
+                </grounding:wsdlOutput>
+                <grounding:owlsProcess rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchConnetorProcess"/>
+                <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit#fetchBatchRequest</grounding:wsdlInputMessage>
+                <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit#fetchBatchResponse</grounding:wsdlOutputMessage>
+              </grounding:WsdlAtomicProcessGrounding>
+            </grounding:hasAtomicProcessGrounding>
+          </grounding:WsdlGrounding>
+        </service:supports>
+      </service:Service>
+    </service:describes>
+    <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#db"/>
+    <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#ids"/>
+    <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#format"/>
+    <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#style"/>
+    <process:hasOutput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/fetchBatchConnetor.owl#fetchBatchReturn"/>
+  </process:AtomicProcess>
+</rdf:RDF>

@@ -1,0 +1,11 @@
+
+<list>
+  <com.esciencenet.models.PeerGroupModel>
+    <groupName>Bioinformatics</groupName>
+    <groupID>urn:jxta:uuid-17DA279E047547A1BDAD8EC10EBE08C402</groupID>
+    <groupArea>Bioinformatics</groupArea>
+    <groupDescription>The semantic group base on bioinformatics concepts.</groupDescription>
+    <groupCreator>Tadeu_PEER</groupCreator>
+    <dataCriacao>29/11/2013</dataCriacao>
+  </com.esciencenet.models.PeerGroupModel>
+</list>

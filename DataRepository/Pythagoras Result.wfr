@@ -1,0 +1,156 @@
+[12/30/2013 at 05:39:25 PM]: The task [Read] whose its operation is [readThreeNumbersSimpleMath] has been started.
+[12/30/2013 at 05:39:25 PM]: The connector [splitNumbersMath] has been started.
+[12/30/2013 at 05:39:26 PM]: The connector [splitNumbersMath] was executed with success.
+[12/30/2013 at 05:39:26 PM]: The connector [splitNumbersMath_1] has been started.
+[12/30/2013 at 05:39:26 PM]: The connector [splitNumbersMath_1] was executed with success.
+[12/30/2013 at 05:39:26 PM]: The connector [splitNumbersMath_2] has been started.
+[12/30/2013 at 05:39:26 PM]: The connector [splitNumbersMath_2] was executed with success.
+[12/30/2013 at 05:39:26 PM]: The task [Read] whose its operation is [readThreeNumbersSimpleMath] was executed with success.
+[12/30/2013 at 05:39:26 PM]: The task [Pot] whose its operation is [potSquareSimpleMath] has been started.
+[12/30/2013 at 05:39:27 PM]: The task [Pot] whose its operation is [potSquareSimpleMath] was executed with success.
+[12/30/2013 at 05:39:27 PM]: The task [Pot] whose its operation is [potSquareSimpleMath_1] has been started.
+[12/30/2013 at 05:39:27 PM]: The task [Pot] whose its operation is [potSquareSimpleMath_1] was executed with success.
+[12/30/2013 at 05:39:27 PM]: The task [Pot] whose its operation is [potSquareSimpleMath_2] has been started.
+[12/30/2013 at 05:39:27 PM]: The task [Pot] whose its operation is [potSquareSimpleMath_2] was executed with success.
+[12/30/2013 at 05:39:27 PM]: The task [Sum] whose its operation is [sumSimpleMath] has been started.
+[12/30/2013 at 05:39:28 PM]: The task [Sum] whose its operation is [sumSimpleMath] was executed with success.
+[12/30/2013 at 05:39:28 PM]: The task [Equals] whose its operation is [equalsSimpleMath] has been started.
+[12/30/2013 at 05:39:28 PM]: The task [Equals] whose its operation is [equalsSimpleMath] was executed with success.
+[12/30/2013 at 05:39:28 PM]: The Pythagoras.awf was executed completely with success at 00:00:03:3395! Congratulations!
+
+FINAL RESULT:
+-------------------------------------------------------------------------------
+return = true
+-------------------------------------------------------------------------------
+
+
+DETAILED RESULT:
+COMPOSITION NAME: Pythagoras.awf
+COMPOSITION DATE: 41/30/2013
+
+***************************************************************************************************************
+TASK NAME: Read
+OPERATION NAME: readThreeNumbersSimpleMath
+OPERATION DOMAIN TERM: Read
+OPERATION SERVICE URL: http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: numberOne
+Parameter Valeu: 5
+
+Parameter Name: numberThree
+Parameter Valeu: 4
+
+Parameter Name: numberTwo
+Parameter Valeu: 3
+
+OUTPUT PARAMETERS:
+
+Parameter Name: numeros
+Parameter Valeu: 5.0§3.0§4.0
+
+***************************************************************************************************************
+TASK NAME: Pot
+OPERATION NAME: potSquareSimpleMath
+OPERATION DOMAIN TERM: Pot
+OPERATION SERVICE URL: http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: number
+Parameter Valeu: 5.0
+
+OUTPUT PARAMETERS:
+
+Parameter Name: return
+Parameter Valeu: 25.0
+
+***************************************************************************************************************
+TASK NAME: Pot
+OPERATION NAME: potSquareSimpleMath_1
+OPERATION DOMAIN TERM: Pot
+OPERATION SERVICE URL: http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: number
+Parameter Valeu: 3.0
+
+OUTPUT PARAMETERS:
+
+Parameter Name: return
+Parameter Valeu: 9.0
+
+***************************************************************************************************************
+TASK NAME: Pot
+OPERATION NAME: potSquareSimpleMath_2
+OPERATION DOMAIN TERM: Pot
+OPERATION SERVICE URL: http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: number
+Parameter Valeu: 4.0
+
+OUTPUT PARAMETERS:
+
+Parameter Name: return
+Parameter Valeu: 16.0
+
+***************************************************************************************************************
+TASK NAME: Sum
+OPERATION NAME: sumSimpleMath
+OPERATION DOMAIN TERM: Sum
+OPERATION SERVICE URL: http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: numberOne
+Parameter Valeu: 9.0
+
+Parameter Name: numberTwo
+Parameter Valeu: 16.0
+
+OUTPUT PARAMETERS:
+
+Parameter Name: return
+Parameter Valeu: 25.0
+
+***************************************************************************************************************
+TASK NAME: Equals
+OPERATION NAME: equalsSimpleMath
+OPERATION DOMAIN TERM: Equals
+OPERATION SERVICE URL: http://192.168.13.128:8080/SimpleMathWS/SimpleMathWebServiec?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: number
+Parameter Valeu: 25.0
+
+Parameter Name: number2
+Parameter Valeu: 25.0
+
+OUTPUT PARAMETERS:
+
+Parameter Name: return
+Parameter Valeu: true
+
+***************************************************************************************************************
+
+
+
+***************************************************************************************************************
+CONNECTORS INFORMATION
+_______________________________________________________________________________________________________________
+Parameter Name: return
+Parameter Valeu: 5.0
+
+Parameter Name: return
+Parameter Valeu: 3.0
+
+Parameter Name: return
+Parameter Valeu: 4.0
+
+
+***************************************************************************************************************

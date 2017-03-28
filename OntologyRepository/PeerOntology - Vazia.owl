@@ -1,0 +1,722 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY PeerOntology "http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#"
+     xml:base="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:PeerOntology="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl">
+        <owl:versionInfo rdf:datatype="&xsd;string">1.1</owl:versionInfo>
+        <rdfs:comment rdf:datatype="&xsd;string">Ontologia responsavel por informacoes sobre o peer local e seus recursos, incluindo os grupos de que cada recurso corresponde</rdfs:comment>
+        <owl:versionIRI rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupHasResources -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;groupHasResources">
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&PeerOntology;Resource"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;pertenceOneGroup"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupWasCreated -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;groupWasCreated">
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&PeerOntology;Peer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasConnector -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasConnector">
+        <rdfs:range rdf:resource="&PeerOntology;Connectors"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Services"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasDomain -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasDomain">
+        <rdfs:range rdf:resource="&PeerOntology;Domain"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;isDomainOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasFile -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasFile">
+        <rdfs:range rdf:resource="&PeerOntology;Files"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:subPropertyOf rdf:resource="&PeerOntology;hasResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasGroup -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasGroup">
+        <rdfs:range rdf:resource="&PeerOntology;Group"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;isGroupOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasResource -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasResource">
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&PeerOntology;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasService -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasService">
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&PeerOntology;Services"/>
+        <rdfs:subPropertyOf rdf:resource="&PeerOntology;hasResource"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;isServiceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#hasWS -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;hasWS">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Services"/>
+        <rdfs:range rdf:resource="&PeerOntology;WebServices"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;isWsOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isConnectorOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isConnectorOf">
+        <rdfs:domain rdf:resource="&PeerOntology;Connectors"/>
+        <rdfs:range rdf:resource="&PeerOntology;Services"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;hasConnector"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isDomainOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isDomainOf">
+        <rdfs:domain rdf:resource="&PeerOntology;Domain"/>
+        <rdfs:range rdf:resource="&PeerOntology;Group"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isFileOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isFileOf">
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&PeerOntology;Peer"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;hasFile"/>
+        <rdfs:subPropertyOf rdf:resource="&PeerOntology;isResourceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isGroupOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isGroupOf">
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&PeerOntology;Peer"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isResourceOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isResourceOf">
+        <rdfs:range rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Resource"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;hasResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isServiceOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isServiceOf">
+        <rdfs:range rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Services"/>
+        <rdfs:subPropertyOf rdf:resource="&PeerOntology;isResourceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#isWsOf -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;isWsOf">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:range rdf:resource="&PeerOntology;Services"/>
+        <rdfs:domain rdf:resource="&PeerOntology;WebServices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#makeUse -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;makeUse">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Services"/>
+        <rdfs:range rdf:resource="&PeerOntology;WebServices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerCreate -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;peerCreate">
+        <rdfs:range rdf:resource="&PeerOntology;Group"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <owl:inverseOf rdf:resource="&PeerOntology;groupWasCreated"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#pertenceOneGroup -->
+
+    <owl:ObjectProperty rdf:about="&PeerOntology;pertenceOneGroup">
+        <rdfs:range rdf:resource="&PeerOntology;Group"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#domainDescription -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;domainDescription">
+        <rdfs:domain rdf:resource="&PeerOntology;Domain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#domainName -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;domainName">
+        <rdfs:domain rdf:resource="&PeerOntology;Domain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#domainURI -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;domainURI">
+        <rdfs:domain rdf:resource="&PeerOntology;Domain"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileCreationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileDescription -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileExtension -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileExtension">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileName -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileOWLDomain -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileOWLDomain">
+        <rdfs:domain rdf:resource="&PeerOntology;Domain"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#filePath -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;filePath">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileSize -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileSize">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#fileType -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;fileType">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Files"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupArea -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;groupArea">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;groupCreationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupDescription -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;groupDescription">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupIdJXTA -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;groupIdJXTA">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#groupName -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;groupName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Group"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerCreationDate -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;peerCreationDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerEmail -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;peerEmail">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerIP -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;peerIP">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerIdJXTA -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;peerIdJXTA">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerInformation -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;peerInformation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#peerName -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;peerName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&PeerOntology;Peer"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceDomainMainTerm -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;serviceDomainMainTerm">
+        <rdfs:domain rdf:resource="&PeerOntology;WebServices"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceOWLSPath -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;serviceOWLSPath">
+        <rdfs:domain rdf:resource="&PeerOntology;WebServices"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceWSDLPath -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;serviceWSDLPath">
+        <rdfs:domain rdf:resource="&PeerOntology;WebServices"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#serviceWSDLURL -->
+
+    <owl:DatatypeProperty rdf:about="&PeerOntology;serviceWSDLURL">
+        <rdfs:domain rdf:resource="&PeerOntology;WebServices"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Connectors -->
+
+    <owl:Class rdf:about="&PeerOntology;Connectors">
+        <rdfs:subClassOf rdf:resource="&PeerOntology;Services"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isConnectorOf"/>
+                <owl:onClass rdf:resource="&PeerOntology;Services"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Domain -->
+
+    <owl:Class rdf:about="&PeerOntology;Domain">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isDomainOf"/>
+                <owl:allValuesFrom rdf:resource="&PeerOntology;Group"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Files -->
+
+    <owl:Class rdf:about="&PeerOntology;Files">
+        <rdfs:subClassOf rdf:resource="&PeerOntology;Resource"/>
+        <owl:disjointWith rdf:resource="&PeerOntology;Services"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Group -->
+
+    <owl:Class rdf:about="&PeerOntology;Group">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isGroupOf"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;Peer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;hasDomain"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;Domain"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;groupWasCreated"/>
+                <owl:onClass rdf:resource="&PeerOntology;Peer"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Peer -->
+
+    <owl:Class rdf:about="&PeerOntology;Peer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;peerName"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;hasGroup"/>
+                <owl:onClass rdf:resource="&PeerOntology;Group"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;peerCreate"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;Group"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#REST -->
+
+    <owl:Class rdf:about="&PeerOntology;REST">
+        <rdfs:subClassOf rdf:resource="&PeerOntology;WebServices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Resource -->
+
+    <owl:Class rdf:about="&PeerOntology;Resource">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isResourceOf"/>
+                <owl:onClass rdf:resource="&PeerOntology;Peer"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;pertenceOneGroup"/>
+                <owl:onClass rdf:resource="&PeerOntology;Group"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#SOAP -->
+
+    <owl:Class rdf:about="&PeerOntology;SOAP">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;hasWS"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;WSDL"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&PeerOntology;WebServices"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;hasWS"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;WSDL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Services -->
+
+    <owl:Class rdf:about="&PeerOntology;Services">
+        <rdfs:subClassOf rdf:resource="&PeerOntology;Resource"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;hasWS"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;WebServices"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#Technology -->
+
+    <owl:Class rdf:about="&PeerOntology;Technology"/>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WSDL -->
+
+    <owl:Class rdf:about="&PeerOntology;WSDL">
+        <rdfs:subClassOf rdf:resource="&PeerOntology;WebServices"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isWsOf"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;SOAP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isWsOf"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&PeerOntology;SOAP"/>
+                            <rdf:Description rdf:about="&PeerOntology;Services"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.esciencenet.com.br/tadeuclasse/esciencenet/PeerOntology.owl#WebServices -->
+
+    <owl:Class rdf:about="&PeerOntology;WebServices">
+        <rdfs:subClassOf rdf:resource="&PeerOntology;Technology"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&PeerOntology;isWsOf"/>
+                <owl:someValuesFrom rdf:resource="&PeerOntology;Services"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&PeerOntology;Group"/>
+            <rdf:Description rdf:about="&PeerOntology;Peer"/>
+            <rdf:Description rdf:about="&PeerOntology;Resource"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

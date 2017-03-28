@@ -1,0 +1,491 @@
+<com.esciencenet.compositionmanager.CompositionModel>
+  <nameComposition>LaryssaAWF.awf</nameComposition>
+  <data>2013-12-30 21:46:16.597 UTC</data>
+  <lstServices>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>GetSequence</operationName>
+        <operationRealName>fetchBatch</operationRealName>
+        <operationDomainTerm>FASTA</operationDomainTerm>
+        <serviceURL>http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>db</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>genbank</manualContent>
+            <parentName>GetSequence - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>format</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>fasta</manualContent>
+            <parentName>GetSequence - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>ids</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>j00124</manualContent>
+            <parentName>GetSequence - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>style</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>raw</manualContent>
+            <parentName>GetSequence - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>fetchBatchReturn</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected>
+              <com.esciencenet.servicemanager.OWLSParam>
+                <paramName>sequences</paramName>
+                <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+                <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                <connectorAssociated/>
+                <paramConnectorAssociated/>
+                <paramConnected>
+                  <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>fetchBatchReturn</paramName>
+                    <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName>RecoverFasta_1 - T2</parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>fetchBatchReturn</paramName>
+                    <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName>GetSequence_2 - T3</parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </paramConnected>
+                <manualContent></manualContent>
+                <parentName>joinSequences - T4</parentName>
+                <valueReturned></valueReturned>
+              </com.esciencenet.servicemanager.OWLSParam>
+            </paramConnected>
+            <manualContent></manualContent>
+            <parentName>GetSequence - T1</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>Parameters:
+-database: to nucleotide: genbank; to protein: uniprotkb
+-ids: any fasta code
+-format: fasta
+-style: raw</serviceDescription>
+      </operation>
+      <task>get_sequences</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>joinSequences</nextTasks>
+      <taskCode>T1</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>RecoverFasta_1</operationName>
+        <operationRealName>fetchBatch</operationRealName>
+        <operationDomainTerm>FASTA</operationDomainTerm>
+        <serviceURL>http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>db</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>genbank</manualContent>
+            <parentName>RecoverFasta_1 - T2</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>format</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>fasta</manualContent>
+            <parentName>RecoverFasta_1 - T2</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>ids</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>j00145</manualContent>
+            <parentName>RecoverFasta_1 - T2</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>style</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>raw</manualContent>
+            <parentName>RecoverFasta_1 - T2</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam[2]"/>
+        </outputs>
+        <serviceDescription>
+Get a set of database entries (see http://www.ebi.ac.uk/Tools/webservices/services/dbfetch#fetchbatch_db_ids_format_style).   </serviceDescription>
+      </operation>
+      <task>get_sequences</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>joinSequences</nextTasks>
+      <taskCode>T2</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>GetSequence_2</operationName>
+        <operationRealName>fetchBatch</operationRealName>
+        <operationDomainTerm>FASTA</operationDomainTerm>
+        <serviceURL>http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>db</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>genbank</manualContent>
+            <parentName>GetSequence_2 - T3</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>format</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>fasta</manualContent>
+            <parentName>GetSequence_2 - T3</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>ids</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>j00189</manualContent>
+            <parentName>GetSequence_2 - T3</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>style</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>raw</manualContent>
+            <parentName>GetSequence_2 - T3</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam[3]"/>
+        </outputs>
+        <serviceDescription>Parameters:
+-database: to nucleotide: genbank; to protein: uniprotkb
+-ids: any fasta code
+-format: fasta
+-style: raw</serviceDescription>
+      </operation>
+      <task>get_sequences</task>
+      <petriOperation>AND-JOIN</petriOperation>
+      <nextTasks>joinSequences</nextTasks>
+      <taskCode>T3</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>joinSequences</operationName>
+        <operationRealName>joinSequences</operationRealName>
+        <operationDomainTerm>GroupSequences</operationDomainTerm>
+        <serviceURL>http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>separator</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>\n</manualContent>
+            <parentName>joinSequences - T4</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>sequences</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+            <paramType>http://ws/#sequence</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName>joinSequences - T4</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>return</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected>
+              <com.esciencenet.servicemanager.OWLSParam>
+                <paramName>sequence</paramName>
+                <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+                <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                <connectorAssociated/>
+                <paramConnectorAssociated/>
+                <paramConnected>
+                  <com.esciencenet.servicemanager.OWLSParam reference="../../../.."/>
+                </paramConnected>
+                <manualContent></manualContent>
+                <parentName>AlignmentClustalOmega - T5</parentName>
+                <valueReturned></valueReturned>
+              </com.esciencenet.servicemanager.OWLSParam>
+            </paramConnected>
+            <manualContent></manualContent>
+            <parentName>joinSequences - T4</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>Auto generated from http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL</serviceDescription>
+      </operation>
+      <task>read_and_format_sequence</task>
+      <petriOperation>SEQUENCE</petriOperation>
+      <nextTasks>AlignmentClustalOmega</nextTasks>
+      <taskCode>T4</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>AlignmentClustalOmega</operationName>
+        <operationRealName>run</operationRealName>
+        <operationDomainTerm>Clustal_Omega</operationDomainTerm>
+        <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>email</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>tadeu.classe@gmail.com</manualContent>
+            <parentName>AlignmentClustalOmega - T5</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>title</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>Clustal Omega</manualContent>
+            <parentName>AlignmentClustalOmega - T5</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>outfmt</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>fa</manualContent>
+            <parentName>AlignmentClustalOmega - T5</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam reference="../../../../com.esciencenet.compositionmanager.CompositionTaskModel[4]/operation/outputs/com.esciencenet.servicemanager.OWLSParam/paramConnected/com.esciencenet.servicemanager.OWLSParam"/>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>jobId</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>getStatusClustalOmega</operationName>
+                <operationRealName>getStatus</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>jobId</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>status</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[jobId == jobId]</compatibility>
+                <restriction>
+                  <time>60</time>
+                  <restrictionType>LOOP</restrictionType>
+                  <owlsParam reference="../../outputs/com.esciencenet.servicemanager.OWLSParam"/>
+                  <operator>!=</operator>
+                  <restrictionTerm>FINISHED</restrictionTerm>
+                </restriction>
+                <serviceDescription>Get the status of a submitted job
+
+Put a loop while output wasn&apos;t FINISHED and retrieve again at 60 seconds.</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>getResultClustalOmega_3</operationName>
+                <operationRealName>getResult</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>jobId</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>type</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent>aln-clustal</manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>name</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>output</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#base64Binary</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[jobId == jobId]</compatibility>
+                <serviceDescription>Get a job result formatted using a particular renderer</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+            </connectorAssociated>
+            <paramConnectorAssociated>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation/inputs/com.esciencenet.servicemanager.OWLSParam"/>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[2]/inputs/com.esciencenet.servicemanager.OWLSParam"/>
+            </paramConnectorAssociated>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName>AlignmentClustalOmega - T5</parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>This is a sequence align algorithm.
+To parameter:
+-outmt: &quot;fa&quot; or &quot;selex&quot; or &quot;clustal&quot;
+-sequence: any fasta format
+
+Obs: is necessary to connect some connector getStatus and before a connector getResult.</serviceDescription>
+      </operation>
+      <task>aligning</task>
+      <petriOperation></petriOperation>
+      <nextTasks></nextTasks>
+      <taskCode>T5</taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+  </lstServices>
+  <validated>false</validated>
+</com.esciencenet.compositionmanager.CompositionModel>

@@ -1,0 +1,151 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:j.0="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl">
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Grounding.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format"/>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#SubParameter">
+    <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#hasSubParameter">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#SubParameter"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#isSubParameterOf"/>
+    </owl:inverseOf>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#isSubParameterOf">
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#SubParameter"/>
+    <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#hasSubParameter"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#serviceRealName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#parameterTypeXSD">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#domainTerm">
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl#Service"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </owl:DatatypeProperty>
+  <service:Service rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesService">
+    <service:presents>
+      <profile:Profile rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesProfile">
+        <j.0:serviceRealName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >joinSequences</j.0:serviceRealName>
+        <service:presentedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesService"/>
+        <profile:serviceName>ReadANDFormat_Sequences</profile:serviceName>
+        <profile:textDescription>Read the sequences and connect them in a only output</profile:textDescription>
+        <profile:hasInput>
+          <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#sequences">
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</process:parameterType>
+            <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#sequences"/>
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://ws/#sequence</j.0:parameterTypeXSD>
+            <rdfs:label>sequences</rdfs:label>
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2002/07/owl#Thing</process:parameterType>
+            <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Input"/>
+          </owl:NamedIndividual>
+        </profile:hasInput>
+        <profile:hasInput>
+          <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#separator">
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+            <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#sequences"/>
+            <rdfs:label>separator</rdfs:label>
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+            <rdf:type rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Input"/>
+          </owl:NamedIndividual>
+        </profile:hasInput>
+        <profile:hasOutput>
+          <process:Output rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#return">
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+            <rdfs:label>return</rdfs:label>
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</process:parameterType>
+          </process:Output>
+        </profile:hasOutput>
+      </profile:Profile>
+    </service:presents>
+    <service:describedBy>
+      <process:AtomicProcess rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesProcess">
+        <rdfs:label>ReadANDFormat_SequencesProcess</rdfs:label>
+        <service:describes rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesService"/>
+        <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#sequences"/>
+        <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#separator"/>
+        <process:hasOutput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#return"/>
+      </process:AtomicProcess>
+    </service:describedBy>
+    <service:supports>
+      <grounding:WsdlGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesGrounding">
+        <service:supportedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesService"/>
+        <grounding:hasAtomicProcessGrounding>
+          <grounding:WsdlAtomicProcessGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesAtomicProcessGrounding">
+            <grounding:owlsProcess rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#ReadANDFormat_SequencesProcess"/>
+            <grounding:wsdlOperation>
+              <grounding:WsdlOperationRef>
+                <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL#joinSequences</grounding:operation>
+                <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL#BioWebServicePort</grounding:portType>
+              </grounding:WsdlOperationRef>
+            </grounding:wsdlOperation>
+            <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL</grounding:wsdlDocument>
+            <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://ws/#joinSequences</grounding:wsdlInputMessage>
+            <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://ws/#joinSequencesResponse</grounding:wsdlOutputMessage>
+            <grounding:wsdlInput>
+              <grounding:WsdlInputMessageMap>
+                <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#sequences"/>
+                <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL#sequences</grounding:wsdlMessagePart>
+              </grounding:WsdlInputMessageMap>
+            </grounding:wsdlInput>
+            <grounding:wsdlInput>
+              <grounding:WsdlInputMessageMap>
+                <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#separator"/>
+                <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL#separator</grounding:wsdlMessagePart>
+              </grounding:WsdlInputMessageMap>
+            </grounding:wsdlInput>
+            <grounding:wsdlOutput>
+              <grounding:WsdlOutputMessageMap>
+                <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/ReadANDFormat_Sequences.owl#return"/>
+                <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://192.168.79.129:8080/BioinformaticsWS/BioWebService?WSDL#return</grounding:wsdlMessagePart>
+              </grounding:WsdlOutputMessageMap>
+            </grounding:wsdlOutput>
+          </grounding:WsdlAtomicProcessGrounding>
+        </grounding:hasAtomicProcessGrounding>
+      </grounding:WsdlGrounding>
+    </service:supports>
+    <j.0:domainTerm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence</j.0:domainTerm>
+  </service:Service>
+</rdf:RDF>

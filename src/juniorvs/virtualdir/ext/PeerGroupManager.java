@@ -63,6 +63,7 @@ import java.net.UnknownServiceException;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import juniorvs.virtualdir.EventoDescoberta;
 import juniorvs.virtualdir.OuvinteDescoberta;
 import juniorvs.virtualdir.OuvinteEstruturaGrupo;
@@ -198,7 +199,7 @@ public class PeerGroupManager implements OuvinteDescoberta {
                             groupDiscover.searchAdvertisements("Name", groupName);
                     }
             } catch (Exception iox) {
-                    iox.printStackTrace();
+                    JOptionPane.showMessageDialog(null, iox, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
     }
     public void searchPeers(String peerName) {
@@ -209,7 +210,7 @@ public class PeerGroupManager implements OuvinteDescoberta {
                             peerDiscover.searchAdvertisements("PeerName", peerName);
                     }
             } catch (Exception iox) {
-                    iox.printStackTrace();
+                    JOptionPane.showMessageDialog(null, iox, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
     }
     public void addStructureListener(OuvinteEstruturaGrupo listener) {
@@ -229,7 +230,7 @@ public class PeerGroupManager implements OuvinteDescoberta {
                     updateJoinedGroups();
 
             } catch (Exception iox) {
-                    iox.printStackTrace();
+                    JOptionPane.showMessageDialog(null, iox, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
     }
 
@@ -335,7 +336,7 @@ public class PeerGroupManager implements OuvinteDescoberta {
                             PeerGroup.DEFAULT_EXPIRATION);
 
             } catch (Throwable pge) {
-                    pge.printStackTrace();
+                    JOptionPane.showMessageDialog(null, pge, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
     }
     public synchronized void leaveGroup(PeerGroupAdvertisement group) throws Exception {

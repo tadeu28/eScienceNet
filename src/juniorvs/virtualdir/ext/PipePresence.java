@@ -64,6 +64,7 @@ import java.util.Hashtable;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import net.jxta.discovery.DiscoveryService;
 import net.jxta.endpoint.Message;
 import net.jxta.instantp2p.util.PreferenceReader;
@@ -121,7 +122,7 @@ public class PipePresence implements Runnable, OutputPipeListener {
 				}
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	public void probe(String buddy, Enumeration advertisements) {
@@ -140,7 +141,7 @@ public class PipePresence implements Runnable, OutputPipeListener {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	public Enumeration getPipes() {
@@ -153,7 +154,8 @@ public class PipePresence implements Runnable, OutputPipeListener {
 		try {
 			pipe.createOutputPipe(pipeAdv, this);
 		} catch (IOException e) {
-			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
+
 		}
 	}
 	public void run() {

@@ -1,0 +1,220 @@
+<com.esciencenet.compositionmanager.CompositionModel>
+  <nameComposition></nameComposition>
+  <data>2013-12-31 03:45:40.732 UTC</data>
+  <lstServices>
+    <com.esciencenet.compositionmanager.CompositionTaskModel>
+      <operation>
+        <operationName>runEmbossPepstar</operationName>
+        <operationRealName>run</operationRealName>
+        <operationDomainTerm>EMBOSS</operationDomainTerm>
+        <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/emboss_pepstats?wsdl</serviceURL>
+        <inputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>email</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>tadeu.classe@gmail.com</manualContent>
+            <parentName>runEmbossPepstar - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>title</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>Teste</manualContent>
+            <parentName>runEmbossPepstar - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>termini</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#boolean</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName>runEmbossPepstar - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>sequence</paramName>
+            <paramDomainTerm>http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent>&gt;tr|O90777|O90777_9PLVG HIV-1 protease (Fragment) OS=Human immunodeficiency virus GN=HIV-1 protease PE=2 SV=1
+PQVTLWQRPIVTIKIGGQLKEALLDTGADDTVLEEMSLPGKWKPKMIGGIGGFIKVRQYD
+QVSIEICGHKAIGTVLIGPTPVNIIGRNLLTQLGCTLNF
+&gt;tr|Q5RU79|Q5RU79_9HIV1 Protease (Fragment) OS=Human immunodeficiency virus 1 GN=pol PE=4 SV=1
+PQITLWQRPIVTIKIGGQLKEALLDTGADDTVLEEMNLPGKWKPKMIGGIGGFIKVRQYD
+QISIEICGHKAIGTVLVGPTPVNIIGRNLLTQLGCTLNF
+&gt;tr|Q6SM99|Q6SM99_9HIV1 Protease (Fragment) OS=Human immunodeficiency virus 1 GN=pol PE=4 SV=1
+PQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMSLPGKWKPKMIGGIGGFIKVRQYD
+QIAIEICGHKAIGTVLIGPTPVNIIGRNLLTQLGCTLNF
+&gt;tr|Q6SM98|Q6SM98_9HIV1 Protease (Fragment) OS=Human immunodeficiency virus 1 GN=pol PE=4 SV=1
+PQITLWQRPLVTIKIGGQLKEALLDTGADDTVLEEMSLPGKWKPKMIGGIGGFIKVRQYD
+QIAIEICGHKAIGTVLIGPTPVNIIGRNLLTQLGCTLNF
+&gt;tr|J9UEK7|J9UEK7_9HIV1 Protease (Fragment) OS=Human immunodeficiency virus 1 GN=pol PE=4 SV=1
+PQITLWQRPIVTIKVGGQLKEALLDTGADDTVLEEMSLPGKWKPKMIGGIGGFIKVRQYD
+QITIEICGHKAIGTVLVGPTPVNIIGRNLLTQLGCTLNF</manualContent>
+            <parentName>runEmbossPepstar - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>mono</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#boolean</paramType>
+            <connectorAssociated/>
+            <paramConnectorAssociated/>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName>runEmbossPepstar - </parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </inputs>
+        <outputs>
+          <com.esciencenet.servicemanager.OWLSParam>
+            <paramName>jobId</paramName>
+            <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+            <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+            <connectorAssociated>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>getStatusEmbossPepstat</operationName>
+                <operationRealName>getStatus</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/emboss_pepstats?wsdl</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>jobId</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>status</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[jobId == jobId]</compatibility>
+                <restriction>
+                  <time>30</time>
+                  <restrictionType>LOOP</restrictionType>
+                  <owlsParam reference="../../outputs/com.esciencenet.servicemanager.OWLSParam"/>
+                  <operator>!=</operator>
+                  <restrictionTerm>FINISHED</restrictionTerm>
+                </restriction>
+                <serviceDescription>Get the status of a submitted job</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+              <com.esciencenet.servicemanager.OWLSOperation>
+                <operationName>getResultEmbossPepstat_2</operationName>
+                <operationRealName>getResult</operationRealName>
+                <operationDomainTerm></operationDomainTerm>
+                <serviceURL>http://www.ebi.ac.uk/Tools/services/soap/emboss_pepstats?wsdl</serviceURL>
+                <inputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>jobId</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected>
+                      <com.esciencenet.servicemanager.OWLSParam reference="../../../../../.."/>
+                    </paramConnected>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>type</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent>out</manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>string</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>name</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#string</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </inputs>
+                <outputs>
+                  <com.esciencenet.servicemanager.OWLSParam>
+                    <paramName>output</paramName>
+                    <paramDomainTerm>http://www.w3.org/2001/XMLSchema#string</paramDomainTerm>
+                    <paramType>http://www.w3.org/2001/XMLSchema#base64Binary</paramType>
+                    <connectorAssociated/>
+                    <paramConnectorAssociated/>
+                    <paramConnected/>
+                    <manualContent></manualContent>
+                    <parentName></parentName>
+                    <valueReturned></valueReturned>
+                  </com.esciencenet.servicemanager.OWLSParam>
+                </outputs>
+                <compatibility>[jobId == jobId]</compatibility>
+                <serviceDescription>Get a job result formatted using a particular renderer</serviceDescription>
+              </com.esciencenet.servicemanager.OWLSOperation>
+            </connectorAssociated>
+            <paramConnectorAssociated>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation/inputs/com.esciencenet.servicemanager.OWLSParam"/>
+              <com.esciencenet.servicemanager.OWLSParam reference="../../connectorAssociated/com.esciencenet.servicemanager.OWLSOperation[2]/inputs/com.esciencenet.servicemanager.OWLSParam"/>
+            </paramConnectorAssociated>
+            <paramConnected/>
+            <manualContent></manualContent>
+            <parentName></parentName>
+            <valueReturned></valueReturned>
+          </com.esciencenet.servicemanager.OWLSParam>
+        </outputs>
+        <serviceDescription>Submit an analysis job</serviceDescription>
+      </operation>
+      <task>emboss</task>
+      <petriOperation>SEQUENCE</petriOperation>
+      <nextTasks></nextTasks>
+      <taskCode></taskCode>
+    </com.esciencenet.compositionmanager.CompositionTaskModel>
+  </lstServices>
+  <validated>false</validated>
+</com.esciencenet.compositionmanager.CompositionModel>

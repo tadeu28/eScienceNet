@@ -1,7 +1,17 @@
 package juniorvs.virtualdir;
 
+import com.esciencenet.datamanager.DataManager;
+import com.esciencenet.datamanager.FindDomainOntologyInRepository;
+import com.esciencenet.interestmanager.DomainAvailableOnSuperNode;
+import com.esciencenet.interestmanager.InterestManager;
+import com.esciencenet.searchmanager.SearchManagerEnum;
+import com.esciencenet.semanticmanager.SemanticManager;
 import java.io.InputStream;
 import java.util.Hashtable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import juniorvs.virtualdir.desktop.VirtualDir;
 import net.jxta.discovery.DiscoveryService;
 import net.jxta.document.AdvertisementFactory;
 import net.jxta.endpoint.Message;
@@ -33,7 +43,7 @@ public final class ControlaMensagens implements PipeMsgListener {
     private final static String ENVIAR_MENSAGEM_TIPO = "type";
     private final static String ENVIAR_MENSAGEM_PEER_NOVO = "userNew";
     private final static String ENVIAR_MENSAGEM_PEER_SAIDA = "userExit";
-
+    
     //atributos da classe controladora de mensagem
     private PeerGroup group = null;
     private PipeService pipe = null;
@@ -76,7 +86,7 @@ public final class ControlaMensagens implements PipeMsgListener {
             //envio a mensagem para os peers
             outputPipe.send(msg);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, ex, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -124,7 +134,7 @@ public final class ControlaMensagens implements PipeMsgListener {
             //envio a mensagem para os peers
             outputPipe.send(msg);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, ex, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -154,9 +164,9 @@ public final class ControlaMensagens implements PipeMsgListener {
             //coloco o canal de saída no has de entrada
             ipTable.put(group.getPeerGroupID().toString(), inputPipe);
             //envio a mensagem para os demais peers da rede
-            enviarMensagem("Peer juntou-se " + group.getPeerGroupName());
+            enviarMensagem("Peer joined in " + group.getPeerGroupName() +" group.");
         } catch (Exception e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -224,13 +234,133 @@ public final class ControlaMensagens implements PipeMsgListener {
                     //crio o envio da mensagem
                     String sender = getTagString(msg, ENVIAR_NOME, "anonymous");
                     String senderMessage = getTagString(msg, ENVIAR_MENSAGEM, null);
-                    //disparo o evendo de envio de mensagem
-                    ouvinteMensagem.eventoMensagem(sender, senderMessage);
+                                                            
+                    //verifico se é uma pesquisa e se o requisitor é diferente do peer de busca
+                    if (senderMessage.contains(SearchManagerEnum.FILE_SEARCH.toString())){
+                        //verifico se é uma pesquisa externa
+                        if(!sender.equals(SemanticManager.getInstance().getNomePeer())){
+                            //Inicio o processo de pesquisa de arquivos
+                            SemanticManager.getInstance().getSearchManager().pesquisaRemota(senderMessage, sender);
+                        }
+                    }else if (senderMessage.contains(SearchManagerEnum.FILE_ANSWERS.toString())){ //verifico se é uma mensagem de resposta a uma pesquisa                        
+                        //verifico se é uma mensagem para este peer, caso não seja eu nem vou perder tempo em analizar
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){
+                            //ajusto a mensagem
+                            senderMessage = senderMessage.replace(SearchManagerEnum.FILE_ANSWERS.toString(), "");
+                            senderMessage = senderMessage.replace("<"+ SemanticManager.getInstance().getNomePeer() +">", sender);
+
+                            //chamo o método de processamento
+                            SemanticManager.getInstance().getSearchManager().processaResposta(senderMessage, false);
+                        }                          
+
+                    }else if (senderMessage.contains(DataManager.RESQUEST_FILE)){ //verifico se é uma resquisição de arquivo                    
+
+                        //verifico se é uma mensagem para este peer, caso não seja eu nem vou perder tempo em analizar
+                        if (senderMessage.contains(SemanticManager.getInstance().getNomePeer())){
+
+                            String fileRequisited = senderMessage.replace(DataManager.RESQUEST_FILE, "").replace(SemanticManager.getInstance().getNomePeer(), "").replace("#", "");
+
+                            SemanticManager.getInstance().getDataManager().processarDownloadRequest(fileRequisited);
+                        }                                                
+                    }else if (senderMessage.contains(InterestManager.RESPONSE_DOMAINS)){                        
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){
+                            SemanticManager.getInstance().getInterestManager().getFrmWatingReponse().setVisible(false);
+                            
+                            DomainAvailableOnSuperNode domainAvailable = new DomainAvailableOnSuperNode();
+                            domainAvailable.setXml(senderMessage);  
+                            domainAvailable.setFileName("");
+                            domainAvailable.setUpLoadSN(false);
+                            domainAvailable.start();
+                        }                        
+                    }else if (senderMessage.contains(InterestManager.GIVEME_DOMAINS)){                        
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){                            
+                            FindDomainOntologyInRepository findDomains = new FindDomainOntologyInRepository();
+                            findDomains.setControlaMensagens(this);
+                            findDomains.setPeerRequest(sender);
+                            findDomains.setDownload(false);
+                            findDomains.start();
+                        }                        
+                    }else if (senderMessage.contains(InterestManager.GIVEME_OWL)){                        
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){                            
+                            FindDomainOntologyInRepository findDomains = new FindDomainOntologyInRepository();
+                            findDomains.setControlaMensagens(this);
+                            findDomains.setPeerRequest(sender);
+                            findDomains.setDownload(true);
+                            findDomains.setFileToDownload(senderMessage);
+                            findDomains.start();
+                        }                        
+                    }else if (senderMessage.contains(InterestManager.RESPONSE_OWL)){                                                
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){                            
+                            DomainAvailableOnSuperNode domainAvailable = new DomainAvailableOnSuperNode();
+                            domainAvailable.setXml(""); 
+                            domainAvailable.setFileName(senderMessage);
+                            domainAvailable.setSuperNode(sender);
+                            domainAvailable.setSimpleNode("");
+                            domainAvailable.setUpLoadSN(false);
+                            domainAvailable.start();                            
+                        }                        
+                    }else if (senderMessage.contains(InterestManager.UP_DOMAIN_SN)){                                                
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){                            
+                            DomainAvailableOnSuperNode domainAvailable = new DomainAvailableOnSuperNode();    
+                            domainAvailable.setXml("");
+                            domainAvailable.setFileName(senderMessage);
+                            domainAvailable.setSimpleNode(sender);
+                            domainAvailable.setUpLoadSN(true);
+                            domainAvailable.start(); 
+                        }                        
+                    }else if ((senderMessage.contains(InterestManager.UP_DOMAIN_SN_OK)) || (senderMessage.contains(InterestManager.UP_DOMAIN_SN_ERROR))){                                                
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){                            
+                            if(senderMessage.contains(InterestManager.UP_DOMAIN_SN_OK)){
+                                JOptionPane.showMessageDialog(null, "The domain ontology was updated with success on Super Node!", 
+                                                                    ".: e-ScienceNet :.", JOptionPane.INFORMATION_MESSAGE);
+                                
+                                SemanticManager.getInstance().getInterestManager().manageDomainInformationReceived(senderMessage);
+                            }else{
+                                JOptionPane.showMessageDialog(null, "The domain ontology wasn't updated with success on Super Node!", 
+                                                                    ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);                                
+                            }
+                            
+                            SemanticManager.getInstance().getInterestManager().getFrmWatingReponse().setVisible(false);
+                            SemanticManager.getInstance().getInterestManager().getFrmIncludeNewDomain().setVisible(false);
+                        }                        
+                    }else if (senderMessage.contains(SearchManagerEnum.SERVICE_SEARCH.toString())){
+                        
+                        //Inicio o processo de pesquisa de serviços
+                        SemanticManager.getInstance().getSearchManager().servicesSearch(senderMessage, sender);
+                    }else if (senderMessage.contains(SearchManagerEnum.SERVICE_ANSWERS.toString())){
+                        
+                        //verifico se é uma pesquisa externa
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){                        
+                            //ajusto a mensagem
+                            senderMessage = senderMessage.replace(SearchManagerEnum.SERVICE_ANSWERS.toString(), "");
+                            senderMessage = senderMessage.replace("<"+ SemanticManager.getInstance().getNomePeer() +">", sender + "\n");
+
+                            //chamo o método de processamento
+                            SemanticManager.getInstance().getSearchManager().processaRespostaServico(senderMessage, false);                            
+                        }
+                    }else if (senderMessage.contains(SearchManagerEnum.CONN_SEARCH.toString())){
+                        
+                        //Inicio o processo de pesquisa de arquivos
+                        SemanticManager.getInstance().getSearchManager().connectorsSearch(senderMessage, sender);
+                    }else if (senderMessage.contains(SearchManagerEnum.CONN_RES.toString())){
+                        
+                        if (senderMessage.contains("<" + SemanticManager.getInstance().getNomePeer() + ">")){
+                            //ajusto a mensagem
+                            senderMessage = senderMessage.replace(SearchManagerEnum.CONN_RES.toString(), "");
+                            senderMessage = senderMessage.replace("<"+ SemanticManager.getInstance().getNomePeer() +">", sender + "\n");
+                            
+                            SemanticManager.getInstance().getSearchManager().processaRespostaConnectors(senderMessage);
+                        }
+                    }else{  
+                        //disparo o evendo de envio de mensagem
+                        ouvinteMensagem.eventoMensagem(sender, senderMessage);
+                    }
+                    
                     break;
                 }
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
         }
     }
     
@@ -252,7 +382,7 @@ public final class ControlaMensagens implements PipeMsgListener {
             //envio a mensagem pelo canal
             outputPipe.send(msg);
         } catch (Exception ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, ex, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
         }
     }
     

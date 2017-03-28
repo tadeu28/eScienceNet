@@ -1,0 +1,175 @@
+<rdf:RDF
+    xmlns:j.0="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:process="http://www.daml.org/services/owl-s/1.1/Process.owl#"
+    xmlns:list="http://www.daml.org/services/owl-s/1.1/generic/ObjectList.owl#"
+    xmlns:service="http://www.daml.org/services/owl-s/1.1/Service.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:profile="http://www.daml.org/services/owl-s/1.1/Profile.owl#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:grounding="http://www.daml.org/services/owl-s/1.1/Grounding.owl#"
+    xmlns:expression="http://www.daml.org/services/owl-s/1.1/generic/Expression.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <owl:Ontology rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl">
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Grounding.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Service.owl"/>
+    <owl:imports rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#SubParameter">
+    <rdfs:subClassOf rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#isSubParameterOf">
+    <owl:inverseOf>
+      <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#hasSubParameter"/>
+    </owl:inverseOf>
+    <rdfs:range rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdfs:domain rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#SubParameter"/>
+  </owl:ObjectProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#serviceRealName">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Profile.owl#Profile"/>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameterTypeXSD">
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+  </owl:DatatypeProperty>
+  <owl:TransitiveProperty rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#hasSubParameter">
+    <owl:inverseOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#isSubParameterOf"/>
+    <rdfs:range rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#SubParameter"/>
+    <rdfs:domain rdf:resource="http://www.daml.org/services/owl-s/1.1/Process.owl#Parameter"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:TransitiveProperty>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#name">
+    <j.0:isSubParameterOf>
+      <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameter">
+        <j.0:isSubParameterOf>
+          <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameters">
+            <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://www.w3.org/2002/07/owl#Thing</process:parameterType>
+            <rdfs:label>parameters</rdfs:label>
+            <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+            >http://soap.jdispatcher.ebi.ac.uk#wsRawOutputParameters</j.0:parameterTypeXSD>
+          </process:Input>
+        </j.0:isSubParameterOf>
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2002/07/owl#Thing</process:parameterType>
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://soap.jdispatcher.ebi.ac.uk#wsRawOutputParameter</j.0:parameterTypeXSD>
+      </owl:NamedIndividual>
+    </j.0:isSubParameterOf>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+  </owl:NamedIndividual>
+  <owl:NamedIndividual rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#value">
+    <j.0:isSubParameterOf rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameter"/>
+    <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://www.w3.org/2002/07/owl#Thing</process:parameterType>
+    <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+    >http://soap.jdispatcher.ebi.ac.uk#ArrayOfString</j.0:parameterTypeXSD>
+  </owl:NamedIndividual>
+  <process:AtomicProcess rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaProcess">
+    <process:hasOutput>
+      <process:Output rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#output">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdfs:label>output</rdfs:label>
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#base64Binary</j.0:parameterTypeXSD>
+      </process:Output>
+    </process:hasOutput>
+    <process:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameters"/>
+    <process:hasInput>
+      <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#type">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdfs:label>type</rdfs:label>
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+      </process:Input>
+    </process:hasInput>
+    <process:hasInput>
+      <process:Input rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#jobId">
+        <process:parameterType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</process:parameterType>
+        <rdfs:label>jobId</rdfs:label>
+        <j.0:parameterTypeXSD rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+        >http://www.w3.org/2001/XMLSchema#string</j.0:parameterTypeXSD>
+      </process:Input>
+    </process:hasInput>
+    <service:describes>
+      <service:Service rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaService">
+        <service:supports>
+          <grounding:WsdlGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaGrounding">
+            <grounding:hasAtomicProcessGrounding>
+              <grounding:WsdlAtomicProcessGrounding rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaAtomicProcessGrounding">
+                <grounding:owlsProcess rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaProcess"/>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#jobId</grounding:wsdlMessagePart>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#jobId"/>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlOutput>
+                  <grounding:WsdlOutputMessageMap>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#output</grounding:wsdlMessagePart>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#output"/>
+                  </grounding:WsdlOutputMessageMap>
+                </grounding:wsdlOutput>
+                <grounding:wsdlDocument rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl</grounding:wsdlDocument>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#type</grounding:wsdlMessagePart>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#type"/>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlOperation>
+                  <grounding:WsdlOperationRef>
+                    <grounding:portType rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#JDispatcherServiceHttpPort</grounding:portType>
+                    <grounding:operation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#getResult</grounding:operation>
+                  </grounding:WsdlOperationRef>
+                </grounding:wsdlOperation>
+                <grounding:wsdlInput>
+                  <grounding:WsdlInputMessageMap>
+                    <grounding:wsdlMessagePart rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                    >http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl#parameters</grounding:wsdlMessagePart>
+                    <grounding:owlsParameter rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameters"/>
+                  </grounding:WsdlInputMessageMap>
+                </grounding:wsdlInput>
+                <grounding:wsdlOutputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://soap.jdispatcher.ebi.ac.uk#getResultResponse</grounding:wsdlOutputMessage>
+                <grounding:wsdlInputMessage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI"
+                >http://soap.jdispatcher.ebi.ac.uk#getResultRequest</grounding:wsdlInputMessage>
+              </grounding:WsdlAtomicProcessGrounding>
+            </grounding:hasAtomicProcessGrounding>
+            <service:supportedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaService"/>
+          </grounding:WsdlGrounding>
+        </service:supports>
+        <service:describedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaProcess"/>
+        <service:presents>
+          <profile:Profile rdf:about="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaProfile">
+            <j.0:serviceRealName rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >getResult</j.0:serviceRealName>
+            <profile:hasOutput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#output"/>
+            <profile:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#parameters"/>
+            <profile:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#type"/>
+            <profile:hasInput rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#jobId"/>
+            <profile:textDescription>Get a job result formatted using a particular renderer</profile:textDescription>
+            <profile:serviceName>getResultClustalOmega</profile:serviceName>
+            <service:presentedBy rdf:resource="http://www.esciencenet.com.br/tadeuclasse/esciencenet/getResultClustalOmega.owl#getResultClustalOmegaService"/>
+          </profile:Profile>
+        </service:presents>
+      </service:Service>
+    </service:describes>
+    <rdfs:label>getResultClustalOmegaProcess</rdfs:label>
+  </process:AtomicProcess>
+</rdf:RDF>

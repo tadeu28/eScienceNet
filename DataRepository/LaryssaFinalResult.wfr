@@ -1,0 +1,1473 @@
+[12/27/2013 at 06:26:14 PM]: The task [get_sequences] whose its operation is [RecoverFasta] has been started.
+[12/27/2013 at 06:26:19 PM]: The task [get_sequences] whose its operation is [RecoverFasta] was executed with success.
+[12/27/2013 at 06:26:19 PM]: The task [get_sequences] whose its operation is [RecoverFasta_1] has been started.
+[12/27/2013 at 06:26:24 PM]: The task [get_sequences] whose its operation is [RecoverFasta_1] was executed with success.
+[12/27/2013 at 06:26:24 PM]: The task [get_sequences] whose its operation is [RecoverFasta_2] has been started.
+[12/27/2013 at 06:26:29 PM]: The task [get_sequences] whose its operation is [RecoverFasta_2] was executed with success.
+[12/27/2013 at 06:26:29 PM]: The task [read_and_format_sequence] whose its operation is [joinSequences] has been started.
+[12/27/2013 at 06:27:11 PM]: The task [read_and_format_sequence] whose its operation is [joinSequences] was executed with success.
+[12/27/2013 at 06:27:11 PM]: The task [aligning] whose its operation is [runClustalOmega] has been started.
+[12/27/2013 at 06:27:19 PM]: The connector [getStatusClustalOmega] has been started.
+[12/27/2013 at 06:28:24 PM]: The connector [getStatusClustalOmega] was executed with success.
+[12/27/2013 at 06:28:24 PM]: The connector [getResultClustalOmega_1] has been started.
+[12/27/2013 at 06:28:31 PM]: The connector [getResultClustalOmega_1] was executed with success.
+[12/27/2013 at 06:28:31 PM]: The task [aligning] whose its operation is [runClustalOmega] was executed with success.
+[12/27/2013 at 06:28:31 PM]: The LaryssaAWF.awf was executed completely with success at 00:02:17:137192! Congratulations!
+
+FINAL RESULT:
+-------------------------------------------------------------------------------
+jobId = clustalo-S20131227-202718-0175-87494262-oy
+status = FINISHED
+output = CLUSTAL O(1.2.0) multiple sequence alignment
+
+
+ENA|J00124|J00124.1      CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGGCGGGACAAGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CATGATGAGGCGGATGAGAGGAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGAT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAAAGCCAAGGGGAATGGAAAGTGCCAGACCCGCCCCCTACCCATGAGTATAAAGCACTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTCAGCCTTCTGCTCGCTCGCTC
+ENA|J00126|J00126.1      -----------------------------------------------------CTCAATG
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTCCAGCTCCATG
+ENA|J00126|J00126.1      AAATCAATTAT----------------GAAGACCACAAGTT-------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCCCGCTTCTCCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGCAGCAGCAGCAGCTTTGGTAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGCTTGGGTGGTGGCTTTGGTGGTGGCTTTGCTGGTGGTGATGGGCTTCTGGTGGGCAGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCTCCTACCTGGACAAGGTGCGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTACCAGAGGCAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ATGCCCCAGGCCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      --------------------CTCAAGTTAAGTCTACAT----------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTCTTTCGAGGTCTTGGATGCCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------GAAAAGGATGGTTTCT--------
+                                                                                     
+
+ENA|J00124|J00124.1      GGCCTCCTCATCCCCTTCTGATCTCAAATCCTCAGACCATGTGAGATCAGTGATTCCTAT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      --------------TGGAGCTTCCACAAACTTAAAACCATGAAACATCTATTATTGCTAC
+                                                                                     
+
+ENA|J00124|J00124.1      CCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGGTGCTGTGACCAGCTGCAGGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      TATTGTGTGTTTTT----------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTTCCAGCACAGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGTACAGGCTGGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGTGGTCCCTTGATGTGCCCTGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCCCCTCCTCCCTGCTCCCACATTACTTGGGAGCCCTCCCTGCTGGAGTCTGTTGGGCTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGTGGGGAAATCCAACCAGACTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCCCCTGTGTTAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCTCAGGAAGGAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAAGCCCCAAGACCCATTAGGTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAAC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCCTGGGCTTTCGATTCTAAGCCCGGGGCTGCCATCTACCCCCTCTGTTGACCATGAGTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTTTGGGCTGCTATGGTCAAGTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAATGTAGGCTACA
+ENA|J00126|J00126.1      ----------------GAAGTCAGGGACTAACACCAAGAAGGCCCTCCAGG---------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCGCGGATGACTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAGAGTAGGGCATTTTTGGAGCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGCATGAAAACTCCCTGGGGTGCTTATAAAAGAATAAGACTCTTGGGCCCCACCCTTGGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATTCTGGTCCACAGCCAGGTTTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTGAAGTATAGGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATC
+ENA|J00126|J00126.1      ------CAGTGTACAGCATGATGAGCTGGCCAGATGACGTCCCTCCTGA-----------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGAGCAATCAATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACC
+ENA|J00126|J00126.1      ------------------------------------------AGGCTGGA----------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACCCACAAGGCACCAGCTCTGGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGT
+ENA|J00126|J00126.1      --------------------------------------------ACCGCACCCGCCA---
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GATCAGGATGGGTGTCTCATACCTTTTCTCTGGGGTCATTCCAGGTATGAGACAGAGTTG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGCGCAGGGTGCTGGACGAACTG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGAGCTGGCCTAC
+ENA|J00126|J00126.1      --------------T---------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGATCACTTGAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AAAAAAAAAAAAAAAAAAAAAAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGAAGGGAGAGTCGAGATAGAATTGTGATGGTGGGAGGGCAGTATTCAGGCCTAAGGAA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACTGTCCCTGGCTTGCAGGAGAT
+ENA|J00126|J00126.1      ---------------GTCATCATCCTCATGACTGATGGATTGCA----------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACGCTGCACCTGG
+ENA|J00126|J00126.1      ---------------------------------CAACATGGGCGGGGACCCAATTACTGT
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+ENA|J00126|J00126.1      CATTGATGAGATTCGGGACTTGCTATA-----------CATTGGCAAGGATCGCAAAAAC
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAG
+ENA|J00126|J00126.1      CCAAGG----------GAGGATTATCTGGATGTCTATGTGTTTGGGGTCGGGCCTTTGGT
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAACCCAGACCACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAG
+ENA|J00126|J00126.1      GAACCAAGTCAACATCAATGC---------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACAGAGGAGCTGAACCGCGAGGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGATCTCGGAGCTCCGGCGCACCATGCAGAACCTGGAGATTGAGCTGCAGTCCCAGCTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAGGACTGGCAGGGAGAGAACGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCCTGGAGAACAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAAGATCCTGCTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCTGGAGGGCGAGGACGCCCAGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CACTCTCACGGCCCCACCATGTATCTAATGATCCTGTCCTTTTCTATTTTCACAGCCTCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGATGGTAAGACCCTCCTCCTCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCATTGGCTAGGGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTCTACGTGGTGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCCTACAGCGGTCTTCCCACTGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGTGTGAGCTCTTAGGAAGCTCTAATCTGAGGGCAAAGACTCTGTCTCTGACCTTTGGGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTTGGGCAACAGCAGGGAGTGAA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACCTTCTTGGCCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGTGGTGTCCACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCAGGCCTAGGAGGCCCCCCGTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAAGCACTTCACAGCTGGACCCTGCTTCACCCTCACCCCCTCCTGGCAATCAATACAGCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCATTGTTAGGAGTGGGGGTGGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGGCCCCTGGGAC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+ENA|J00126|J00126.1      -----------------------------------------------TTTGGCTTCCAAG
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGA
+ENA|J00126|J00126.1      AAAGACAATGAGCAACATGTGTTCAAAGTCAAGGATATGGAAAACCTGGA----------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TATTCATTCATTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTG
+ENA|J00126|J00126.1      -----AGATGTTTTCTAC-----------------CAAATGATCGAT--------GAAAG
+ENA|J00130|J00130.1      -----------------------------------CTAGTT--------------AAGTC
+                                                            * * *               .*.: 
+
+ENA|J00124|J00124.1      CCTCTATGTCAGGCACTATGTTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATT
+ENA|J00126|J00126.1      CCAGTCTCTGAG-----------------------------------TCTCTGTGGCATG
+ENA|J00130|J00130.1      CCAAGGTGTCAACGACAATGAGGAGGTGAAT----------TTTTTAAA-----------
+                         **:   * * *.                                   :            
+
+ENA|J00124|J00124.1      CCTTGGAGAATATTGAAAGCTATAGATCTTTCCTTCTGCCCCCTACCTTCAAATAAGCAT
+ENA|J00126|J00126.1      GTTTGGGAACACAGGAAGGGTACCGATTACCACAAG------CAACCATGGCAGGCCAAG
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCCTAGAGCTCCTTACCGGAGT
+ENA|J00126|J00126.1      ATCTCAGT----------CATTCGCCCTTCAAAGGGACACGAGAG--------------
+ENA|J00130|J00130.1      -----------------------------------------------------------
+-------------------------------------------------------------------------------
+
+
+DETAILED RESULT:
+COMPOSITION NAME: LaryssaAWF.awf
+COMPOSITION DATE: 30/27/2013
+
+***************************************************************************************************************
+TASK NAME: get_sequences
+OPERATION NAME: RecoverFasta
+OPERATION DOMAIN TERM: FASTA
+OPERATION SERVICE URL: http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: db
+Parameter Valeu: genbank
+
+Parameter Name: format
+Parameter Valeu: fasta
+
+Parameter Name: ids
+Parameter Valeu: j00124
+
+Parameter Name: style
+Parameter Valeu: raw
+
+OUTPUT PARAMETERS:
+
+Parameter Name: fetchBatchReturn
+Parameter Valeu: >ENA|J00124|J00124.1 Homo sapiens 50 kDa type I epidermal keratin gene, complete cds.
+CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCC
+TGGCGGGACAAGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGA
+CATGATGAGGCGGATGAGAGGAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGAT
+GAAAGCCAAGGGGAATGGAAAGTGCCAGACCCGCCCCCTACCCATGAGTATAAAGCACTC
+GCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTCAGCCTTCTGCTCGCTCGCTC
+ACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTCCAGCTCCATG
+AAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCC
+TCCCGCTTCTCCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGC
+AGCAGCAGCAGCAGCTTTGGTAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCT
+GGCTTGGGTGGTGGCTTTGGTGGTGGCTTTGCTGGTGGTGATGGGCTTCTGGTGGGCAGT
+GAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCTCCTACCTGGACAAGGTGCGT
+GCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTACCAGAGGCAG
+CGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTC
+ATGCCCCAGGCCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCC
+TTCTTTCGAGGTCTTGGATGCCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCA
+GGCCTCCTCATCCCCTTCTGATCTCAAATCCTCAGACCATGTGAGATCAGTGATTCCTAT
+CCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGGTGCTGTGACCAGCTGCAGGT
+CACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTTCCAGCACAGG
+AGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTT
+GGTACAGGCTGGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAG
+TGTGGTCCCTTGATGTGCCCTGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAG
+CCCCCTCCTCCCTGCTCCCACATTACTTGGGAGCCCTCCCTGCTGGAGTCTGTTGGGCTC
+TAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGTGGGGAAATCCAACCAGACTC
+AGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCCCCTGTGTTAG
+TTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCA
+GCTCAGGAAGGAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTT
+GAAGCCCCAAGACCCATTAGGTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAAC
+TCCTGGGCTTTCGATTCTAAGCCCGGGGCTGCCATCTACCCCCTCTGTTGACCATGAGTT
+AGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTTTGGGCTGCTATGGTCAAGTT
+TTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAATGTAGGCTACA
+GTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGG
+CCGCGGATGACTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCC
+CAGAGTAGGGCATTTTTGGAGCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGG
+TGCATGAAAACTCCCTGGGGTGCTTATAAAAGAATAAGACTCTTGGGCCCCACCCTTGGA
+GTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATTCTGGTCCACAGCCAGGTTTC
+AGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTGAAGTATAGGA
+AGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATC
+TGAGCAATCAATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACC
+ACCCACAAGGCACCAGCTCTGGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGT
+GATCAGGATGGGTGTCTCATACCTTTTCTCTGGGGTCATTCCAGGTATGAGACAGAGTTG
+AACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGCGCAGGGTGCTGGACGAACTG
+ACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGAGCTGGCCTAC
+CTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGG
+AGGATCACTTGAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCA
+AAAAAAAAAAAAAAAAAAAAAAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGA
+GAGAAGGGAGAGTCGAGATAGAATTGTGATGGTGGGAGGGCAGTATTCAGGCCTAAGGAA
+CACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACTGTCCCTGGCTTGCAGGAGAT
+GAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACGCTGCACCTGG
+CGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAG
+GAACCCAGACCACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAG
+ACAGAGGAGCTGAACCGCGAGGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGC
+GAGATCTCGGAGCTCCGGCGCACCATGCAGAACCTGGAGATTGAGCTGCAGTCCCAGCTC
+AGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAGGACTGGCAGGGAGAGAACGG
+CCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCCTGGAGAACAG
+CCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTA
+CAAGATCCTGCTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCT
+GCTGGAGGGCGAGGACGCCCAGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGG
+CACTCTCACGGCCCCACCATGTATCTAATGATCCTGTCCTTTTCTATTTTCACAGCCTCT
+CCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGATGGTAAGACCCTCCTCCTCT
+GCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCATTGGCTAGGGG
+CTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCC
+TTCTACGTGGTGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGG
+CCCTACAGCGGTCTTCCCACTGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCA
+GGTGTGAGCTCTTAGGAAGCTCTAATCTGAGGGCAAAGACTCTGTCTCTGACCTTTGGGA
+GCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTTGGGCAACAGCAGGGAGTGAA
+GCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACCTTCTTGGCCT
+CCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCA
+AGGTGGTGTCCACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGC
+TCAGGCCTAGGAGGCCCCCCGTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCC
+CAAGCACTTCACAGCTGGACCCTGCTTCACCCTCACCCCCTCCTGGCAATCAATACAGCT
+TCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCATTGTTAGGAGTGGGGGTGGG
+GAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGGCCCCTGGGAC
+TGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGA
+TATTCATTCATTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTG
+CCTCTATGTCAGGCACTATGTTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATT
+CCTTGGAGAATATTGAAAGCTATAGATCTTTCCTTCTGCCCCCTACCTTCAAATAAGCAT
+ACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCCTAGAGCTCCTTACCGGAGT
+
+
+***************************************************************************************************************
+TASK NAME: get_sequences
+OPERATION NAME: RecoverFasta_1
+OPERATION DOMAIN TERM: FASTA
+OPERATION SERVICE URL: http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: db
+Parameter Valeu: genbank
+
+Parameter Name: format
+Parameter Valeu: fasta
+
+Parameter Name: ids
+Parameter Valeu: j00126
+
+Parameter Name: style
+Parameter Valeu: raw
+
+OUTPUT PARAMETERS:
+
+Parameter Name: fetchBatchReturn
+Parameter Valeu: >ENA|J00126|J00126.1 Human MHC class III factor B gene, Bb fragment, cDNA clone fb1.
+CTCAATGAAATCAATTATGAAGACCACAAGTTGAAGTCAGGGACTAACACCAAGAAGGCC
+CTCCAGGCAGTGTACAGCATGATGAGCTGGCCAGATGACGTCCCTCCTGAAGGCTGGAAC
+CGCACCCGCCATGTCATCATCCTCATGACTGATGGATTGCACAACATGGGCGGGGACCCA
+ATTACTGTCATTGATGAGATTCGGGACTTGCTATACATTGGCAAGGATCGCAAAAACCCA
+AGGGAGGATTATCTGGATGTCTATGTGTTTGGGGTCGGGCCTTTGGTGAACCAAGTCAAC
+ATCAATGCTTTGGCTTCCAAGAAAGACAATGAGCAACATGTGTTCAAAGTCAAGGATATG
+GAAAACCTGGAAGATGTTTTCTACCAAATGATCGATGAAAGCCAGTCTCTGAGTCTCTGT
+GGCATGGTTTGGGAACACAGGAAGGGTACCGATTACCACAAGCAACCATGGCAGGCCAAG
+ATCTCAGTCATTCGCCCTTCAAAGGGACACGAGAG
+
+
+***************************************************************************************************************
+TASK NAME: get_sequences
+OPERATION NAME: RecoverFasta_2
+OPERATION DOMAIN TERM: FASTA
+OPERATION SERVICE URL: http://www.ebi.ac.uk/ws/services/WSDbfetchDoclit?wsdl
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: db
+Parameter Valeu: genbank
+
+Parameter Name: format
+Parameter Valeu: fasta
+
+Parameter Name: ids
+Parameter Valeu: j00130
+
+Parameter Name: style
+Parameter Valeu: raw
+
+OUTPUT PARAMETERS:
+
+Parameter Name: fetchBatchReturn
+Parameter Valeu: >ENA|J00130|J00130.1 Human fibrinogen beta-chain gene, exon 1.
+CTCAAGTTAAGTCTACATGAAAAGGATGGTTTCTTGGAGCTTCCACAAACTTAAAACCAT
+GAAACATCTATTATTGCTACTATTGTGTGTTTTTCTAGTTAAGTCCCAAGGTGTCAACGA
+CAATGAGGAGGTGAATTTTTTAAA
+
+
+***************************************************************************************************************
+TASK NAME: read_and_format_sequence
+OPERATION NAME: joinSequences
+OPERATION DOMAIN TERM: GroupSequences
+OPERATION SERVICE URL: http://192.168.13.128:8080/BioinformaticsWS/BioWebService?WSDL
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: separator
+Parameter Valeu: \n
+
+Parameter Name: sequences
+Parameter Valeu: >ENA|J00124|J00124.1 Homo sapiens 50 kDa type I epidermal keratin gene, complete cds.
+CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCC
+TGGCGGGACAAGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGA
+CATGATGAGGCGGATGAGAGGAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGAT
+GAAAGCCAAGGGGAATGGAAAGTGCCAGACCCGCCCCCTACCCATGAGTATAAAGCACTC
+GCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTCAGCCTTCTGCTCGCTCGCTC
+ACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTCCAGCTCCATG
+AAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCC
+TCCCGCTTCTCCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGC
+AGCAGCAGCAGCAGCTTTGGTAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCT
+GGCTTGGGTGGTGGCTTTGGTGGTGGCTTTGCTGGTGGTGATGGGCTTCTGGTGGGCAGT
+GAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCTCCTACCTGGACAAGGTGCGT
+GCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTACCAGAGGCAG
+CGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTC
+ATGCCCCAGGCCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCC
+TTCTTTCGAGGTCTTGGATGCCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCA
+GGCCTCCTCATCCCCTTCTGATCTCAAATCCTCAGACCATGTGAGATCAGTGATTCCTAT
+CCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGGTGCTGTGACCAGCTGCAGGT
+CACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTTCCAGCACAGG
+AGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTT
+GGTACAGGCTGGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAG
+TGTGGTCCCTTGATGTGCCCTGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAG
+CCCCCTCCTCCCTGCTCCCACATTACTTGGGAGCCCTCCCTGCTGGAGTCTGTTGGGCTC
+TAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGTGGGGAAATCCAACCAGACTC
+AGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCCCCTGTGTTAG
+TTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCA
+GCTCAGGAAGGAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTT
+GAAGCCCCAAGACCCATTAGGTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAAC
+TCCTGGGCTTTCGATTCTAAGCCCGGGGCTGCCATCTACCCCCTCTGTTGACCATGAGTT
+AGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTTTGGGCTGCTATGGTCAAGTT
+TTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAATGTAGGCTACA
+GTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGG
+CCGCGGATGACTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCC
+CAGAGTAGGGCATTTTTGGAGCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGG
+TGCATGAAAACTCCCTGGGGTGCTTATAAAAGAATAAGACTCTTGGGCCCCACCCTTGGA
+GTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATTCTGGTCCACAGCCAGGTTTC
+AGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTGAAGTATAGGA
+AGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATC
+TGAGCAATCAATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACC
+ACCCACAAGGCACCAGCTCTGGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGT
+GATCAGGATGGGTGTCTCATACCTTTTCTCTGGGGTCATTCCAGGTATGAGACAGAGTTG
+AACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGCGCAGGGTGCTGGACGAACTG
+ACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGAGCTGGCCTAC
+CTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGG
+AGGATCACTTGAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCA
+AAAAAAAAAAAAAAAAAAAAAAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGA
+GAGAAGGGAGAGTCGAGATAGAATTGTGATGGTGGGAGGGCAGTATTCAGGCCTAAGGAA
+CACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACTGTCCCTGGCTTGCAGGAGAT
+GAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACGCTGCACCTGG
+CGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAG
+GAACCCAGACCACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAG
+ACAGAGGAGCTGAACCGCGAGGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGC
+GAGATCTCGGAGCTCCGGCGCACCATGCAGAACCTGGAGATTGAGCTGCAGTCCCAGCTC
+AGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAGGACTGGCAGGGAGAGAACGG
+CCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCCTGGAGAACAG
+CCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTA
+CAAGATCCTGCTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCT
+GCTGGAGGGCGAGGACGCCCAGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGG
+CACTCTCACGGCCCCACCATGTATCTAATGATCCTGTCCTTTTCTATTTTCACAGCCTCT
+CCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGATGGTAAGACCCTCCTCCTCT
+GCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCATTGGCTAGGGG
+CTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCC
+TTCTACGTGGTGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGG
+CCCTACAGCGGTCTTCCCACTGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCA
+GGTGTGAGCTCTTAGGAAGCTCTAATCTGAGGGCAAAGACTCTGTCTCTGACCTTTGGGA
+GCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTTGGGCAACAGCAGGGAGTGAA
+GCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACCTTCTTGGCCT
+CCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCA
+AGGTGGTGTCCACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGC
+TCAGGCCTAGGAGGCCCCCCGTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCC
+CAAGCACTTCACAGCTGGACCCTGCTTCACCCTCACCCCCTCCTGGCAATCAATACAGCT
+TCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCATTGTTAGGAGTGGGGGTGGG
+GAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGGCCCCTGGGAC
+TGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGA
+TATTCATTCATTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTG
+CCTCTATGTCAGGCACTATGTTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATT
+CCTTGGAGAATATTGAAAGCTATAGATCTTTCCTTCTGCCCCCTACCTTCAAATAAGCAT
+ACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCCTAGAGCTCCTTACCGGAGT
+
+
+Parameter Valeu: >ENA|J00126|J00126.1 Human MHC class III factor B gene, Bb fragment, cDNA clone fb1.
+CTCAATGAAATCAATTATGAAGACCACAAGTTGAAGTCAGGGACTAACACCAAGAAGGCC
+CTCCAGGCAGTGTACAGCATGATGAGCTGGCCAGATGACGTCCCTCCTGAAGGCTGGAAC
+CGCACCCGCCATGTCATCATCCTCATGACTGATGGATTGCACAACATGGGCGGGGACCCA
+ATTACTGTCATTGATGAGATTCGGGACTTGCTATACATTGGCAAGGATCGCAAAAACCCA
+AGGGAGGATTATCTGGATGTCTATGTGTTTGGGGTCGGGCCTTTGGTGAACCAAGTCAAC
+ATCAATGCTTTGGCTTCCAAGAAAGACAATGAGCAACATGTGTTCAAAGTCAAGGATATG
+GAAAACCTGGAAGATGTTTTCTACCAAATGATCGATGAAAGCCAGTCTCTGAGTCTCTGT
+GGCATGGTTTGGGAACACAGGAAGGGTACCGATTACCACAAGCAACCATGGCAGGCCAAG
+ATCTCAGTCATTCGCCCTTCAAAGGGACACGAGAG
+
+
+Parameter Valeu: >ENA|J00130|J00130.1 Human fibrinogen beta-chain gene, exon 1.
+CTCAAGTTAAGTCTACATGAAAAGGATGGTTTCTTGGAGCTTCCACAAACTTAAAACCAT
+GAAACATCTATTATTGCTACTATTGTGTGTTTTTCTAGTTAAGTCCCAAGGTGTCAACGA
+CAATGAGGAGGTGAATTTTTTAAA
+
+
+Parameter Name: sequences
+OUTPUT PARAMETERS:
+
+Parameter Name: return
+Parameter Valeu: >ENA|J00124|J00124.1 Homo sapiens 50 kDa type I epidermal keratin gene, complete cds.
+CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCC
+TGGCGGGACAAGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGA
+CATGATGAGGCGGATGAGAGGAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGAT
+GAAAGCCAAGGGGAATGGAAAGTGCCAGACCCGCCCCCTACCCATGAGTATAAAGCACTC
+GCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTCAGCCTTCTGCTCGCTCGCTC
+ACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTCCAGCTCCATG
+AAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCC
+TCCCGCTTCTCCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGC
+AGCAGCAGCAGCAGCTTTGGTAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCT
+GGCTTGGGTGGTGGCTTTGGTGGTGGCTTTGCTGGTGGTGATGGGCTTCTGGTGGGCAGT
+GAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCTCCTACCTGGACAAGGTGCGT
+GCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTACCAGAGGCAG
+CGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTC
+ATGCCCCAGGCCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCC
+TTCTTTCGAGGTCTTGGATGCCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCA
+GGCCTCCTCATCCCCTTCTGATCTCAAATCCTCAGACCATGTGAGATCAGTGATTCCTAT
+CCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGGTGCTGTGACCAGCTGCAGGT
+CACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTTCCAGCACAGG
+AGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTT
+GGTACAGGCTGGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAG
+TGTGGTCCCTTGATGTGCCCTGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAG
+CCCCCTCCTCCCTGCTCCCACATTACTTGGGAGCCCTCCCTGCTGGAGTCTGTTGGGCTC
+TAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGTGGGGAAATCCAACCAGACTC
+AGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCCCCTGTGTTAG
+TTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCA
+GCTCAGGAAGGAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTT
+GAAGCCCCAAGACCCATTAGGTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAAC
+TCCTGGGCTTTCGATTCTAAGCCCGGGGCTGCCATCTACCCCCTCTGTTGACCATGAGTT
+AGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTTTGGGCTGCTATGGTCAAGTT
+TTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAATGTAGGCTACA
+GTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGG
+CCGCGGATGACTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCC
+CAGAGTAGGGCATTTTTGGAGCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGG
+TGCATGAAAACTCCCTGGGGTGCTTATAAAAGAATAAGACTCTTGGGCCCCACCCTTGGA
+GTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATTCTGGTCCACAGCCAGGTTTC
+AGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTGAAGTATAGGA
+AGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATC
+TGAGCAATCAATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACC
+ACCCACAAGGCACCAGCTCTGGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGT
+GATCAGGATGGGTGTCTCATACCTTTTCTCTGGGGTCATTCCAGGTATGAGACAGAGTTG
+AACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGCGCAGGGTGCTGGACGAACTG
+ACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGAGCTGGCCTAC
+CTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGG
+AGGATCACTTGAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCA
+AAAAAAAAAAAAAAAAAAAAAAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGA
+GAGAAGGGAGAGTCGAGATAGAATTGTGATGGTGGGAGGGCAGTATTCAGGCCTAAGGAA
+CACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACTGTCCCTGGCTTGCAGGAGAT
+GAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACGCTGCACCTGG
+CGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAG
+GAACCCAGACCACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAG
+ACAGAGGAGCTGAACCGCGAGGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGC
+GAGATCTCGGAGCTCCGGCGCACCATGCAGAACCTGGAGATTGAGCTGCAGTCCCAGCTC
+AGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAGGACTGGCAGGGAGAGAACGG
+CCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCCTGGAGAACAG
+CCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTA
+CAAGATCCTGCTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCT
+GCTGGAGGGCGAGGACGCCCAGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGG
+CACTCTCACGGCCCCACCATGTATCTAATGATCCTGTCCTTTTCTATTTTCACAGCCTCT
+CCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGATGGTAAGACCCTCCTCCTCT
+GCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCATTGGCTAGGGG
+CTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCC
+TTCTACGTGGTGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGG
+CCCTACAGCGGTCTTCCCACTGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCA
+GGTGTGAGCTCTTAGGAAGCTCTAATCTGAGGGCAAAGACTCTGTCTCTGACCTTTGGGA
+GCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTTGGGCAACAGCAGGGAGTGAA
+GCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACCTTCTTGGCCT
+CCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCA
+AGGTGGTGTCCACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGC
+TCAGGCCTAGGAGGCCCCCCGTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCC
+CAAGCACTTCACAGCTGGACCCTGCTTCACCCTCACCCCCTCCTGGCAATCAATACAGCT
+TCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCATTGTTAGGAGTGGGGGTGGG
+GAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGGCCCCTGGGAC
+TGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGA
+TATTCATTCATTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTG
+CCTCTATGTCAGGCACTATGTTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATT
+CCTTGGAGAATATTGAAAGCTATAGATCTTTCCTTCTGCCCCCTACCTTCAAATAAGCAT
+ACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCCTAGAGCTCCTTACCGGAGT
+>ENA|J00126|J00126.1 Human MHC class III factor B gene, Bb fragment, cDNA clone fb1.
+CTCAATGAAATCAATTATGAAGACCACAAGTTGAAGTCAGGGACTAACACCAAGAAGGCC
+CTCCAGGCAGTGTACAGCATGATGAGCTGGCCAGATGACGTCCCTCCTGAAGGCTGGAAC
+CGCACCCGCCATGTCATCATCCTCATGACTGATGGATTGCACAACATGGGCGGGGACCCA
+ATTACTGTCATTGATGAGATTCGGGACTTGCTATACATTGGCAAGGATCGCAAAAACCCA
+AGGGAGGATTATCTGGATGTCTATGTGTTTGGGGTCGGGCCTTTGGTGAACCAAGTCAAC
+ATCAATGCTTTGGCTTCCAAGAAAGACAATGAGCAACATGTGTTCAAAGTCAAGGATATG
+GAAAACCTGGAAGATGTTTTCTACCAAATGATCGATGAAAGCCAGTCTCTGAGTCTCTGT
+GGCATGGTTTGGGAACACAGGAAGGGTACCGATTACCACAAGCAACCATGGCAGGCCAAG
+ATCTCAGTCATTCGCCCTTCAAAGGGACACGAGAG
+>ENA|J00130|J00130.1 Human fibrinogen beta-chain gene, exon 1.
+CTCAAGTTAAGTCTACATGAAAAGGATGGTTTCTTGGAGCTTCCACAAACTTAAAACCAT
+GAAACATCTATTATTGCTACTATTGTGTGTTTTTCTAGTTAAGTCCCAAGGTGTCAACGA
+CAATGAGGAGGTGAATTTTTTAAA
+
+***************************************************************************************************************
+TASK NAME: aligning
+OPERATION NAME: runClustalOmega
+OPERATION DOMAIN TERM: Clustal_Omega
+OPERATION SERVICE URL: http://www.ebi.ac.uk/Tools/services/soap/clustalo?wsdl
+_______________________________________________________________________________________________________________
+INPUT PARAMETERS:
+
+Parameter Name: email
+Parameter Valeu: tadeu.classe@gmail.com
+
+Parameter Name: title
+Parameter Valeu: Clustal Omega
+
+Parameter Name: sequence
+Parameter Valeu: >ENA|J00124|J00124.1 Homo sapiens 50 kDa type I epidermal keratin gene, complete cds.
+CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCC
+TGGCGGGACAAGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGA
+CATGATGAGGCGGATGAGAGGAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGAT
+GAAAGCCAAGGGGAATGGAAAGTGCCAGACCCGCCCCCTACCCATGAGTATAAAGCACTC
+GCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTCAGCCTTCTGCTCGCTCGCTC
+ACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTCCAGCTCCATG
+AAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCC
+TCCCGCTTCTCCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGC
+AGCAGCAGCAGCAGCTTTGGTAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCT
+GGCTTGGGTGGTGGCTTTGGTGGTGGCTTTGCTGGTGGTGATGGGCTTCTGGTGGGCAGT
+GAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCTCCTACCTGGACAAGGTGCGT
+GCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTACCAGAGGCAG
+CGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTC
+ATGCCCCAGGCCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCC
+TTCTTTCGAGGTCTTGGATGCCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCA
+GGCCTCCTCATCCCCTTCTGATCTCAAATCCTCAGACCATGTGAGATCAGTGATTCCTAT
+CCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGGTGCTGTGACCAGCTGCAGGT
+CACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTTCCAGCACAGG
+AGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTT
+GGTACAGGCTGGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAG
+TGTGGTCCCTTGATGTGCCCTGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAG
+CCCCCTCCTCCCTGCTCCCACATTACTTGGGAGCCCTCCCTGCTGGAGTCTGTTGGGCTC
+TAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGTGGGGAAATCCAACCAGACTC
+AGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCCCCTGTGTTAG
+TTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCA
+GCTCAGGAAGGAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTT
+GAAGCCCCAAGACCCATTAGGTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAAC
+TCCTGGGCTTTCGATTCTAAGCCCGGGGCTGCCATCTACCCCCTCTGTTGACCATGAGTT
+AGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTTTGGGCTGCTATGGTCAAGTT
+TTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAATGTAGGCTACA
+GTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGG
+CCGCGGATGACTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCC
+CAGAGTAGGGCATTTTTGGAGCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGG
+TGCATGAAAACTCCCTGGGGTGCTTATAAAAGAATAAGACTCTTGGGCCCCACCCTTGGA
+GTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATTCTGGTCCACAGCCAGGTTTC
+AGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTGAAGTATAGGA
+AGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATC
+TGAGCAATCAATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACC
+ACCCACAAGGCACCAGCTCTGGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGT
+GATCAGGATGGGTGTCTCATACCTTTTCTCTGGGGTCATTCCAGGTATGAGACAGAGTTG
+AACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGCGCAGGGTGCTGGACGAACTG
+ACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGAGCTGGCCTAC
+CTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGG
+AGGATCACTTGAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCA
+AAAAAAAAAAAAAAAAAAAAAAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGA
+GAGAAGGGAGAGTCGAGATAGAATTGTGATGGTGGGAGGGCAGTATTCAGGCCTAAGGAA
+CACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACTGTCCCTGGCTTGCAGGAGAT
+GAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACGCTGCACCTGG
+CGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAG
+GAACCCAGACCACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAG
+ACAGAGGAGCTGAACCGCGAGGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGC
+GAGATCTCGGAGCTCCGGCGCACCATGCAGAACCTGGAGATTGAGCTGCAGTCCCAGCTC
+AGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAGGACTGGCAGGGAGAGAACGG
+CCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCCTGGAGAACAG
+CCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTA
+CAAGATCCTGCTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCT
+GCTGGAGGGCGAGGACGCCCAGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGG
+CACTCTCACGGCCCCACCATGTATCTAATGATCCTGTCCTTTTCTATTTTCACAGCCTCT
+CCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGATGGTAAGACCCTCCTCCTCT
+GCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCATTGGCTAGGGG
+CTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCC
+TTCTACGTGGTGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGG
+CCCTACAGCGGTCTTCCCACTGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCA
+GGTGTGAGCTCTTAGGAAGCTCTAATCTGAGGGCAAAGACTCTGTCTCTGACCTTTGGGA
+GCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTTGGGCAACAGCAGGGAGTGAA
+GCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACCTTCTTGGCCT
+CCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCA
+AGGTGGTGTCCACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGC
+TCAGGCCTAGGAGGCCCCCCGTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCC
+CAAGCACTTCACAGCTGGACCCTGCTTCACCCTCACCCCCTCCTGGCAATCAATACAGCT
+TCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCATTGTTAGGAGTGGGGGTGGG
+GAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGGCCCCTGGGAC
+TGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGA
+TATTCATTCATTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTG
+CCTCTATGTCAGGCACTATGTTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATT
+CCTTGGAGAATATTGAAAGCTATAGATCTTTCCTTCTGCCCCCTACCTTCAAATAAGCAT
+ACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCCTAGAGCTCCTTACCGGAGT
+>ENA|J00126|J00126.1 Human MHC class III factor B gene, Bb fragment, cDNA clone fb1.
+CTCAATGAAATCAATTATGAAGACCACAAGTTGAAGTCAGGGACTAACACCAAGAAGGCC
+CTCCAGGCAGTGTACAGCATGATGAGCTGGCCAGATGACGTCCCTCCTGAAGGCTGGAAC
+CGCACCCGCCATGTCATCATCCTCATGACTGATGGATTGCACAACATGGGCGGGGACCCA
+ATTACTGTCATTGATGAGATTCGGGACTTGCTATACATTGGCAAGGATCGCAAAAACCCA
+AGGGAGGATTATCTGGATGTCTATGTGTTTGGGGTCGGGCCTTTGGTGAACCAAGTCAAC
+ATCAATGCTTTGGCTTCCAAGAAAGACAATGAGCAACATGTGTTCAAAGTCAAGGATATG
+GAAAACCTGGAAGATGTTTTCTACCAAATGATCGATGAAAGCCAGTCTCTGAGTCTCTGT
+GGCATGGTTTGGGAACACAGGAAGGGTACCGATTACCACAAGCAACCATGGCAGGCCAAG
+ATCTCAGTCATTCGCCCTTCAAAGGGACACGAGAG
+>ENA|J00130|J00130.1 Human fibrinogen beta-chain gene, exon 1.
+CTCAAGTTAAGTCTACATGAAAAGGATGGTTTCTTGGAGCTTCCACAAACTTAAAACCAT
+GAAACATCTATTATTGCTACTATTGTGTGTTTTTCTAGTTAAGTCCCAAGGTGTCAACGA
+CAATGAGGAGGTGAATTTTTTAAA
+
+Parameter Name: outfmt
+Parameter Valeu: clustal
+
+OUTPUT PARAMETERS:
+
+Parameter Name: jobId
+Parameter Valeu: clustalo-S20131227-202718-0175-87494262-oy
+
+***************************************************************************************************************
+
+
+
+***************************************************************************************************************
+CONNECTORS INFORMATION
+_______________________________________________________________________________________________________________
+Parameter Name: status
+Parameter Valeu: FINISHED
+
+Parameter Name: output
+Parameter Valeu: CLUSTAL O(1.2.0) multiple sequence alignment
+
+
+ENA|J00124|J00124.1      CCCAGGGTCCGATGGGAAAGTGTAGCCTGCAGGCCCACACCTCCCCCTGTGAATCACGCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGGCGGGACAAGAAAGCCCAAAACACTCCAAACAATGAGTTTCCAGTAAAATATGACAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CATGATGAGGCGGATGAGAGGAGGGACCTGCCTGGGAGTTGGCGCTAGCCTGTGGGTGAT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAAAGCCAAGGGGAATGGAAAGTGCCAGACCCGCCCCCTACCCATGAGTATAAAGCACTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCATCCCTTTGCAATTTACCCGAGCACCTTCTCTTCACTCAGCCTTCTGCTCGCTCGCTC
+ENA|J00126|J00126.1      -----------------------------------------------------CTCAATG
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACCTCCCTCCTCTGCACCATGACTACCTGCAGCCGCCAGTTCACCTCCTCCAGCTCCATG
+ENA|J00126|J00126.1      AAATCAATTAT----------------GAAGACCACAAGTT-------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AAGGGCTCCTGCGGCATCGGGGGCGGCATCGGGGCGGGCTCCAGCCGCATCTCCTCCGTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTGGCCGGAGGGTCCTGCCGCGCCCCCAACACCTACGGGGGCGGCCTGTCTGTCTCATCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCCCGCTTCTCCTCTGGGGGAGCCTATGGGTTGGGGGGCGGCTATGGCGGTGGCTTCAGC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGCAGCAGCAGCAGCTTTGGTAGTGGCTTTGGGGGAGGATATGGTGGTGGCCTTGGTGCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGCTTGGGTGGTGGCTTTGGTGGTGGCTTTGCTGGTGGTGATGGGCTTCTGGTGGGCAGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGAAGGTGACCATGCAGAACCTCAATGACCGCCTGGCCTCCTACCTGGACAAGGTGCGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCTCTGGAGGAGGCCAACGCCGACCTGGAAGTGAAGATCCGTGACTGGTACCAGAGGCAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CGGCCTGCTGAGATCAAAGACTACAGTCCCTACTTCAAGACCATTGAGGACCTGAGGAAC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AAGGTGGGTGAATGGGCAGCAGAAGGCACCATTCCAGCTAGCTCCTTCTGGGAACAATTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ATGCCCCAGGCCGCTGAGACCTTAAGATTTCTCTATAGGACAGAGTCCACCCCAGATCCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      --------------------CTCAAGTTAAGTCTACAT----------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTCTTTCGAGGTCTTGGATGCCCTAAGACTGATCAGTGAGAAGATGCTTTCCCTTCCCCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------GAAAAGGATGGTTTCT--------
+                                                                                     
+
+ENA|J00124|J00124.1      GGCCTCCTCATCCCCTTCTGATCTCAAATCCTCAGACCATGTGAGATCAGTGATTCCTAT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      --------------TGGAGCTTCCACAAACTTAAAACCATGAAACATCTATTATTGCTAC
+                                                                                     
+
+ENA|J00124|J00124.1      CCTTACATTTTTTAGAGGAAGCAGTTGAAGCTTCGAGAGGTGCTGTGACCAGCTGCAGGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      TATTGTGTGTTTTT----------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CACATAGCAAATTAATGGCAGAGCAAGGCTGGGGCCCTTGTGCCTACCTTCCAGCACAGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGCAGCTACTTGTTCTCCAGCACAGGGGAGGAGTGAGGCTCTAACGGGACCAGGCAAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CATCCAAACCACTCATTAGCTCACTAGTCTGGGCTGTGGTTGCCGCCGCCCATAAGCCTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGTACAGGCTGGTCCCTCCCCACAGCCAGGCGGGCATGGAGAGCCTGCAGAGACAATTAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGTGGTCCCTTGATGTGCCCTGCACAGAGAGAGCCTGGCAGGCTTGTGCCCTGACTCTAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCCCCTCCTCCCTGCTCCCACATTACTTGGGAGCCCTCCCTGCTGGAGTCTGTTGGGCTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TAATGACTTGCATGGATTAGGGAAATTCAAGTGATGAGGTGGGGAAATCCAACCAGACTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGGGCCAATATATCTTCTTATTCTTCCCCTGAGTCCTCTTTTCTAATCCCCTGTGTTAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTGGGTTTTATCTCTTCACAAAGTTCCACTTGAAGTCCCATGGCCTGTGAGCTTGAAAAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAATGTGCATATCTGCAGAGGACTGGCAGGGCTGGCCTGATGCAGACAGAAGAGAGGTCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCTCAGGAAGGAGGGCTAGGGAGCCTCAGATTATTCTCCTCACCTGGAGGTGGGGAACTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAAGCCCCAAGACCCATTAGGTTTTGCCCAGCAAGACACTGGCAGAATTGGGACCAGAAC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCCTGGGCTTTCGATTCTAAGCCCGGGGCTGCCATCTACCCCCTCTGTTGACCATGAGTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGCAAAGTCTTAGGACAGGCCTGGGGCATCTGTTTTCCTTTGGGCTGCTATGGTCAAGTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTGTGGGGGAAAAGGGGGATTCAGGCAAGAACATGAAGCAAGAGCTTAATGTAGGCTACA
+ENA|J00126|J00126.1      ----------------GAAGTCAGGGACTAACACCAAGAAGGCCCTCCAGG---------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GTGAAGTCCAGCTTGTGAAGTCCATTTGACAAATTACCTGTGCCTTTTCCATCCTGCAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTCTCACAGCCACAGTGGACAATGCCAATGTCCTTCTGCAGATTGACAATGCCCGTCTGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCGCGGATGACTTCCGCACCAAGTGAGTTTGAAATGGTGGGCCAGAACATCCAGTGTCCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAGAGTAGGGCATTTTTGGAGCAGTGTTTCCCAAATAGAACTAGCCAGTACCAGGATAGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGCATGAAAACTCCCTGGGGTGCTTATAAAAGAATAAGACTCTTGGGCCCCACCCTTGGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GTTTTGATTCAGCTATTTATAGCAGGTTACCTGGGTGATTCTGGTCCACAGCCAGGTTTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGAACCGCTGCTTTAGGGAGAGGCACTTTCCACTTCCCCAGCTGCCCTTGAAGTATAGGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGAATCATAGTTGGAGGACTTCTGCATTATTTGTTGGCTGAAGCTAGAAGTGCAACCCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTCCTGATTTCTGCAGCAAGATGAACTGCCTTATCCCCAGCCCGCAGGAATGTTCATATC
+ENA|J00126|J00126.1      ------CAGTGTACAGCATGATGAGCTGGCCAGATGACGTCCCTCCTGA-----------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGAGCAATCAATGGGCACTGTGTTCAACCACGCCATTTTTCAAGATTGGCTCCTTAAACC
+ENA|J00126|J00126.1      ------------------------------------------AGGCTGGA----------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACCCACAAGGCACCAGCTCTGGGAGAAGCTGCAGGGAGAAGAGAACAAAGCCCTCGCTGT
+ENA|J00126|J00126.1      --------------------------------------------ACCGCACCCGCCA---
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GATCAGGATGGGTGTCTCATACCTTTTCTCTGGGGTCATTCCAGGTATGAGACAGAGTTG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AACCTGCGCATGAGTGTGGAAGCCGACATCAATGGCCTGCGCAGGGTGCTGGACGAACTG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACCCTGGCCAGAGCTGACCTGGAGATGCAGATTGAGAGCCTGAAGGAGGAGCTGGCCTAC
+ENA|J00126|J00126.1      --------------T---------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTGAAGAAGAACCACGAGGAGGTGAGAACTATATGGAAAAGTCAGCTTAAAAGAAATGCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGGAGGCTGGGTACAGTGGTGCGTGCCCATAGTCCCAGCTACTTGGGAGGCTGAGACAGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGATCACTTGAACACAGGAGTTTGAGTCCAGCCTGGGCAACAAGGTTAGACCCTGTCCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AAAAAAAAAAAAAAAAAAAAAAAAAAGAGAGAGAGAGAGAGAGAGATTGAGAGAGAGAGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGAAGGGAGAGTCGAGATAGAATTGTGATGGTGGGAGGGCAGTATTCAGGCCTAAGGAA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CACCAATCCGCTGCCATGGTGGAACTCCTGACTGTGGACTGTCCCTGGCTTGCAGGAGAT
+ENA|J00126|J00126.1      ---------------GTCATCATCCTCATGACTGATGGATTGCA----------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAATGCCCTGAGAGGCCAGGTGGGTGGAGATGTCAATGTGGAGATGGACGCTGCACCTGG
+ENA|J00126|J00126.1      ---------------------------------CAACATGGGCGGGGACCCAATTACTGT
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CGTGGACCTGAGCCGCATTCTGAACGAGATGCGTGACCAGTATGAGAAGATGGCAGAGAA
+ENA|J00126|J00126.1      CATTGATGAGATTCGGGACTTGCTATA-----------CATTGGCAAGGATCGCAAAAAC
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAACCGCAAGGATGCCGAGGAATGGTTCTTCACCAAGGTGGGTGTCATTTGAGGTGGAAG
+ENA|J00126|J00126.1      CCAAGG----------GAGGATTATCTGGATGTCTATGTGTTTGGGGTCGGGCCTTTGGT
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAACCCAGACCACCTGCCTTCTGGGGCCTTCTGGTGTGAATGGCATTCTCTTTTTTGCAG
+ENA|J00126|J00126.1      GAACCAAGTCAACATCAATGC---------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACAGAGGAGCTGAACCGCGAGGTGGCCACCAACAGCGAGCTGGTGCAGAGCGGCAAGAGC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGATCTCGGAGCTCCGGCGCACCATGCAGAACCTGGAGATTGAGCTGCAGTCCCAGCTC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGCATGGTAGGAATAGTGCCAGGAAGGGTGGTGCACCCAGGACTGGCAGGGAGAGAACGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCACACTCACTAATCGTTGATTCCCTTCCCTCCCTCACAGAAAGCATCCCTGGAGAACAG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCTGGAGGAGACCAAAGGTCGCTACTGCATGCAGCTGGCCCAGATCCAGGAGATGATTGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAGCGTGGAGGAGCAGCTGGCCCAGCTCCGCTGCGAGATGGAGCAGCAGAACCAGGAGTA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAAGATCCTGCTGGACGTGAAGACGCGGCTGGAGCAGGAGATCGCCACCTACCGCCGCCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCTGGAGGGCGAGGACGCCCAGTGAGTCTTGGCCCTCCCCTTAGTCCGCCCCCCCCATGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CACTCTCACGGCCCCACCATGTATCTAATGATCCTGTCCTTTTCTATTTTCACAGCCTCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCTCCTCCCAGTTCTCCTCTGGATCGCAGTCATCCAGAGATGGTAAGACCCTCCTCCTCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCAGGCCTGGGCTCCAGGCCACCCTCTGTACCCCAAGCAGGTCTAGGCATTGGCTAGGGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CTCCGTGAGGGGCTGAGCTCTAGTGCTGTCACCCAGTTTCCCTTGTGAACCTCCTTGGGT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGAAGAAGCTATTTTCTAAACCCTCCTTAGGGCTAGGAGAGGCAGCCCCCACCTCTTGCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TTCTACGTGGTGTCTGTGGCAGATCCTATTAGCTGTTGTGGTCAGCACCATGAACAAGGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCCTACAGCGGTCTTCCCACTGAGACCACTCCATTGGGTGAATATGGATGGAACCAGCCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GGTGTGAGCTCTTAGGAAGCTCTAATCTGAGGGCAAAGACTCTGTCTCTGACCTTTGGGA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCCCTCGTCTGAAAGAAATGTGTTGATGGTATCAGTGCTTGGGCAACAGCAGGGAGTGAA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GCAGTAATCAGGGGAGAGGGCAATGGGGAGCCAGTTTGAGTTTCCTCACCTTCTTGGCCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCTTACTCCTGATTAGTCCATTGTCTGTCCACCTCTGGTAACGTCCTCTTCCCACCTCTT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CCCCAGTGACCTCCTCCAGCCGCCAAATCCGCACCAAGGTCATGGATGTGCACGATGGCA
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      AGGTGGTGTCCACCCACGAGCAGGTCCTTCGCACCAAGAACTGAGGCTGCCCAGCCCCGC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCAGGCCTAGGAGGCCCCCCGTGTGGACACAGATCCCACTGGAAGATCCCCTCTCCTGCC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      CAAGCACTTCACAGCTGGACCCTGCTTCACCCTCACCCCCTCCTGGCAATCAATACAGCT
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TCATTATCTGAGTTGCATAATTCTCGCCTCTCTCTGGTCATTGTTAGGAGTGGGGGTGGG
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAGAAAGTGGGAGAGCATCTCTTTGGAGCTTGTCATGCACCTGGCTATGGCCCCTGGGAC
+ENA|J00126|J00126.1      ------------------------------------------------------------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TGGGAGAAAAGTCCTGGGGGTGGGTTGGGCTCAGGTCCCAGGATATCTTTCGCCATCTCA
+ENA|J00126|J00126.1      -----------------------------------------------TTTGGCTTCCAAG
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      GAAGACACAGATAGATGTGTGTACCAGGTCATATGTGGTGTCTCCTAGGGTACGGAGGGA
+ENA|J00126|J00126.1      AAAGACAATGAGCAACATGTGTTCAAAGTCAAGGATATGGAAAACCTGGA----------
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      TATTCATTCATTTACTCACTCATTTTCATGTGTGTCCATTCATTCACCAGATATTGAGTG
+ENA|J00126|J00126.1      -----AGATGTTTTCTAC-----------------CAAATGATCGAT--------GAAAG
+ENA|J00130|J00130.1      -----------------------------------CTAGTT--------------AAGTC
+                                                            * * *               .*.: 
+
+ENA|J00124|J00124.1      CCTCTATGTCAGGCACTATGTTAGGTTAAGGATTCCTGATGTTTTTGTGTATCAGGGATT
+ENA|J00126|J00126.1      CCAGTCTCTGAG-----------------------------------TCTCTGTGGCATG
+ENA|J00130|J00130.1      CCAAGGTGTCAACGACAATGAGGAGGTGAAT----------TTTTTAAA-----------
+                         **:   * * *.                                   :            
+
+ENA|J00124|J00124.1      CCTTGGAGAATATTGAAAGCTATAGATCTTTCCTTCTGCCCCCTACCTTCAAATAAGCAT
+ENA|J00126|J00126.1      GTTTGGGAACACAGGAAGGGTACCGATTACCACAAG------CAACCATGGCAGGCCAAG
+ENA|J00130|J00130.1      ------------------------------------------------------------
+                                                                                     
+
+ENA|J00124|J00124.1      ACATACATTTGCATACATGTCATGGGGTTCATGGGTCTCCTAGAGCTCCTTACCGGAGT
+ENA|J00126|J00126.1      ATCTCAGT----------CATTCGCCCTTCAAAGGGACACGAGAG--------------
+ENA|J00130|J00130.1      -----------------------------------------------------------
+                                                                                    
+
+
+
+***************************************************************************************************************

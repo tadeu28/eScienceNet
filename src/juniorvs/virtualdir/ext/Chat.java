@@ -64,6 +64,7 @@ import java.util.EventListener;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import juniorvs.virtualdir.EventoDescoberta;
 import juniorvs.virtualdir.Mensagem;
 import juniorvs.virtualdir.OuvinteEstruturaGrupo;
@@ -329,12 +330,12 @@ public class Chat extends Discover implements DiscoveryListener,
                                             adv = (PipeAdvertisement) en.nextElement();
                                             return adv;
                                     } catch (Exception e) {
-                                            e.printStackTrace();
+                                            JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
                                     }
                             }
                     }
             } catch (Exception e) {
-                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
             return null;
     }
@@ -359,8 +360,7 @@ public class Chat extends Discover implements DiscoveryListener,
                                                             .getPeerGroupName(), null));
                             currentUser.sendMessage(msg);
                     } catch (Exception e) {
-                            e.printStackTrace();
-                            return;
+                            JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
                     }
             }
     }
@@ -373,7 +373,7 @@ public class Chat extends Discover implements DiscoveryListener,
             myPeerAdvString = advToString(myPeerAdvt);
             myPipeAdvt = findUser(myName, tmpDiscovery);
             if (myPipeAdvt == null) {
-                    messageBoard.info("Autenticando " + myName + " no grupo "
+                    messageBoard.info("Autenticated " + myName + " in group "
                                     + group.getPeerGroupName());
                     myPipeAdvt = (PipeAdvertisement) AdvertisementFactory
                                     .newAdvertisement(PipeAdvertisement.getAdvertisementType());
@@ -388,10 +388,10 @@ public class Chat extends Discover implements DiscoveryListener,
                     publishAdvertisement(myPipeAdvt, tmpDiscovery);
                     inputPipe = tmpPipe.createInputPipe(myPipeAdvt, this);
                     inputPipes.addElement(inputPipe);
-                    messageBoard.info(myName + " foi autenticado no grupo " + group.getPeerGroupName() + EOL);
+                    messageBoard.info(myName + " was authenticated in group " + group.getPeerGroupName() + EOL);
                     probeUser(myPipeAdvt);
             } catch (IOException e) {
-                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
     }
     public synchronized void publishAdvertisement(Advertisement adv,
@@ -534,7 +534,7 @@ public class Chat extends Discover implements DiscoveryListener,
                             }
                     }
             } catch (Exception e) {
-                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
             String cmd = popString(msg, COMMAND);
             if (cmd == null) {

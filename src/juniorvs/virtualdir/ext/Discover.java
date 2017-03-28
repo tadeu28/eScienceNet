@@ -64,6 +64,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
+import javax.swing.JOptionPane;
 import juniorvs.virtualdir.EventoDescoberta;
 import juniorvs.virtualdir.OuvinteDescoberta;
 import net.jxta.discovery.DiscoveryEvent;
@@ -131,7 +132,7 @@ public abstract class Discover implements DiscoveryListener {
                                     // adv is good add it
                                     addAdToList(adv, result);
                             } catch (Exception ex) {
-                                    ex.printStackTrace();
+                                    JOptionPane.showMessageDialog(null, ex, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
                                     exception = true;
                             }
                     }

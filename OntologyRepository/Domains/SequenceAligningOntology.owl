@@ -1,0 +1,1834 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY genome "http://gabriellacastro.com.br/SequenceAligningOntology#INB-dev:genome.imim.es:" >
+]>
+
+
+<rdf:RDF xmlns="http://gabriellacastro.com.br/SequenceAligningOntology#"
+     xml:base="http://gabriellacastro.com.br/SequenceAligningOntology"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:genome="http://gabriellacastro.com.br/SequenceAligningOntology#INB-dev:genome.imim.es:">
+    <owl:Ontology rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology">
+        <owl:versionInfo rdf:datatype="&xsd;int">2</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence_type -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence_type">
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence"/>
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used">
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database"/>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format">
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#MultiAlign"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_type -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_type">
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#next_task -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#next_task">
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#performs_task -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task">
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <owl:inverseOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#previous_task -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task">
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used">
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by">
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks -->
+
+    <owl:ObjectProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks">
+        <rdfs:domain rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_sequencing_platform"/>
+        <rdfs:range rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#hasLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#hasLocation">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#AMPS_block_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#AMPS_block_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#DNA_strider_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#GCG_MSF_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#IG_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Jackknifer_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#BLASTN -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTN">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#BLASTP -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used"/>
+                        <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used"/>
+                        <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#BLASTX -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTX">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#pairwise_local_aligning"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#BLOSUM -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLOSUM">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_substitution_matrix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#CAP3 -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#CAP3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#ClustalW2 -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#ClustalW2">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_type"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#DNA_sequence"/>
+                            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Available at: http://www.ebi.ac.uk/Tools/msa/clustalw2/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Clustal_Omega -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Clustal_Omega">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_type"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#DNA_sequence"/>
+                            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#RNA_sequence"/>
+                            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Available at: http://www.ebi.ac.uk/Tools/msa/clustalo/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Consed -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Consed">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Cross_match -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Cross_match">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#vector_masking"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#DDBJ -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#DDBJ">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#EMBL_nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Genbank_nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Unigene"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbEST"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#est_human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#DDBJ_Amino_Acid_Database_DAD -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#DDBJ_Amino_Acid_Database_DAD">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Entrez_GenBank_protein"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PIR"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#SWISS-PROT"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#TREMBL"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#UniProt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#DNA_sequence -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#DNA_sequence">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#RNA_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#DNA_strider_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#DNA_strider_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#GCG_MSF_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#IG_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Jackknifer_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#EMBL -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#EMBL">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#EMBL_nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#EMBL_nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Genbank_nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Unigene"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbEST"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#est_human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#EMBOSS -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#EMBOSS">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                                <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#pairwise_local_aligning"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                                <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#paiwise_global_aligning"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Entrez_GenBank_protein -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Entrez_GenBank_protein">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PIR"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#SWISS-PROT"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#TREMBL"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#UniProt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#FASTA -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#FASTA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#get_sequences"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#FLX_454 -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#FLX_454">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#NGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#GCG_MSF_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#GCG_MSF_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#IG_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Jackknifer_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#GDE_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#GDE_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#RSF_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#acedb_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#gff_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Genbank -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Genbank">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Genbank_nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Genbank_nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Unigene"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbEST"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#est_human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#GroupSequences -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#GroupSequences">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#IG_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#IG_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Jackknifer_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Jackknifer_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Jackknifer_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#LaryssaSample -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#LaryssaSample">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_sequencing_platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#aligning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#get_sequences"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#MultiAlign -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#MultiAlign">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#EMBL"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Genbank"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#multialign_format"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#input_sequences_format"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#SwissProt"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Available at: http://multalin.toulouse.inra.fr/multalin/</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#NBRF_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#NBRF_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#NGS -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#NGS">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_sequencing_platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#assembly"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#base_calling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#aligning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Needleman_and_Wunsch -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Needleman_and_Wunsch">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#PAM -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#PAM">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_substitution_matrix"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP_View -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP_View">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#PHRED -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#PHRED">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#base_calling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#PIR -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#PIR">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#SWISS-PROT"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#TREMBL"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#UniProt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#PIR_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#PIR_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Pfam_Stockholm_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#RNA_sequence -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#RNA_sequence">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#RSF_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#RSF_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#acedb_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#gff_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#SOLiDSystem -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#SOLiDSystem">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#NGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#SWISS-PROT -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#SWISS-PROT">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#TREMBL"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#UniProt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Sanger -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Sanger">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_sequencing_platform"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#assembly"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#vector_masking"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#base_calling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#workflow_possible_tasks"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#aligning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Smith_Waterman -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Smith_Waterman">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#performs_task"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#pairwise_local_aligning"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Available at: http://www.ebi.ac.uk/Tools/psa/emboss_water</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Solexa -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Solexa">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#NGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#SwissProt -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#SwissProt">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#TBLASTN -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#TBLASTN">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#TBLASTX -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#TBLASTX">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#database_format_sequence_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#query_format_used"/>
+                        <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#TREMBL -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#TREMBL">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#UniProt"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#UniProt -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#UniProt">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#Unigene -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#Unigene">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbEST"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#est_human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#acedb_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#acedb_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#gff_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#asn1_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#assembly -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#assembly">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#aligning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#base_calling -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#base_calling">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRED"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_algorithm">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_data -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_data">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_data_resource -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_data_resource">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_file_formats -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_file_formats">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_sequencing_platform -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_sequencing_platform">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_substitution_matrix -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_substitution_matrix">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_concept"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_data"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#clustalw_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#codata_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#codata_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#dbEST -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#dbEST">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#est_human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#dbSNP">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#est_human"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#est_human -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#est_human">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_code">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#fasta_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#gff_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#fitch_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#get_sequences -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#get_sequences">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#FASTA"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#gff_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#gff_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#global_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#global_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_aligning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#local_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#local_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_aligning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#mega_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#mega_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#multialign_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#multialign_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#multiple_global_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#multiple_global_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#global_aligning"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#ClustalW2"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#MultiAlign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Clustal_Omega"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#multiple_local_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#multiple_local_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#local_aligning"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#pairwise_local_aligning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#nexus_paup_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence_type"/>
+                <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#nucleotide_sequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#pairwise_local_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#pairwise_local_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#local_aligning"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#BLAST_Basic_Local_Alignment_Search_Tool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#EMBOSS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Smith_Waterman"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#paiwise_global_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#paiwise_global_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#global_aligning"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#EMBOSS"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#phylip_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#protein -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#protein">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence_database">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#biological_sequence_type"/>
+                <owl:allValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#protein_sequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#raw_sequence_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#GroupSequences"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#get_sequences"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#selex_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#selex_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#treecon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#sequence_aligning -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_aligning">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#aligning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_data_resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#CAP3"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#base_calling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#vector_masking"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#GroupSequences"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#read_and_format_sequence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#staden_experiment_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+        <owl:disjointWith rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#tSMS -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#tSMS">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#NGS"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#text_plain_format">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_query_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide_sequence_database -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#translated_nucleotide_sequence_database">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_database"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#treecon -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#treecon">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_file_formats"/>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#vector_masking -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#vector_masking">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Cross_match"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#base_calling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing -->
+
+    <owl:Class rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#viewing_and_editing">
+        <rdfs:subClassOf rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#bioinformatics_task"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Consed"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#task_performed_by"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP_View"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#aligning"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#previous_task"/>
+                <owl:someValuesFrom rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#sequence_grouping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#INB-dev:genome.imim.es:runCrossMatchToScreenVector -->
+
+    <owl:NamedIndividual rdf:about="&genome;runCrossMatchToScreenVector">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Cross_match"/>
+        <hasLocation>http://www.biocatalogue.org/services/2261</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#INB-dev:genome.imim.es:runPhrap -->
+
+    <owl:NamedIndividual rdf:about="&genome;runPhrap">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP"/>
+        <hasLocation>http://www.biocatalogue.org/services/2268</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#INB-dev:genome.imim.es:runPhred -->
+
+    <owl:NamedIndividual rdf:about="&genome;runPhred">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRED"/>
+        <hasLocation>http://www.biocatalogue.org/services/2290</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#INB-dev:genome.imim.es:runPhredCollection -->
+
+    <owl:NamedIndividual rdf:about="&genome;runPhredCollection">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRED"/>
+        <hasLocation>http://www.biocatalogue.org/services/2293</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#NCBI-BLASTN -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#NCBI-BLASTN">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTN"/>
+        <hasLocation rdf:datatype="&xsd;string">http://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&amp;BLAST_PROGRAMS=megaBlast&amp;PAGE_TYPE=BlastSearch&amp;SHOW_DEFAULTS=on&amp;LINK_LOC=blasthome</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#runCrossMatchToScreenVectorCollectionService -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#runCrossMatchToScreenVectorCollectionService">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Cross_match"/>
+        <hasLocation>http://www.biocatalogue.org/services/1588</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#runCrossMatchToScreenVectorService -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#runCrossMatchToScreenVectorService">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#Cross_match"/>
+        <hasLocation>http://www.biocatalogue.org/services/1586</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#runPhrapService -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#runPhrapService">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP"/>
+        <hasLocation>http://www.biocatalogue.org/services/1567</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#runPhrapWithQualityDataService -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#runPhrapWithQualityDataService">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRAP"/>
+        <hasLocation>http://www.biocatalogue.org/services/1582</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#runPhredCollectionService -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#runPhredCollectionService">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRED"/>
+        <hasLocation>http://www.biocatalogue.org/services/1575</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://gabriellacastro.com.br/SequenceAligningOntology#runPhredService -->
+
+    <owl:NamedIndividual rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#runPhredService">
+        <rdf:type rdf:resource="http://gabriellacastro.com.br/SequenceAligningOntology#PHRED"/>
+        <hasLocation>http://www.biocatalogue.org/services/1571</hasLocation>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTN"/>
+            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTP"/>
+            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#BLASTX"/>
+            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#TBLASTN"/>
+            <rdf:Description rdf:about="http://gabriellacastro.com.br/SequenceAligningOntology#TBLASTX"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

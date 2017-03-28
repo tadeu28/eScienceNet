@@ -52,7 +52,23 @@ public class Peer {
      */
     public ContentAdvertisement getAnuncioConteudo(int index){
         //retorna o conteudo do anuncio
-        return (ContentAdvertisement)listAnuncioConteudo.values().toArray()[index];
+        return (ContentAdvertisement) listAnuncioConteudo.values().toArray()[index];
+    }
+    
+    public ContentAdvertisement getAnuncioConteudo(String content){
+        
+        for (Object obj : listAnuncioConteudo.values().toArray()){
+            
+            ContentAdvertisement contentAdvertisement = (ContentAdvertisement) obj;
+            
+            if (contentAdvertisement != null){
+                
+                if (contentAdvertisement.getName().equals(content)){
+                    return contentAdvertisement;
+                }                
+            }
+        }
+        return null;        
     }
     
     /**

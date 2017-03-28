@@ -8,7 +8,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import juniorvs.virtualdir.ext.PeerGroupManager;
+import net.jxta.discovery.DiscoveryService;
 import net.jxta.exception.PeerGroupException;
 import net.jxta.instantp2p.Search;
 import net.jxta.peergroup.PeerGroup;
@@ -48,6 +52,7 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
     private File adicaoArquivos[] = null;
     private Hashtable cmsTable = new Hashtable();
     private Hashtable searchTable = new Hashtable();
+    private DiscoveryService discoveryService;
 
     /**
      * Método contrutor da classe
@@ -55,13 +60,15 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
      * @param manager gerente do grupo de peers
      * @param getContentDownload conteúdo de download
      */   
-    public GerenciaProcura(PeerGroupManager manager, ConteudoDownload getContentDownload) {
+    public GerenciaProcura(PeerGroupManager manager, ConteudoDownload getContentDownload, DiscoveryService discoveryService) {
         //seto o gerente do grupo de peers    
         this.peerGroupManager = manager;
         //seto o objeto de conteúdo de download
         this.conteudoDownload = getContentDownload;
         //altero o grupo passando o grupo selecionado
         grupoAlterado(manager.getSelectedPeerGroup());
+        
+        this.discoveryService = discoveryService;
     }
     
     /**
@@ -155,12 +162,13 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
     public Enumeration recuperaConteudoLocal() {
         //verifico se a lista de conteuno não esta vazia    
         if (content != null) {
+            
             //verifico se o conteúdo local não está atualizado
             if (!conteudoLocalAtualizado) {
                 //removo todos os elementos da lista de conteúdo
                 contentItems.removeAllElements();
                 //percorro os arquivos da lista de conteúdo
-                for (int i = 0; i < content.length; i++) {
+                for (int i = 0; i < content.length; i++) {                    
                     //adiciono os arquivo a lista de conteudo
                     contentItems.addElement(content[i]);
                 }
@@ -285,6 +293,7 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
 
             //crio o objeto de notificação de arquivos
             CMS cms = getCMS(group);
+            
             //pego o gerenciador de conteudo do objeto de notificação
             contentManager = cms.getContentManager();
             //pego o conteudo do gerenciador de conteudo
@@ -341,7 +350,7 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
             //insito o objeto de requisição do arquivo na lista de requisições
             getRequests().addElement(request);
         } catch (InvocationTargetException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
         }
         
         //atualizo a lista de resuisições
@@ -453,10 +462,10 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
                 //inicializo o objteo de transferencia para o grupo
                 cms.init(group, null, null);
             } catch (PeerGroupException e) {
-                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, e, ".: e-ScienceNet :.", JOptionPane.ERROR_MESSAGE);
             }
             
-            //starto o objeto de transferência de arquivos
+            //starto o objeto de transferência de arquivos            
             cms.startApp(new File(getDiretorioGrupo(group), CMS.DEFAULT_DIR));
         }
         
@@ -507,7 +516,7 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
         //verifico se é um arquivo
         if (file.isFile()) {
             //compartilho o arquivo com o gerenciador de conteudo
-            contentManager.share(file, peerGroupManager.getMyPeerName());
+            contentManager.share(file, peerGroupManager.getMyPeerName());            
         } else {
             //pego a lista de arquivos
             File fileList[] = file.listFiles();
@@ -517,6 +526,26 @@ public class GerenciaProcura implements OuvinteProcura, Runnable {
                 addFile(fileList[i]);
             }
         }
+    }
+    
+    public void removeFile(String file) throws Exception {
+        
+        for(Content cont : contentManager.getContent()){
+            if(cont.getContentAdvertisement().getName().contains(file)){             
+                ContentAdvertisement cadv = cont.getContentAdvertisement();
+                contentManager.unshare(cadv);
+            }
+        }        
+    }
+    
+    public boolean localContentExists(String contentFile){
+        
+        for(Content cont : contentManager.getContent()){
+            if(cont.getContentAdvertisement().getName().contains(contentFile)){             
+                return true;
+            }
+        } 
+        return false;
     }
     
     /**
